@@ -1,7 +1,9 @@
 #include "utilities.h"  
+#include "ADC.h"
 
 int set_mode(modevars *modevar) {
-	
+	int Itestsp, Itestcount, Itestval, Itestout;
+	float Itestdt;
 	
 	
 	switch(modevar->mode) {
@@ -25,8 +27,29 @@ int set_mode(modevars *modevar) {
 		}
 		case ITEST:
 		{
+			Itestdt = dt_CurrCtrl;
+			if(Itestcount == 0) {
+				Itestsp = 200;
+			}
+			if ((Itestcount == 25) || (Itestcount == 75) || (Itestcount == 50)) {
+				Itestsp = -1 * Itestsp;
+			}
+			Itestval = ADC_ma(read_ADC());
+			Itestout = PID_Out(&CurrCtrl, (float)Itestsp, (float)Itestval, Itestdt);
 			
+			if (Itestout > 100) {
+				Itestout = 100;
+			}
+			if (Itestout < -100) {
+				Itestout = -100;
+			}
+
+			if (Itestcount == 99) {	
+				Itestcount = 0;
+				modevar->mode = IDLE;
+			}								
 			
+			modevar->duty_p = Itestout;
 			break;
 		}
 		case HOLD:
@@ -52,6 +75,22 @@ int set_mode(modevars *modevar) {
 	}
 	
 	return modevar->duty_p;
+}
+
+float PID_Out(GAINS *pidctrl, float setpoint, float real_val, float dt) {
+	
+	float e, ed, out;
+	
+	e = setpoint - real_val;
+	pidctrl->eint += e*dt;
+	ed = (e - pidctrl->eprev) / dt;
+	
+	out = pidctrl->kp * e + pidctrl->ki * pidctrl->eint + pidctrl.kd * ed;
+	
+	pidctrl->eprev = e;
+	
+	
+	return out;	
 }
 
 int get_mode(modevars *modevar) {

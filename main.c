@@ -120,8 +120,9 @@ int main()
 	  case 'g':			//Set Current Gains
 	  {
 		  //modevar.mode =
+		  CurrCtrl.kd = 0;
 		  NU32_ReadUART3(buffer, BUF_SIZE);
-		  sscanf(buffer, "%f %f", &CurrCtrl.P, &CurrCtrl.I);
+		  sscanf(buffer, "%f %f", &CurrCtrl.kp, &CurrCtrl.ki);
 		  sprintf(buffer, "%d\r\n", 1);
 		  NU32_WriteUART3(buffer);
 		  

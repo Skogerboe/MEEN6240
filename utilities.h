@@ -9,6 +9,7 @@
 #define ITEST	2
 #define HOLD	3
 #define TRACK	4
+#define dt_CurrCtrl		0.0002
 
 
 int op_mode;
@@ -22,9 +23,12 @@ typedef struct {
 }modevars;
 
 typedef struct {
-	float P;
-	float I;
-	float D;
+	float kp;
+	float ki;
+	float kd;
+	float e;
+	float eprev;
+	float eint;
 }GAINS;
 
 GAINS CurrCtrl;
@@ -34,5 +38,6 @@ int get_mode(modevars *modevar);
 void init_ControlLoop(void);
 void config_PWM(void);
 void config_T4(void);
+float PID_Out(GAINS *pidctrl, float setpoint, float real_val, float dt);
 
 #endif // UTILITIES__H__
