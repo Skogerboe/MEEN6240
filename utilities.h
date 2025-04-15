@@ -13,6 +13,9 @@
 
 
 int op_mode;
+volatile int Itest_Data_f;
+int Itest_data_real[100], Itest_ref[100];
+
 
 typedef struct {
 	int pwm;
@@ -29,6 +32,8 @@ typedef struct {
 	float e;
 	float eprev;
 	float eint;
+	float int_min;
+	float int_max;
 }GAINS;
 
 GAINS CurrCtrl;

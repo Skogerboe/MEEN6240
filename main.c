@@ -29,11 +29,13 @@ void __ISR(_TIMER_4_VECTOR, IPL5SOFT) TIMER4ISR(void) {
 int main() 
 {
   char buffer[BUF_SIZE];
+  int i;
   NU32_Startup(); // cache on, min flash wait, interrupts on, LED/button init, UART init
   NU32_LED1 = 1;  // turn off the LEDs
   NU32_LED2 = 1;        
   
   modevar.mode = IDLE;
+  Itest_Data_f = 0;
   
   __builtin_disable_interrupts();
   // in future, initialize modules or peripherals here
@@ -131,21 +133,33 @@ int main()
 	  case 'h':			//Get Current Gains
 	  {
 		  //modevar.mode = ITEST;
-		  sprintf(buffer, "%f %f\r\n", CurrCtrl.P, CurrCtrl.I);
+		  sprintf(buffer, "%f %f\r\n", CurrCtrl.kp, CurrCtrl.ki);
 		  NU32_WriteUART3(buffer);
 		  
+		  break;
+	  }
+	  case 'k':
+	  {
+		  
+		  int i;
+		  CurrCtrl.int_min = -100;
+		  CurrCtrl.int_max = 100; 
+		  modevar.mode = ITEST;
+		  //sprintf(buffer, "%d\r\n", 100);
+		  //NU32_WriteUART3(buffer);
 		  break;
 	  }
       case 'q':
       {
 		  modevar.mode = IDLE;
         // handle q for quit. Later you may want to return to IDLE mode here. 
-        break;
+		  break;
       }
 	  case 't':
 	  {
 		  sprintf(buffer, "%d\r\n", (int) modevar.duty_p);
-		  NU32_WriteUART3(buffer);		  
+		  NU32_WriteUART3(buffer);		
+		  break;
 	  }
       default:
       {
@@ -154,7 +168,15 @@ int main()
         break;
       }
     }
-	modevar.duty_p = set_mode(&modevar);
+	//modevar.duty_p = set_mode(&modevar);
+	/*if (Itest_Data_f == 1){
+		  for(i = 0; i < 100; i++) {
+	  		  sprintf(buffer, "%d %d\r\n", Itest_ref[i], Itest_data_real[i]);
+			  NU32_WriteUART3(buffer);	
+		  }
+		  Itest_Data_f = 0;  
+	}*/
+	
   }
   return 0;
 }
