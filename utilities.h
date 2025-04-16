@@ -10,11 +10,14 @@
 #define HOLD	3
 #define TRACK	4
 #define dt_CurrCtrl		0.0002
+#define ITEST_IREF		200
+#define ITEST_DATAPOINTS	100
+#define PWM_MIN		-100
+#define PWM_MAX		100
 
 
-int op_mode;
-volatile int Itest_Data_f;
-int Itest_data_real[100], Itest_ref[100];
+extern volatile int Itest_Data_f;
+extern volatile int Itest_data_real[100], Itest_ref[100];
 
 
 typedef struct {
@@ -34,15 +37,16 @@ typedef struct {
 	float eint;
 	float int_min;
 	float int_max;
+	float ref;
 }GAINS;
 
-GAINS CurrCtrl;
+extern GAINS CurrCtrl;
 
 int set_mode(modevars *modevar);	
 int get_mode(modevars *modevar);
 void init_ControlLoop(void);
 void config_PWM(void);
 void config_T4(void);
-float PID_Out(GAINS *pidctrl, float setpoint, float real_val, float dt);
+float PID_Out(GAINS *pidctrl, float real_val, float dt);
 
 #endif // UTILITIES__H__

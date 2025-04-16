@@ -7,6 +7,9 @@
 #define BUF_SIZE 200
 
 
+volatile int Itest_Data_f;
+GAINS CurrCtrl;
+volatile int Itest_data_real[100], Itest_ref[100];
 modevars modevar;
 
 /*void __ISR(_TIMER_2_VECTOR, IPL5SOFT) TIMER2ISR(void) {
@@ -29,7 +32,7 @@ void __ISR(_TIMER_4_VECTOR, IPL5SOFT) TIMER4ISR(void) {
 int main() 
 {
   char buffer[BUF_SIZE];
-  int i;
+  static int i;
   NU32_Startup(); // cache on, min flash wait, interrupts on, LED/button init, UART init
   NU32_LED1 = 1;  // turn off the LEDs
   NU32_LED2 = 1;        
@@ -142,11 +145,21 @@ int main()
 	  {
 		  
 		  int i;
-		  CurrCtrl.int_min = -100;
-		  CurrCtrl.int_max = 100; 
+		  CurrCtrl.eint = 0;
+		  CurrCtrl.ref = ITEST_IREF;
+		  CurrCtrl.int_min = PWM_MIN;
+		  CurrCtrl.int_max = PWM_MAX; 
+		  Itest_Data_f = 0;
 		  modevar.mode = ITEST;
-		  //sprintf(buffer, "%d\r\n", 100);
-		  //NU32_WriteUART3(buffer);
+		  
+		  while(!Itest_Data_f);
+		  sprintf(buffer, "%d\r\n", ITEST_DATAPOINTS);
+		  NU32_WriteUART3(buffer);
+		  
+		  for(i=0;i<ITEST_DATAPOINTS;i++) {
+			  sprintf(buffer, "%d %d\r\n", Itest_ref[i], Itest_data_real[i]);
+			  NU32_WriteUART3(buffer);
+		  }
 		  break;
 	  }
       case 'q':

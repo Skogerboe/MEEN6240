@@ -16,8 +16,9 @@ unsigned int read_ADC(void) {
 	unsigned int ticks_avg = 0;
 	
 	AD1CHSbits.CH0SA = ADC_PIN;
+	//AD1CON1bits.SAMP = 1;
 	
-	for(i=0;i<8;i++) {
+	for(i=0;i<64;i++) {
 		AD1CON1bits.SAMP = 1; 
 		if(ADC1BUF0 <= (0.5*ticks_old)) {
 			ticks_avg += ticks_old;
@@ -27,7 +28,7 @@ unsigned int read_ADC(void) {
 		}
 	}
 	
-	return (ticks_avg)>>3;		//Divide ticks_avg sum of 4 samples by 4 to get an average count
+	return (ticks_avg)>>6;		//Divide ticks_avg sum of 4 samples by 4 to get an average count
 }
 
 int ADC_ma(unsigned int ticks) {

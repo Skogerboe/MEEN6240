@@ -5,7 +5,7 @@
 #include <sys/attribs.h>            // __ISR macro
 
 #define		ADC_PIN		10
-#define 	ADC_MA(x)		0.6893*(x-105) - 273
+#define 	ADC_MA(x)		0.685*(x-185) - 287
 //#define 	ADC_MA(x)		0.8515*(x-150) - 290
 
 void init_ADC(void);

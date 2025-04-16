@@ -1,11 +1,9 @@
 #include "utilities.h"  
 #include "ADC.h"
 
-static int Itestcount;
 
 int set_mode(modevars *modevar) {
-	
-	int Itestsp, Itestval, Itestout;
+	int Itestval, Itestout;
 	float Itestdt;
 	
 	
@@ -14,8 +12,6 @@ int set_mode(modevars *modevar) {
 		case IDLE:
 		{
 			modevar->duty_p = 0;
-			Itestcount = 0;
-			Itestsp = 0;
 		
 			break;
 		}
@@ -32,26 +28,33 @@ int set_mode(modevars *modevar) {
 		}
 		case ITEST:
 		{
+			static volatile int Itestcount;
+			
 			Itestdt = dt_CurrCtrl;		//Itest sampling period
-			if ((Itestcount == 2500) || (Itestcount == 7500)) {		//Every 25 iterations through ISR, Flip sign of Itest ref
-				Itestsp = -200;
-			}else if((Itestcount == 0) || (Itestcount == 5000)) {
-				Itestsp = 200;
+			if ((Itestcount == 25) || (Itestcount == 50) || (Itestcount == 75)) {		//Every 25 iterations through ISR, Flip sign of Itest ref
+				CurrCtrl.ref = (-1)*CurrCtrl.ref;
 			}
+			
 			Itestval = ADC_ma(read_ADC());		//Read ADC value in mA
-			Itestout = (int)PID_Out(&CurrCtrl, (float)Itestsp, (float)Itestval, Itestdt);	//Set PWM to Control signal output.
+			Itestout = (int)PID_Out(&CurrCtrl, (float)Itestval, Itestdt);	//Set PWM to Control signal output.
+			if(Itestout < PWM_MIN) {			//Clamp PI output to -100% or 100%
+				Itestout = PWM_MIN;
+			}else if(Itestout > PWM_MAX) {
+				Itestout = PWM_MAX;
+			}
 			modevar->pwm = Itestout;
-			if(Itestout < 0) {				//Set direction bit. Clockwise for negative PWM, CCW for Positive PWM.
+			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;	//Duty cycle period calculation.
+			if(modevar->pwm < 0) {				//Set direction bit. Clockwise for negative PWM, CCW for Positive PWM.
 				LATCbits.LATC14 = 0;
 			}else{
 				LATCbits.LATC14 = 1;
 			}
 			
-			//Itest_data_real[Itestcount] = Itestval;		//Store Itest reference in this array
-			//Itest_ref[Itestcount] = Itestsp;			//Store Itest real value in this array
-			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;	//Duty cycle period calculation.
-			Itestcount+=1;								//Increment counter	
-			if (Itestcount == 10000) {						//Reset Itest count, set mode to IDLE, and set Itest Data send flag.
+			Itest_data_real[Itestcount] = Itestval;		//Store Itest reference in this array
+			Itest_ref[Itestcount] = CurrCtrl.ref;			//Store Itest real value in this array
+			Itestcount++;								//Increment counter	
+			if (Itestcount > 99) {						//Reset Itest count, set mode to IDLE, and set Itest Data send flag.
+				CurrCtrl.eint = 0;
 				Itestcount = 0;
 				modevar->mode = IDLE;
 				Itest_Data_f = 1;
@@ -85,13 +88,15 @@ int set_mode(modevars *modevar) {
 	return modevar->duty_p;
 }
 
-float PID_Out(GAINS *pidctrl, float setpoint, float real_val, float dt) {
+float PID_Out(GAINS *pidctrl, float real_val, float dt) {
 	
-	float e, ed, out;	
+	float e=0;
+	float ed = 0;
+	float out=0;	
 	
-	e = setpoint - real_val;		//Set error
+	e = pidctrl->ref - real_val;		//Set error
 	
-	pidctrl->eint += e*dt;			//Set integration of error
+	pidctrl->eint += e;//*dt;			//Set integration of error
 	if(pidctrl->eint > pidctrl->int_max) {		//Integration Anti-Windup
 		pidctrl->eint = pidctrl->int_max;
 	}
@@ -99,11 +104,10 @@ float PID_Out(GAINS *pidctrl, float setpoint, float real_val, float dt) {
 		pidctrl->eint = pidctrl->int_min;
 	}
 	
-	ed = (e - pidctrl->eprev) / dt;			//Derivative term
-	
+	ed = (e - pidctrl->eprev);// / dt;			//Derivative term
+	pidctrl->eprev = e;						//Set eprev value for derivative term.
 	out = (pidctrl->kp * e) + (pidctrl->ki * pidctrl->eint) + (pidctrl->kd * ed);			//Control signal output
 	
-	pidctrl->eprev = e;						//Set eprev value for derivative term.
 	
 	
 	return out;	
