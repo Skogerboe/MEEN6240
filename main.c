@@ -7,25 +7,32 @@
 #define BUF_SIZE 200
 
 
-volatile int Itest_Data_f;
-GAINS CurrCtrl;
+volatile int Itest_Data_f, Hold_Data_f;
+GAINS CurrCtrl, PosCtrl;
 volatile int Itest_data_real[100], Itest_ref[100];
+int Ival, Iref, PosVal, Posref;
 modevars modevar;
 
-/*void __ISR(_TIMER_2_VECTOR, IPL5SOFT) TIMER2ISR(void) {
-	//IFS0CLR = (1<<8);
-	IFS0CLR = (1<<6);
-	TMR2 = 0;
-}*/
+void __ISR(_TIMER_3_VECTOR, IPL4SOFT) TIMER3ISR(void) {
+	
+	IFS0CLR = (1<<12);
+	TMR3 = 0;
+	Iref = state_200Hz(&modevar);
+	//NU32_LED1 = !NU32_LED1;
+}
 
 void __ISR(_OUTPUT_COMPARE_1_VECTOR, IPL5SOFT) OC1ISR(void) {
 	IFS0CLR = (1<<5);
-	
 }
 
 void __ISR(_TIMER_4_VECTOR, IPL5SOFT) TIMER4ISR(void) {
 	IFS0CLR = (1<<16);
-	OC1RS = set_mode(&modevar);//(int) modevar.duty_p;	
+	OC1RS = state_5kHz(&modevar);
+	if(modevar.pwm < 0) {				//Set direction bit. Clockwise for negative PWM, CCW for Positive PWM.
+		LATCbits.LATC14 = 0;
+	}else{
+		LATCbits.LATC14 = 1;
+	}
 	TMR4 = 0;
 }
 
@@ -45,6 +52,7 @@ int main()
   encoder_init();
   init_ADC();
   init_ControlLoop();
+  config_T3();
   __builtin_enable_interrupts();
 
   while(1)
@@ -111,20 +119,18 @@ int main()
 	  {		  
 		  NU32_ReadUART3(buffer, BUF_SIZE);
 		  sscanf(buffer, "%d", &modevar.pwm);
-		  modevar.mode = PWM;
+		  set_modee(&modevar, PWM);
 		  sprintf(buffer, "%d\r\n", modevar.pwm);
 		  NU32_WriteUART3(buffer);
 		  break;
 	  }
 	  case 'p':
 	  {
-		  modevar.mode = IDLE;
-		  
+		  set_modee(&modevar, IDLE);
 		  break;
 	  }
 	  case 'g':			//Set Current Gains
 	  {
-		  //modevar.mode =
 		  CurrCtrl.kd = 0;
 		  NU32_ReadUART3(buffer, BUF_SIZE);
 		  sscanf(buffer, "%f %f", &CurrCtrl.kp, &CurrCtrl.ki);
@@ -135,7 +141,6 @@ int main()
 	  }
 	  case 'h':			//Get Current Gains
 	  {
-		  //modevar.mode = ITEST;
 		  sprintf(buffer, "%f %f\r\n", CurrCtrl.kp, CurrCtrl.ki);
 		  NU32_WriteUART3(buffer);
 		  
@@ -143,15 +148,13 @@ int main()
 	  }
 	  case 'k':
 	  {
-		  
 		  int i;
 		  CurrCtrl.eint = 0;
 		  CurrCtrl.ref = ITEST_IREF;
 		  CurrCtrl.int_min = PWM_MIN;
 		  CurrCtrl.int_max = PWM_MAX; 
 		  Itest_Data_f = 0;
-		  modevar.mode = ITEST;
-		  
+		  set_modee(&modevar, ITEST);
 		  while(!Itest_Data_f);
 		  sprintf(buffer, "%d\r\n", ITEST_DATAPOINTS);
 		  NU32_WriteUART3(buffer);
@@ -162,9 +165,41 @@ int main()
 		  }
 		  break;
 	  }
+	  case 'i':
+	  {
+		  NU32_ReadUART3(buffer, BUF_SIZE);
+		  sscanf(buffer, "%f %f %f", &PosCtrl.kp, &PosCtrl.ki, &PosCtrl.kd);
+		  sprintf(buffer, "%d\r\n", 1);
+		  NU32_WriteUART3(buffer);
+	  
+		  break;
+	  }
+	  case 'j':
+	  {
+		  sprintf(buffer, "%f %f %f\r\n", PosCtrl.kp, PosCtrl.ki, PosCtrl.kd);
+		  NU32_WriteUART3(buffer);
+		  
+		  break;
+	  }
+	  case 'l':
+	  {
+		  PosCtrl.eint = 0;
+		  CurrCtrl.eint = 0;
+		  PosCtrl.eprev = 0;
+		  PosCtrl.int_min = IMIN;
+		  PosCtrl.int_max = IMAX;
+		  NU32_ReadUART3(buffer, BUF_SIZE);
+		  sscanf(buffer, "%d", (int)&modevar.pos);
+		  
+		  set_modee(&modevar, HOLD);
+		  
+		  //while(!Hold_Data_f);
+		  
+		  break;
+	  }
       case 'q':
       {
-		  modevar.mode = IDLE;
+		  set_modee(&modevar, IDLE);
         // handle q for quit. Later you may want to return to IDLE mode here. 
 		  break;
       }
@@ -181,14 +216,6 @@ int main()
         break;
       }
     }
-	//modevar.duty_p = set_mode(&modevar);
-	/*if (Itest_Data_f == 1){
-		  for(i = 0; i < 100; i++) {
-	  		  sprintf(buffer, "%d %d\r\n", Itest_ref[i], Itest_data_real[i]);
-			  NU32_WriteUART3(buffer);	
-		  }
-		  Itest_Data_f = 0;  
-	}*/
 	
   }
   return 0;

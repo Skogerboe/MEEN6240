@@ -1,9 +1,10 @@
 #include "utilities.h"  
 #include "ADC.h"
+#include "encoder.h"
 
 
-int set_mode(modevars *modevar) {
-	int Itestval, Itestout;
+int state_5kHz(modevars *modevar) {
+	int Itestval, Itestout, Imon;
 	float Itestdt;
 	
 	
@@ -17,11 +18,11 @@ int set_mode(modevars *modevar) {
 		}
 		case PWM:
 		{
-			if(modevar->pwm < 0) {				//Set direction bit. Clockwise for negative PWM, CCW for Positive PWM.
+			/*if(modevar->pwm < 0) {				//Set direction bit. Clockwise for negative PWM, CCW for Positive PWM.
 				LATCbits.LATC14 = 0;
 			}else{
 				LATCbits.LATC14 = 1;
-			}
+			}*/
 			
 			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;			//duty cycle = OCxR/(PRy + 1) x 100%.
 			break;
@@ -30,25 +31,15 @@ int set_mode(modevars *modevar) {
 		{
 			static volatile int Itestcount;
 			
-			Itestdt = dt_CurrCtrl;		//Itest sampling period
+			CurrCtrl.dt = dt_CurrCtrl;		//Itest sampling period
 			if ((Itestcount == 25) || (Itestcount == 50) || (Itestcount == 75)) {		//Every 25 iterations through ISR, Flip sign of Itest ref
 				CurrCtrl.ref = (-1)*CurrCtrl.ref;
 			}
 			
 			Itestval = ADC_ma(read_ADC());		//Read ADC value in mA
-			Itestout = (int)PID_Out(&CurrCtrl, (float)Itestval, Itestdt);	//Set PWM to Control signal output.
-			if(Itestout < PWM_MIN) {			//Clamp PI output to -100% or 100%
-				Itestout = PWM_MIN;
-			}else if(Itestout > PWM_MAX) {
-				Itestout = PWM_MAX;
-			}
-			modevar->pwm = Itestout;
+			modevar->pwm = (int)PID_Out(&CurrCtrl, (float)Itestval);	//Set PWM to Control signal output.
+		
 			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;	//Duty cycle period calculation.
-			if(modevar->pwm < 0) {				//Set direction bit. Clockwise for negative PWM, CCW for Positive PWM.
-				LATCbits.LATC14 = 0;
-			}else{
-				LATCbits.LATC14 = 1;
-			}
 			
 			Itest_data_real[Itestcount] = Itestval;		//Store Itest reference in this array
 			Itest_ref[Itestcount] = CurrCtrl.ref;			//Store Itest real value in this array
@@ -56,7 +47,7 @@ int set_mode(modevars *modevar) {
 			if (Itestcount > 99) {						//Reset Itest count, set mode to IDLE, and set Itest Data send flag.
 				CurrCtrl.eint = 0;
 				Itestcount = 0;
-				modevar->mode = IDLE;
+				set_modee(modevar, IDLE);
 				Itest_Data_f = 1;
 			}
 					
@@ -65,13 +56,20 @@ int set_mode(modevars *modevar) {
 		}
 		case HOLD:
 		{
+			PosCtrl.dt = dt_PosCtrl;
+			Imon = ADC_ma(read_ADC());
+			CurrCtrl.ref = Iref;
+			modevar->pwm = (int)PID_Out(&CurrCtrl, (float)Imon);
 			
-			
+			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;	//Duty cycle period calculation.
 			break;
 		}
 		case TRACK:
 		{
+			Imon = ADC_ma(read_ADC());
+			modevar->pwm = PID_Out(&CurrCtrl, (float)Imon);
 			
+			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;	//Duty cycle period calculation.
 			
 			break;
 		}
@@ -88,7 +86,49 @@ int set_mode(modevars *modevar) {
 	return modevar->duty_p;
 }
 
-float PID_Out(GAINS *pidctrl, float real_val, float dt) {
+int state_200Hz(modevars *modevar) {
+	int Angle;
+	
+	switch(modevar->mode) {
+		case IDLE:
+		{
+			break;
+		}
+		case PWM:
+		{
+			break;
+		}
+		case ITEST:
+		{
+			break;
+		}
+		case HOLD:
+		{
+			//PosCtrl.ref = (-1) * PosCtrl.ref;
+			Angle = count_to_deg(encoder_counts());
+			PosCtrl.ref = modevar->pos;
+			modevar->current = PID_Out(&PosCtrl, Angle);
+			
+			break;
+		}
+		case TRACK:
+		{
+			
+			
+			break;
+		}
+		default:
+		{
+			
+			break;
+		}
+		
+		
+	}
+	return modevar->current;
+}
+
+float PID_Out(GAINS *pidctrl, float real_val) {
 	
 	float e=0;
 	float ed = 0;
@@ -104,13 +144,22 @@ float PID_Out(GAINS *pidctrl, float real_val, float dt) {
 		pidctrl->eint = pidctrl->int_min;
 	}
 	
-	ed = (e - pidctrl->eprev);// / dt;			//Derivative term
+	ed = (e - pidctrl->eprev) / pidctrl->dt;			//Derivative term
 	pidctrl->eprev = e;						//Set eprev value for derivative term.
 	out = (pidctrl->kp * e) + (pidctrl->ki * pidctrl->eint) + (pidctrl->kd * ed);			//Control signal output
 	
-	
+	if(out > pidctrl->int_max) {		//Clamp controller output to limits.
+		out = pidctrl->int_max;
+	}
+	if(out < pidctrl->int_min) {
+		out = pidctrl->int_min;
+	}
 	
 	return out;	
+}
+
+void set_modee(modevars *modevar, int mode) {
+	modevar->mode = mode;	
 }
 
 int get_mode(modevars *modevar) {
@@ -176,3 +225,18 @@ void config_T4(void) {
     IEC0bits.T4IE = 1;              // INT step 6: enable interrupt
 	
 }
+
+void config_T3(void) {
+	
+	PR3 = 6249;
+	TMR3 = 0;
+	T3CONbits.TCKPS = 6;
+	T3CONCLR = 2;  
+	T3CONbits.TGATE = 0; 
+	T3CONbits.ON = 1;			//Timer Initialize for 5kHz current controller.
+	
+	IPC3bits.T3IP = 4;
+	IPC4bits.T4IS = 0;
+	IFS0bits.T3IF = 0;
+	IEC0bits.T3IE = 1;	
+}	

@@ -39,7 +39,7 @@ void encoder_init(void) {
 
 int count_to_deg(int counts){
 	int degrees = 0;
-	degrees = (ENCODER_ZERO - counts) * COUNT_TO_DEG;
+	degrees = (counts - ENCODER_ZERO) * COUNT_TO_DEG;
 	
 	return degrees;
 }
