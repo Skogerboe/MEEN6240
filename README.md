@@ -1,4 +1,4 @@
-                                                                            **ME EN 6240 Final Motor Control Project**
+**ME EN 6240 Final Motor Control Project**
 
 This repository holds the code and results of the MEEN 6240  Motor control Project:
 
