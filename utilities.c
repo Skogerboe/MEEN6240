@@ -66,8 +66,11 @@ int state_5kHz(modevars *modevar) {
 		}
 		case TRACK:
 		{
+			
+			PosCtrl.dt = dt_PosCtrl;
 			Imon = ADC_ma(read_ADC());
-			modevar->pwm = PID_Out(&CurrCtrl, (float)Imon);
+			CurrCtrl.ref = Iref;
+			modevar->pwm = (int)PID_Out(&CurrCtrl, (float)Imon);
 			
 			modevar->duty_p = (abs(modevar->pwm) * (PR2 + 1)) / 100;	//Duty cycle period calculation.
 			
@@ -88,6 +91,7 @@ int state_5kHz(modevars *modevar) {
 
 int state_200Hz(modevars *modevar) {
 	int Angle;
+	static volatile int trackcount=0;
 	
 	switch(modevar->mode) {
 		case IDLE:
@@ -113,8 +117,24 @@ int state_200Hz(modevars *modevar) {
 		}
 		case TRACK:
 		{
+			if(trackcount < trajectory_size) {
+				Angle = count_to_deg(encoder_counts());
+				Track_data_real[trackcount] = Angle;
+				PosCtrl.ref = Track_data_ref[trackcount];
+				modevar->current = PID_Out(&PosCtrl, Angle);
+				trackcount++;
+			}else {
+				Angle = count_to_deg(encoder_counts());
+				modevar->pos = Track_data_ref[trajectory_size-1];
 			
-			
+				Track_Data_f = 1;
+				trackcount = 0;
+				CurrCtrl.eint = 0;
+				CurrCtrl.eprev = 0;
+				PosCtrl.eint = 0;
+				PosCtrl.eint = 0;
+				set_modee(modevar, HOLD);
+			}
 			break;
 		}
 		default:
@@ -240,3 +260,13 @@ void config_T3(void) {
 	IFS0bits.T3IF = 0;
 	IEC0bits.T3IE = 1;	
 }	
+
+void array_clr(int *array) {
+	int size = sizeof(array);
+	int c;
+	
+	for (c = 0; c < size; c++) {
+			array[c] = 0;
+	}
+	
+}

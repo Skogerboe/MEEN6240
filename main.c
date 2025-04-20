@@ -7,11 +7,14 @@
 #define BUF_SIZE 200
 
 
-volatile int Itest_Data_f, Hold_Data_f;
+volatile int Itest_Data_f, Track_Data_f;
 GAINS CurrCtrl, PosCtrl;
 volatile int Itest_data_real[100], Itest_ref[100];
 int Ival, Iref, PosVal, Posref;
 modevars modevar;
+int trajectory_pos, trajectory_size;
+int Track_data_ref[MAX_TRAJ_SIZE], Track_data_real[MAX_TRAJ_SIZE];
+
 
 void __ISR(_TIMER_3_VECTOR, IPL4SOFT) TIMER3ISR(void) {
 	
@@ -195,6 +198,54 @@ int main()
 		  
 		  //while(!Hold_Data_f);
 		  
+		  break;
+	  }
+	  case 'm':
+	  {
+		  int m;
+		  array_clr(Track_data_ref);
+		  NU32_ReadUART3(buffer, BUF_SIZE);
+          sscanf(buffer, "%d", &trajectory_size);
+		  for (m = 0; m < trajectory_size; m++){
+			NU32_ReadUART3(buffer, BUF_SIZE);
+			sscanf(buffer, "%d", &Track_data_ref[m]);
+          }
+		  sprintf(buffer, "%d\r\n", 1);
+          NU32_WriteUART3(buffer);
+		  break;
+	  }
+	  case 'n':
+	  {
+		  int n;
+		  array_clr(Track_data_ref);
+		  NU32_ReadUART3(buffer, BUF_SIZE);
+		  sscanf(buffer, "%d", &trajectory_size);
+		  for (n = 0; n < trajectory_size; n++) {
+			  NU32_ReadUART3(buffer, BUF_SIZE);
+			  sscanf(buffer, "%d", &Track_data_ref[n]);
+		  }
+		  sprintf(buffer, "%d\r\n", 1);
+		  NU32_WriteUART3(buffer);
+		  
+		  break;
+	  }
+	  case 'o':
+	  {
+		  int k;
+		  CurrCtrl.eint = 0;
+		  CurrCtrl.eprev = 0;
+		  PosCtrl.eint = 0;
+		  PosCtrl.eprev = 0;
+		  Track_Data_f = 0;
+		  set_modee(&modevar, TRACK);
+		  
+		  while(!Track_Data_f);
+		  sprintf(buffer, "%d\r\n", trajectory_size);
+		  NU32_WriteUART3(buffer);
+		  for(k=0; k<trajectory_size; k++) {
+			  sprintf(buffer, "%d %d\r\n", Track_data_ref[k], Track_data_real[k]);
+			  NU32_WriteUART3(buffer);
+		  }
 		  break;
 	  }
       case 'q':
