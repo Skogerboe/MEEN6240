@@ -24,7 +24,8 @@
 extern volatile int Itest_Data_f, Track_Data_f;
 extern volatile int Itest_data_real[100], Itest_ref[100];
 extern int Ival, Iref, PosVal, Posref;
-extern int Track_data_real[MAX_TRAJ_SIZE], Track_data_ref[MAX_TRAJ_SIZE];
+extern int Track_data_real[MAX_TRAJ_SIZE];
+extern float Track_data_ref[MAX_TRAJ_SIZE];
 extern int trajectory_pos, trajectory_size;
 
 
@@ -64,6 +65,6 @@ void config_PWM(void);
 void config_T4(void);
 void config_T3(void);
 float PID_Out(GAINS *pidctrl, float real_val);
-void array_clr(int *array);
+void array_clr(float *array);
 
 #endif // UTILITIES__H__

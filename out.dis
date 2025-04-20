@@ -34,7 +34,7 @@ bd00197c:	7f5a04c0 	ext	k0,k0,0x13,0x1
 bd001980:	13400005 	beqz	k0,bd001998 <_no_nmi>
 bd001984:	00000000 	nop
 bd001988:	3c1a9d01 	lui	k0,0x9d01
-bd00198c:	275ac04c 	addiu	k0,k0,-16308
+bd00198c:	275ac058 	addiu	k0,k0,-16296
 bd001990:	03400008 	jr	k0
 bd001994:	00000000 	nop
 
@@ -53,7 +53,7 @@ bd0019c0:	41dce000 	wrpgpr	gp,gp
 bd0019c4:	408b6002 	mtc0	t3,c0_srsctl
 bd0019c8:	000000c0 	ehb
 bd0019cc:	3c089d01 	lui	t0,0x9d01
-bd0019d0:	2508c0f4 	addiu	t0,t0,-16140
+bd0019d0:	2508c100 	addiu	t0,t0,-16128
 bd0019d4:	0100f809 	jalr	t0
 bd0019d8:	00000000 	nop
 
@@ -126,7 +126,7 @@ bd001ac4:	01284025 	or	t0,t1,t0
 bd001ac8:	40886000 	mtc0	t0,c0_status
 bd001acc:	000000c0 	ehb
 bd001ad0:	3c089d01 	lui	t0,0x9d01
-bd001ad4:	2508c0fc 	addiu	t0,t0,-16132
+bd001ad4:	2508c108 	addiu	t0,t0,-16120
 bd001ad8:	0100f809 	jalr	t0
 bd001adc:	00000000 	nop
 bd001ae0:	40086000 	mfc0	t0,c0_status
@@ -137,7 +137,7 @@ bd001af0:	40886000 	mtc0	t0,c0_status
 bd001af4:	30840000 	andi	a0,a0,0x0
 bd001af8:	30a50000 	andi	a1,a1,0x0
 bd001afc:	3c089d01 	lui	t0,0x9d01
-bd001b00:	2508ba58 	addiu	t0,t0,-17832
+bd001b00:	2508ba64 	addiu	t0,t0,-17820
 bd001b04:	01000008 	jr	t0
 bd001b08:	00000000 	nop
 
@@ -145,7 +145,7 @@ Disassembly of section .bev_excpt:
 
 bd001cf0 <_bev_exception>:
 bd001cf0:	3c1a9d01 	lui	k0,0x9d01
-bd001cf4:	275abb94 	addiu	k0,k0,-17516
+bd001cf4:	275abba0 	addiu	k0,k0,-17504
 bd001cf8:	03400008 	jr	k0
 bd001cfc:	00000000 	nop
 
@@ -160,37 +160,37 @@ Disassembly of section .app_excpt:
 Disassembly of section .vector_0:
 
 9d000200 <__vector_dispatch_0>:
-9d000200:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000200:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000204:	00000000 	nop
 
 Disassembly of section .vector_1:
 
 9d000220 <__vector_dispatch_1>:
-9d000220:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000220:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000224:	00000000 	nop
 
 Disassembly of section .vector_2:
 
 9d000240 <__vector_dispatch_2>:
-9d000240:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000240:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000244:	00000000 	nop
 
 Disassembly of section .vector_3:
 
 9d000260 <__vector_dispatch_3>:
-9d000260:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000260:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000264:	00000000 	nop
 
 Disassembly of section .vector_4:
 
 9d000280 <__vector_dispatch_4>:
-9d000280:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000280:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000284:	00000000 	nop
 
 Disassembly of section .vector_5:
 
 9d0002a0 <__vector_dispatch_5>:
-9d0002a0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0002a0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0002a4:	00000000 	nop
 
 Disassembly of section .vector_6:
@@ -202,31 +202,31 @@ Disassembly of section .vector_6:
 Disassembly of section .vector_7:
 
 9d0002e0 <__vector_dispatch_7>:
-9d0002e0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0002e0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0002e4:	00000000 	nop
 
 Disassembly of section .vector_8:
 
 9d000300 <__vector_dispatch_8>:
-9d000300:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000300:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000304:	00000000 	nop
 
 Disassembly of section .vector_9:
 
 9d000320 <__vector_dispatch_9>:
-9d000320:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000320:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000324:	00000000 	nop
 
 Disassembly of section .vector_10:
 
 9d000340 <__vector_dispatch_10>:
-9d000340:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000340:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000344:	00000000 	nop
 
 Disassembly of section .vector_11:
 
 9d000360 <__vector_dispatch_11>:
-9d000360:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000360:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000364:	00000000 	nop
 
 Disassembly of section .vector_12:
@@ -238,19 +238,19 @@ Disassembly of section .vector_12:
 Disassembly of section .vector_13:
 
 9d0003a0 <__vector_dispatch_13>:
-9d0003a0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0003a0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0003a4:	00000000 	nop
 
 Disassembly of section .vector_14:
 
 9d0003c0 <__vector_dispatch_14>:
-9d0003c0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0003c0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0003c4:	00000000 	nop
 
 Disassembly of section .vector_15:
 
 9d0003e0 <__vector_dispatch_15>:
-9d0003e0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0003e0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0003e4:	00000000 	nop
 
 Disassembly of section .vector_16:
@@ -262,211 +262,211 @@ Disassembly of section .vector_16:
 Disassembly of section .vector_17:
 
 9d000420 <__vector_dispatch_17>:
-9d000420:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000420:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000424:	00000000 	nop
 
 Disassembly of section .vector_18:
 
 9d000440 <__vector_dispatch_18>:
-9d000440:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000440:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000444:	00000000 	nop
 
 Disassembly of section .vector_19:
 
 9d000460 <__vector_dispatch_19>:
-9d000460:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000460:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000464:	00000000 	nop
 
 Disassembly of section .vector_20:
 
 9d000480 <__vector_dispatch_20>:
-9d000480:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000480:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000484:	00000000 	nop
 
 Disassembly of section .vector_21:
 
 9d0004a0 <__vector_dispatch_21>:
-9d0004a0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0004a0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0004a4:	00000000 	nop
 
 Disassembly of section .vector_22:
 
 9d0004c0 <__vector_dispatch_22>:
-9d0004c0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0004c0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0004c4:	00000000 	nop
 
 Disassembly of section .vector_23:
 
 9d0004e0 <__vector_dispatch_23>:
-9d0004e0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0004e0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0004e4:	00000000 	nop
 
 Disassembly of section .vector_24:
 
 9d000500 <__vector_dispatch_24>:
-9d000500:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000500:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000504:	00000000 	nop
 
 Disassembly of section .vector_25:
 
 9d000520 <__vector_dispatch_25>:
-9d000520:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000520:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000524:	00000000 	nop
 
 Disassembly of section .vector_26:
 
 9d000540 <__vector_dispatch_26>:
-9d000540:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000540:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000544:	00000000 	nop
 
 Disassembly of section .vector_27:
 
 9d000560 <__vector_dispatch_27>:
-9d000560:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000560:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000564:	00000000 	nop
 
 Disassembly of section .vector_28:
 
 9d000580 <__vector_dispatch_28>:
-9d000580:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000580:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000584:	00000000 	nop
 
 Disassembly of section .vector_29:
 
 9d0005a0 <__vector_dispatch_29>:
-9d0005a0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0005a0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0005a4:	00000000 	nop
 
 Disassembly of section .vector_30:
 
 9d0005c0 <__vector_dispatch_30>:
-9d0005c0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0005c0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0005c4:	00000000 	nop
 
 Disassembly of section .vector_31:
 
 9d0005e0 <__vector_dispatch_31>:
-9d0005e0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0005e0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0005e4:	00000000 	nop
 
 Disassembly of section .vector_32:
 
 9d000600 <__vector_dispatch_32>:
-9d000600:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000600:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000604:	00000000 	nop
 
 Disassembly of section .vector_33:
 
 9d000620 <__vector_dispatch_33>:
-9d000620:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000620:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000624:	00000000 	nop
 
 Disassembly of section .vector_34:
 
 9d000640 <__vector_dispatch_34>:
-9d000640:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000640:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000644:	00000000 	nop
 
 Disassembly of section .vector_35:
 
 9d000660 <__vector_dispatch_35>:
-9d000660:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000660:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000664:	00000000 	nop
 
 Disassembly of section .vector_36:
 
 9d000680 <__vector_dispatch_36>:
-9d000680:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000680:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000684:	00000000 	nop
 
 Disassembly of section .vector_37:
 
 9d0006a0 <__vector_dispatch_37>:
-9d0006a0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0006a0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0006a4:	00000000 	nop
 
 Disassembly of section .vector_38:
 
 9d0006c0 <__vector_dispatch_38>:
-9d0006c0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0006c0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0006c4:	00000000 	nop
 
 Disassembly of section .vector_39:
 
 9d0006e0 <__vector_dispatch_39>:
-9d0006e0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0006e0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0006e4:	00000000 	nop
 
 Disassembly of section .vector_40:
 
 9d000700 <__vector_dispatch_40>:
-9d000700:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000700:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000704:	00000000 	nop
 
 Disassembly of section .vector_41:
 
 9d000720 <__vector_dispatch_41>:
-9d000720:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000720:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000724:	00000000 	nop
 
 Disassembly of section .vector_42:
 
 9d000740 <__vector_dispatch_42>:
-9d000740:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000740:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000744:	00000000 	nop
 
 Disassembly of section .vector_43:
 
 9d000760 <__vector_dispatch_43>:
-9d000760:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000760:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000764:	00000000 	nop
 
 Disassembly of section .vector_44:
 
 9d000780 <__vector_dispatch_44>:
-9d000780:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000780:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000784:	00000000 	nop
 
 Disassembly of section .vector_45:
 
 9d0007a0 <__vector_dispatch_45>:
-9d0007a0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0007a0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0007a4:	00000000 	nop
 
 Disassembly of section .vector_46:
 
 9d0007c0 <__vector_dispatch_46>:
-9d0007c0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0007c0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0007c4:	00000000 	nop
 
 Disassembly of section .vector_47:
 
 9d0007e0 <__vector_dispatch_47>:
-9d0007e0:	0b402f09 	j	9d00bc24 <.LFE0>
+9d0007e0:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d0007e4:	00000000 	nop
 
 Disassembly of section .vector_48:
 
 9d000800 <__vector_dispatch_48>:
-9d000800:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000800:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000804:	00000000 	nop
 
 Disassembly of section .vector_49:
 
 9d000820 <__vector_dispatch_49>:
-9d000820:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000820:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000824:	00000000 	nop
 
 Disassembly of section .vector_50:
 
 9d000840 <__vector_dispatch_50>:
-9d000840:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000840:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000844:	00000000 	nop
 
 Disassembly of section .vector_51:
 
 9d000860 <__vector_dispatch_51>:
-9d000860:	0b402f09 	j	9d00bc24 <.LFE0>
+9d000860:	0b402f0c 	j	9d00bc30 <.LFE0>
 9d000864:	00000000 	nop
 
 Disassembly of section ._debug_exception:
@@ -475,7 +475,7 @@ bfc00480 <__DbgExecReturn>:
 bfc00480:	409bf800 	mtc0	k1,c0_desave
 bfc00484:	000000c0 	ehb
 bfc00488:	3c1b9d01 	lui	k1,0x9d01
-bfc0048c:	277bbcb4 	addiu	k1,k1,-17228
+bfc0048c:	277bbcc0 	addiu	k1,k1,-17216
 bfc00490:	13600002 	beqz	k1,bfc0049c <__DbgExecReturn+0x1c>
 bfc00494:	00000000 	nop
 bfc00498:	409bc000 	mtc0	k1,c0_depc
@@ -563,7 +563,7 @@ Disassembly of section .text.do_scan:
 9d001f24:	8fb000d8 	lw	s0,216(sp)
 9d001f28:	03e00008 	jr	ra
 9d001f2c:	27bd0100 	addiu	sp,sp,256
-9d001f30:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d001f30:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d001f34:	00000000 	nop
 9d001f38:	2403ffff 	li	v1,-1
 9d001f3c:	504301ce 	beql	v0,v1,9d002678 <do_scan+0x878>
@@ -723,7 +723,7 @@ Disassembly of section .text.do_scan:
 9d0021a4:	24030008 	li	v1,8
 9d0021a8:	afa300d4 	sw	v1,212(sp)
 9d0021ac:	3c049d01 	lui	a0,0x9d01
-9d0021b0:	2494be54 	addiu	s4,a0,-16812
+9d0021b0:	2494be60 	addiu	s4,a0,-16800
 9d0021b4:	2403ffff 	li	v1,-1
 9d0021b8:	12e30009 	beq	s7,v1,9d0021e0 <do_scan+0x3e0>
 9d0021bc:	02802021 	move	a0,s4
@@ -945,7 +945,7 @@ Disassembly of section .text.do_scan:
 9d00251c:	24660004 	addiu	a2,v1,4
 9d002520:	1220011c 	beqz	s1,9d002994 <do_scan+0xb94>
 9d002524:	ac46000c 	sw	a2,12(v0)
-9d002528:	0f402fcd 	jal	9d00bf34 <strtod>
+9d002528:	0f402fd0 	jal	9d00bf40 <strtod>
 9d00252c:	8c710000 	lw	s1,0(v1)
 9d002530:	ae220000 	sw	v0,0(s1)
 9d002534:	8fa200b4 	lw	v0,180(sp)
@@ -964,7 +964,7 @@ Disassembly of section .text.do_scan:
 9d002568:	afa300d4 	sw	v1,212(sp)
 9d00256c:	3c029d01 	lui	v0,0x9d01
 9d002570:	0b40086d 	j	9d0021b4 <do_scan+0x3b4>
-9d002574:	2454be78 	addiu	s4,v0,-16776
+9d002574:	2454be84 	addiu	s4,v0,-16764
 9d002578:	afa200a0 	sw	v0,160(sp)
 9d00257c:	80720001 	lb	s2,1(v1)
 9d002580:	0b4007f6 	j	9d001fd8 <do_scan+0x1d8>
@@ -973,7 +973,7 @@ Disassembly of section .text.do_scan:
 9d00258c:	80720001 	lb	s2,1(v1)
 9d002590:	0b4007f6 	j	9d001fd8 <do_scan+0x1d8>
 9d002594:	36310080 	ori	s1,s1,0x80
-9d002598:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d002598:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d00259c:	27a40098 	addiu	a0,sp,152
 9d0025a0:	0040b821 	move	s7,v0
 9d0025a4:	2402ffff 	li	v0,-1
@@ -997,8 +997,8 @@ Disassembly of section .text.do_scan:
 9d0025ec:	afa300d4 	sw	v1,212(sp)
 9d0025f0:	3c049d01 	lui	a0,0x9d01
 9d0025f4:	0b40086d 	j	9d0021b4 <do_scan+0x3b4>
-9d0025f8:	2494be60 	addiu	s4,a0,-16800
-9d0025fc:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d0025f8:	2494be6c 	addiu	s4,a0,-16788
+9d0025fc:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d002600:	27a40098 	addiu	a0,sp,152
 9d002604:	2403ffff 	li	v1,-1
 9d002608:	5043001b 	beql	v0,v1,9d002678 <do_scan+0x878>
@@ -1021,7 +1021,7 @@ Disassembly of section .text.do_scan:
 9d00264c:	2442ffff 	addiu	v0,v0,-1
 9d002650:	0b40087a 	j	9d0021e8 <do_scan+0x3e8>
 9d002654:	afa200a8 	sw	v0,168(sp)
-9d002658:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d002658:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d00265c:	27a40098 	addiu	a0,sp,152
 9d002660:	0040b821 	move	s7,v0
 9d002664:	00021027 	nor	v0,zero,v0
@@ -1069,7 +1069,7 @@ Disassembly of section .text.do_scan:
 9d00270c:	8fb600cc 	lw	s6,204(sp)
 9d002710:	0b40097a 	j	9d0025e8 <do_scan+0x7e8>
 9d002714:	2417ffff 	li	s7,-1
-9d002718:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d002718:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d00271c:	27a40098 	addiu	a0,sp,152
 9d002720:	2416ffff 	li	s6,-1
 9d002724:	1056fff9 	beq	v0,s6,9d00270c <do_scan+0x90c>
@@ -1085,7 +1085,7 @@ Disassembly of section .text.do_scan:
 9d00274c:	00009021 	move	s2,zero
 9d002750:	0b40097a 	j	9d0025e8 <do_scan+0x7e8>
 9d002754:	2417ffff 	li	s7,-1
-9d002758:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d002758:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d00275c:	27a40098 	addiu	a0,sp,152
 9d002760:	0040b821 	move	s7,v0
 9d002764:	2402ffff 	li	v0,-1
@@ -1107,7 +1107,7 @@ Disassembly of section .text.do_scan:
 9d0027a4:	2417ffff 	li	s7,-1
 9d0027a8:	0b400869 	j	9d0021a4 <do_scan+0x3a4>
 9d0027ac:	8fb600cc 	lw	s6,204(sp)
-9d0027b0:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d0027b0:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d0027b4:	27a40098 	addiu	a0,sp,152
 9d0027b8:	2416ffff 	li	s6,-1
 9d0027bc:	1056fff9 	beq	v0,s6,9d0027a4 <do_scan+0x9a4>
@@ -1154,7 +1154,7 @@ Disassembly of section .text.do_scan:
 9d002860:	8c630000 	lw	v1,0(v1)
 9d002864:	0b400899 	j	9d002264 <do_scan+0x464>
 9d002868:	a0620000 	sb	v0,0(v1)
-9d00286c:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d00286c:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d002870:	27a40098 	addiu	a0,sp,152
 9d002874:	0040b021 	move	s6,v0
 9d002878:	2402ffff 	li	v0,-1
@@ -1208,7 +1208,7 @@ Disassembly of section .text.do_scan:
 9d002938:	a0620000 	sb	v0,0(v1)
 9d00293c:	0b4007b0 	j	9d001ec0 <do_scan+0xc0>
 9d002940:	8fa500a0 	lw	a1,160(sp)
-9d002944:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d002944:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d002948:	27a40098 	addiu	a0,sp,152
 9d00294c:	10560023 	beq	v0,s6,9d0029dc <do_scan+0xbdc>
 9d002950:	0040b821 	move	s7,v0
@@ -1228,7 +1228,7 @@ Disassembly of section .text.do_scan:
 9d002988:	02407821 	move	t7,s2
 9d00298c:	0b400924 	j	9d002490 <do_scan+0x690>
 9d002990:	8fa200c8 	lw	v0,200(sp)
-9d002994:	0f402ffe 	jal	9d00bff8 <strtof>
+9d002994:	0f403001 	jal	9d00c004 <strtof>
 9d002998:	8c710000 	lw	s1,0(v1)
 9d00299c:	0b40094d 	j	9d002534 <do_scan+0x734>
 9d0029a0:	ae220000 	sw	v0,0(s1)
@@ -1239,7 +1239,7 @@ Disassembly of section .text.do_scan:
 9d0029b4:	8fa400bc 	lw	a0,188(sp)
 9d0029b8:	24660004 	addiu	a2,v1,4
 9d0029bc:	ac46000c 	sw	a2,12(v0)
-9d0029c0:	0f402fcd 	jal	9d00bf34 <strtod>
+9d0029c0:	0f402fd0 	jal	9d00bf40 <strtod>
 9d0029c4:	8c710000 	lw	s1,0(v1)
 9d0029c8:	0f402b9c 	jal	9d00ae70 <__extendsfdf2>
 9d0029cc:	00402021 	move	a0,v0
@@ -1265,9 +1265,9 @@ Disassembly of section .text.do_scan:
 Disassembly of section .text:
 
 9d002a18 <TIMER3ISR>:
-modevars modevar;
 int trajectory_pos, trajectory_size;
-int Track_data_ref[MAX_TRAJ_SIZE], Track_data_real[MAX_TRAJ_SIZE];
+int Track_data_real[MAX_TRAJ_SIZE];
+float Track_data_ref[MAX_TRAJ_SIZE];
 
 
 void __ISR(_TIMER_3_VECTOR, IPL4SOFT) TIMER3ISR(void) {
@@ -1548,12 +1548,12 @@ int main()
 
 9d002d94 <.LVL4>:
   init_ControlLoop();
-9d002d94:	0f4013af 	jal	9d004ebc <init_ControlLoop>
+9d002d94:	0f4013ae 	jal	9d004eb8 <init_ControlLoop>
 9d002d98:	00000000 	nop
 
 9d002d9c <.LVL5>:
   config_T3();
-9d002d9c:	0f4013bc 	jal	9d004ef0 <config_T3>
+9d002d9c:	0f4013bb 	jal	9d004eec <config_T3>
 9d002da0:	00000000 	nop
 
 9d002da4 <.LVL6>:
@@ -1576,10 +1576,10 @@ int main()
 		  PosCtrl.eprev = 0;
 		  PosCtrl.int_min = IMIN;
 9d002db0:	3c029d01 	lui	v0,0x9d01
-9d002db4:	8c5eba50 	lw	s8,-17840(v0)
+9d002db4:	8c5eb934 	lw	s8,-18124(v0)
 		  PosCtrl.int_max = IMAX;
 9d002db8:	3c029d01 	lui	v0,0x9d01
-9d002dbc:	8c57ba54 	lw	s7,-17836(v0)
+9d002dbc:	8c57b938 	lw	s7,-18120(v0)
 	  }
 	  case 'k':
 	  {
@@ -1587,7 +1587,7 @@ int main()
 		  CurrCtrl.eint = 0;
 		  CurrCtrl.ref = ITEST_IREF;
 9d002dc0:	3c029d01 	lui	v0,0x9d01
-9d002dc4:	8c42ba44 	lw	v0,-17852(v0)
+9d002dc4:	8c42b928 	lw	v0,-18136(v0)
 9d002dc8:	afa200e8 	sw	v0,232(sp)
   config_T3();
   __builtin_enable_interrupts();
@@ -1661,7 +1661,7 @@ int main()
         sprintf(buffer,"%d\r\n", degrees); // return encoder counts to degrees
 9d002e88:	27a40018 	addiu	a0,sp,24
 9d002e8c:	3c059d01 	lui	a1,0x9d01
-9d002e90:	24a5ba00 	addiu	a1,a1,-17920
+9d002e90:	24a5b8d8 	addiu	a1,a1,-18216
 9d002e94:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d002e98:	00403021 	move	a2,v0
 
@@ -1693,7 +1693,7 @@ int main()
 		  sscanf(buffer, "%d %d", &num1, &num2);
 9d002ec0:	27a40018 	addiu	a0,sp,24
 9d002ec4:	3c059d01 	lui	a1,0x9d01
-9d002ec8:	24a5ba08 	addiu	a1,a1,-17912
+9d002ec8:	24a5b8e0 	addiu	a1,a1,-18208
 9d002ecc:	27a600e4 	addiu	a2,sp,228
 9d002ed0:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
 9d002ed4:	27a700e0 	addiu	a3,sp,224
@@ -1703,7 +1703,7 @@ int main()
 		  sprintf(buffer, "%d\r\n", sum);
 9d002ed8:	27a40018 	addiu	a0,sp,24
 9d002edc:	3c059d01 	lui	a1,0x9d01
-9d002ee0:	24a5ba00 	addiu	a1,a1,-17920
+9d002ee0:	24a5b8d8 	addiu	a1,a1,-18216
 9d002ee4:	8fa200e0 	lw	v0,224(sp)
 9d002ee8:	8fa600e4 	lw	a2,228(sp)
 9d002eec:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
@@ -1735,7 +1735,7 @@ int main()
 9d002f0c <.LVL19>:
 9d002f0c:	27a40018 	addiu	a0,sp,24
 9d002f10:	3c059d01 	lui	a1,0x9d01
-9d002f14:	24a5ba00 	addiu	a1,a1,-17920
+9d002f14:	24a5b8d8 	addiu	a1,a1,-18216
 9d002f18:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d002f1c:	00403021 	move	a2,v0
 
@@ -1758,7 +1758,7 @@ int main()
 9d002f38 <.LVL22>:
 9d002f38:	27a40018 	addiu	a0,sp,24
 9d002f3c:	3c059d01 	lui	a1,0x9d01
-9d002f40:	24a5ba00 	addiu	a1,a1,-17920
+9d002f40:	24a5b8d8 	addiu	a1,a1,-18216
 9d002f44:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d002f48:	00403021 	move	a2,v0
 
@@ -1784,7 +1784,7 @@ int main()
 		  sprintf(buffer, "%d\r\n", ticks);
 9d002f64:	27a40018 	addiu	a0,sp,24
 9d002f68:	3c059d01 	lui	a1,0x9d01
-9d002f6c:	24a5ba00 	addiu	a1,a1,-17920
+9d002f6c:	24a5b8d8 	addiu	a1,a1,-18216
 9d002f70:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d002f74:	00403021 	move	a2,v0
 
@@ -1813,7 +1813,7 @@ int main()
 9d002f98 <.LVL29>:
 9d002f98:	27a40018 	addiu	a0,sp,24
 9d002f9c:	3c059d01 	lui	a1,0x9d01
-9d002fa0:	24a5ba00 	addiu	a1,a1,-17920
+9d002fa0:	24a5b8d8 	addiu	a1,a1,-18216
 9d002fa4:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d002fa8:	00403021 	move	a2,v0
 
@@ -1831,13 +1831,13 @@ int main()
 	  {
 		  sprintf(buffer, "%d\r\n", get_mode(&modevar));
 9d002fbc:	3c04a000 	lui	a0,0xa000
-9d002fc0:	0f40135b 	jal	9d004d6c <get_mode>
+9d002fc0:	0f40135a 	jal	9d004d68 <get_mode>
 9d002fc4:	24842294 	addiu	a0,a0,8852
 
 9d002fc8 <.LVL32>:
 9d002fc8:	27a40018 	addiu	a0,sp,24
 9d002fcc:	3c059d01 	lui	a1,0x9d01
-9d002fd0:	24a5ba00 	addiu	a1,a1,-17920
+9d002fd0:	24a5b8d8 	addiu	a1,a1,-18216
 9d002fd4:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d002fd8:	00403021 	move	a2,v0
 
@@ -1863,7 +1863,7 @@ int main()
 		  sscanf(buffer, "%d", &modevar.pwm);
 9d002ff8:	27a40018 	addiu	a0,sp,24
 9d002ffc:	3c059d01 	lui	a1,0x9d01
-9d003000:	24a5ba10 	addiu	a1,a1,-17904
+9d003000:	24a5b8e8 	addiu	a1,a1,-18200
 9d003004:	3c10a000 	lui	s0,0xa000
 9d003008:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
 9d00300c:	26062294 	addiu	a2,s0,8852
@@ -1871,14 +1871,14 @@ int main()
 9d003010 <.LVL36>:
 		  set_modee(&modevar, PWM);
 9d003010:	26042294 	addiu	a0,s0,8852
-9d003014:	0f401359 	jal	9d004d64 <set_modee>
+9d003014:	0f401358 	jal	9d004d60 <set_modee>
 9d003018:	24050001 	li	a1,1
 
 9d00301c <.LVL37>:
 		  sprintf(buffer, "%d\r\n", modevar.pwm);
 9d00301c:	27a40018 	addiu	a0,sp,24
 9d003020:	3c059d01 	lui	a1,0x9d01
-9d003024:	24a5ba00 	addiu	a1,a1,-17920
+9d003024:	24a5b8d8 	addiu	a1,a1,-18216
 9d003028:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d00302c:	8e062294 	lw	a2,8852(s0)
 
@@ -1897,7 +1897,7 @@ int main()
 		  set_modee(&modevar, IDLE);
 9d003040:	3c04a000 	lui	a0,0xa000
 9d003044:	24842294 	addiu	a0,a0,8852
-9d003048:	0f401359 	jal	9d004d64 <set_modee>
+9d003048:	0f401358 	jal	9d004d60 <set_modee>
 9d00304c:	00002821 	move	a1,zero
 
 9d003050 <.LVL40>:
@@ -1921,7 +1921,7 @@ int main()
 		  sscanf(buffer, "%f %f", &CurrCtrl.kp, &CurrCtrl.ki);
 9d003074:	27a40018 	addiu	a0,sp,24
 9d003078:	3c059d01 	lui	a1,0x9d01
-9d00307c:	24a5ba14 	addiu	a1,a1,-17900
+9d00307c:	24a5b8ec 	addiu	a1,a1,-18196
 9d003080:	02003021 	move	a2,s0
 9d003084:	3c07a000 	lui	a3,0xa000
 9d003088:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
@@ -1931,7 +1931,7 @@ int main()
 		  sprintf(buffer, "%d\r\n", 1);
 9d003090:	27a40018 	addiu	a0,sp,24
 9d003094:	3c059d01 	lui	a1,0x9d01
-9d003098:	24a5ba00 	addiu	a1,a1,-17920
+9d003098:	24a5b8d8 	addiu	a1,a1,-18216
 9d00309c:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d0030a0:	24060001 	li	a2,1
 
@@ -1953,7 +1953,7 @@ int main()
 9d0030b8:	244322b0 	addiu	v1,v0,8880
 9d0030bc:	27a40018 	addiu	a0,sp,24
 9d0030c0:	3c059d01 	lui	a1,0x9d01
-9d0030c4:	24a5ba1c 	addiu	a1,a1,-17892
+9d0030c4:	24a5b8f4 	addiu	a1,a1,-18188
 9d0030c8:	8c4622b0 	lw	a2,8880(v0)
 9d0030cc:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d0030d0:	8c670004 	lw	a3,4(v1)
@@ -1982,18 +1982,18 @@ int main()
 9d0030f8:	ac440020 	sw	a0,32(v0)
 		  CurrCtrl.int_min = PWM_MIN;
 9d0030fc:	3c039d01 	lui	v1,0x9d01
-9d003100:	8c63ba48 	lw	v1,-17848(v1)
+9d003100:	8c63b92c 	lw	v1,-18132(v1)
 9d003104:	ac430018 	sw	v1,24(v0)
 		  CurrCtrl.int_max = PWM_MAX; 
 9d003108:	3c039d01 	lui	v1,0x9d01
-9d00310c:	8c63ba4c 	lw	v1,-17844(v1)
+9d00310c:	8c63b930 	lw	v1,-18128(v1)
 9d003110:	ac43001c 	sw	v1,28(v0)
 		  Itest_Data_f = 0;
 9d003114:	af808038 	sw	zero,-32712(gp)
 		  set_modee(&modevar, ITEST);
 9d003118:	3c04a000 	lui	a0,0xa000
 9d00311c:	24842294 	addiu	a0,a0,8852
-9d003120:	0f401359 	jal	9d004d64 <set_modee>
+9d003120:	0f401358 	jal	9d004d60 <set_modee>
 9d003124:	24050002 	li	a1,2
 
 9d003128 <.LVL47>:
@@ -2003,7 +2003,7 @@ int main()
 9d003130:	27a40018 	addiu	a0,sp,24
 		  sprintf(buffer, "%d\r\n", ITEST_DATAPOINTS);
 9d003134:	3c059d01 	lui	a1,0x9d01
-9d003138:	24a5ba00 	addiu	a1,a1,-17920
+9d003138:	24a5b8d8 	addiu	a1,a1,-18216
 9d00313c:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d003140:	24060064 	li	a2,100
 
@@ -2022,7 +2022,7 @@ int main()
 9d003158:	3c13a000 	lui	s3,0xa000
 9d00315c:	26732104 	addiu	s3,s3,8452
 9d003160:	3c129d01 	lui	s2,0x9d01
-9d003164:	2652ba24 	addiu	s2,s2,-17884
+9d003164:	2652b8fc 	addiu	s2,s2,-18180
 		  set_modee(&modevar, ITEST);
 		  while(!Itest_Data_f);
 		  sprintf(buffer, "%d\r\n", ITEST_DATAPOINTS);
@@ -2074,7 +2074,7 @@ int main()
 9d0031bc:	afa20010 	sw	v0,16(sp)
 9d0031c0:	27a40018 	addiu	a0,sp,24
 9d0031c4:	3c059d01 	lui	a1,0x9d01
-9d0031c8:	24a5ba2c 	addiu	a1,a1,-17876
+9d0031c8:	24a5b904 	addiu	a1,a1,-18172
 9d0031cc:	3c06a000 	lui	a2,0xa000
 9d0031d0:	24c64218 	addiu	a2,a2,16920
 9d0031d4:	3c07a000 	lui	a3,0xa000
@@ -2085,7 +2085,7 @@ int main()
 		  sprintf(buffer, "%d\r\n", 1);
 9d0031e0:	27a40018 	addiu	a0,sp,24
 9d0031e4:	3c059d01 	lui	a1,0x9d01
-9d0031e8:	24a5ba00 	addiu	a1,a1,-17920
+9d0031e8:	24a5b8d8 	addiu	a1,a1,-18216
 9d0031ec:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d0031f0:	24060001 	li	a2,1
 
@@ -2112,7 +2112,7 @@ int main()
 9d00321c:	27a40018 	addiu	a0,sp,24
 9d003220:	3c059d01 	lui	a1,0x9d01
 9d003224:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
-9d003228:	24a5ba38 	addiu	a1,a1,-17864
+9d003228:	24a5b910 	addiu	a1,a1,-18160
 
 9d00322c <.LVL59>:
 		  NU32_WriteUART3(buffer);
@@ -2151,7 +2151,7 @@ int main()
 		  sscanf(buffer, "%d", (int)&modevar.pos);
 9d003270:	27a40018 	addiu	a0,sp,24
 9d003274:	3c059d01 	lui	a1,0x9d01
-9d003278:	24a5ba10 	addiu	a1,a1,-17904
+9d003278:	24a5b8e8 	addiu	a1,a1,-18200
 9d00327c:	3c06a000 	lui	a2,0xa000
 9d003280:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
 9d003284:	24c622a8 	addiu	a2,a2,8872
@@ -2161,7 +2161,7 @@ int main()
 		  set_modee(&modevar, HOLD);
 9d003288:	3c04a000 	lui	a0,0xa000
 9d00328c:	24842294 	addiu	a0,a0,8852
-9d003290:	0f401359 	jal	9d004d64 <set_modee>
+9d003290:	0f401358 	jal	9d004d60 <set_modee>
 9d003294:	24050003 	li	a1,3
 
 9d003298 <.LVL63>:
@@ -2179,7 +2179,7 @@ int main()
 		  int m;
 		  array_clr(Track_data_ref);
 9d0032a0:	3c04a000 	lui	a0,0xa000
-9d0032a4:	0f4013e3 	jal	9d004f8c <array_clr>
+9d0032a4:	0f4013e2 	jal	9d004f88 <array_clr>
 9d0032a8:	248422d8 	addiu	a0,a0,8920
 
 9d0032ac <.LVL64>:
@@ -2192,7 +2192,7 @@ int main()
           sscanf(buffer, "%d", &trajectory_size);
 9d0032b8:	27a40018 	addiu	a0,sp,24
 9d0032bc:	3c059d01 	lui	a1,0x9d01
-9d0032c0:	24a5ba10 	addiu	a1,a1,-17904
+9d0032c0:	24a5b8e8 	addiu	a1,a1,-18200
 9d0032c4:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
 9d0032c8:	2786802c 	addiu	a2,gp,-32724
 
@@ -2205,9 +2205,9 @@ int main()
 9d0032dc:	263122d8 	addiu	s1,s1,8920
 9d0032e0:	00008021 	move	s0,zero
 			NU32_ReadUART3(buffer, BUF_SIZE);
-			sscanf(buffer, "%d", &Track_data_ref[m]);
+			sscanf(buffer, "%f", &Track_data_ref[m]);
 9d0032e4:	3c129d01 	lui	s2,0x9d01
-9d0032e8:	2652ba10 	addiu	s2,s2,-17904
+9d0032e8:	2652b91c 	addiu	s2,s2,-18148
 		  int m;
 		  array_clr(Track_data_ref);
 		  NU32_ReadUART3(buffer, BUF_SIZE);
@@ -2219,7 +2219,7 @@ int main()
 9d0032f4:	240500c8 	li	a1,200
 
 9d0032f8 <.LVL68>:
-			sscanf(buffer, "%d", &Track_data_ref[m]);
+			sscanf(buffer, "%f", &Track_data_ref[m]);
 9d0032f8:	27a40018 	addiu	a0,sp,24
 9d0032fc:	02402821 	move	a1,s2
 9d003300:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
@@ -2238,12 +2238,12 @@ int main()
 9d003314:	1440fff5 	bnez	v0,9d0032ec <.LVL66+0x20>
 9d003318:	26310004 	addiu	s1,s1,4
 			NU32_ReadUART3(buffer, BUF_SIZE);
-			sscanf(buffer, "%d", &Track_data_ref[m]);
+			sscanf(buffer, "%f", &Track_data_ref[m]);
           }
 		  sprintf(buffer, "%d\r\n", 1);
 9d00331c:	27a40018 	addiu	a0,sp,24
 9d003320:	3c059d01 	lui	a1,0x9d01
-9d003324:	24a5ba00 	addiu	a1,a1,-17920
+9d003324:	24a5b8d8 	addiu	a1,a1,-18216
 9d003328:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d00332c:	24060001 	li	a2,1
 
@@ -2264,7 +2264,7 @@ int main()
 		  int n;
 		  array_clr(Track_data_ref);
 9d003340:	3c04a000 	lui	a0,0xa000
-9d003344:	0f4013e3 	jal	9d004f8c <array_clr>
+9d003344:	0f4013e2 	jal	9d004f88 <array_clr>
 9d003348:	248422d8 	addiu	a0,a0,8920
 
 9d00334c <.LVL74>:
@@ -2277,7 +2277,7 @@ int main()
 		  sscanf(buffer, "%d", &trajectory_size);
 9d003358:	27a40018 	addiu	a0,sp,24
 9d00335c:	3c059d01 	lui	a1,0x9d01
-9d003360:	24a5ba10 	addiu	a1,a1,-17904
+9d003360:	24a5b8e8 	addiu	a1,a1,-18200
 9d003364:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
 9d003368:	2786802c 	addiu	a2,gp,-32724
 
@@ -2290,9 +2290,9 @@ int main()
 9d00337c:	263122d8 	addiu	s1,s1,8920
 9d003380:	00008021 	move	s0,zero
 			  NU32_ReadUART3(buffer, BUF_SIZE);
-			  sscanf(buffer, "%d", &Track_data_ref[n]);
+			  sscanf(buffer, "%f", &Track_data_ref[n]);
 9d003384:	3c129d01 	lui	s2,0x9d01
-9d003388:	2652ba10 	addiu	s2,s2,-17904
+9d003388:	2652b91c 	addiu	s2,s2,-18148
 		  int n;
 		  array_clr(Track_data_ref);
 		  NU32_ReadUART3(buffer, BUF_SIZE);
@@ -2304,7 +2304,7 @@ int main()
 9d003394:	240500c8 	li	a1,200
 
 9d003398 <.LVL78>:
-			  sscanf(buffer, "%d", &Track_data_ref[n]);
+			  sscanf(buffer, "%f", &Track_data_ref[n]);
 9d003398:	27a40018 	addiu	a0,sp,24
 9d00339c:	02402821 	move	a1,s2
 9d0033a0:	0f402d96 	jal	9d00b658 <_sscanf_cdfFnopuxX>
@@ -2323,12 +2323,12 @@ int main()
 9d0033b4:	1440fff5 	bnez	v0,9d00338c <.LVL76+0x20>
 9d0033b8:	26310004 	addiu	s1,s1,4
 			  NU32_ReadUART3(buffer, BUF_SIZE);
-			  sscanf(buffer, "%d", &Track_data_ref[n]);
+			  sscanf(buffer, "%f", &Track_data_ref[n]);
 		  }
 		  sprintf(buffer, "%d\r\n", 1);
 9d0033bc:	27a40018 	addiu	a0,sp,24
 9d0033c0:	3c059d01 	lui	a1,0x9d01
-9d0033c4:	24a5ba00 	addiu	a1,a1,-17920
+9d0033c4:	24a5b8d8 	addiu	a1,a1,-18216
 9d0033c8:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d0033cc:	24060001 	li	a2,1
 
@@ -2366,7 +2366,7 @@ int main()
 		  set_modee(&modevar, TRACK);
 9d003408:	3c04a000 	lui	a0,0xa000
 9d00340c:	24842294 	addiu	a0,a0,8852
-9d003410:	0f401359 	jal	9d004d64 <set_modee>
+9d003410:	0f401358 	jal	9d004d60 <set_modee>
 9d003414:	24050004 	li	a1,4
 
 9d003418 <.LVL84>:
@@ -2377,7 +2377,7 @@ int main()
 9d003420:	27a40018 	addiu	a0,sp,24
 		  sprintf(buffer, "%d\r\n", trajectory_size);
 9d003424:	3c059d01 	lui	a1,0x9d01
-9d003428:	24a5ba00 	addiu	a1,a1,-17920
+9d003428:	24a5b8d8 	addiu	a1,a1,-18216
 9d00342c:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d003430:	8f86802c 	lw	a2,-32724(gp)
 
@@ -2395,9 +2395,9 @@ int main()
 9d00344c:	3c11a000 	lui	s1,0xa000
 9d003450:	26310034 	addiu	s1,s1,52
 9d003454:	00008021 	move	s0,zero
-			  sprintf(buffer, "%d %d\r\n", Track_data_ref[k], Track_data_real[k]);
+			  sprintf(buffer, "%f %d\r\n", Track_data_ref[k], Track_data_real[k]);
 9d003458:	3c139d01 	lui	s3,0x9d01
-9d00345c:	2673ba24 	addiu	s3,s3,-17884
+9d00345c:	2673b920 	addiu	s3,s3,-18144
 9d003460:	27a40018 	addiu	a0,sp,24
 9d003464:	02602821 	move	a1,s3
 9d003468:	8e460000 	lw	a2,0(s2)
@@ -2434,7 +2434,7 @@ int main()
 		  set_modee(&modevar, IDLE);
 9d00349c:	3c04a000 	lui	a0,0xa000
 9d0034a0:	24842294 	addiu	a0,a0,8852
-9d0034a4:	0f401359 	jal	9d004d64 <set_modee>
+9d0034a4:	0f401358 	jal	9d004d60 <set_modee>
 9d0034a8:	00002821 	move	a1,zero
 
 9d0034ac <.LVL92>:
@@ -2448,7 +2448,7 @@ int main()
 		  sprintf(buffer, "%d\r\n", (int) modevar.duty_p);
 9d0034b4:	27a40018 	addiu	a0,sp,24
 9d0034b8:	3c059d01 	lui	a1,0x9d01
-9d0034bc:	24a5ba00 	addiu	a1,a1,-17920
+9d0034bc:	24a5b8d8 	addiu	a1,a1,-18216
 9d0034c0:	3c02a000 	lui	v0,0xa000
 9d0034c4:	0f402db3 	jal	9d00b6cc <_sprintf_cdfFnopuxX>
 9d0034c8:	8c462298 	lw	a2,8856(v0)
@@ -3442,7 +3442,7 @@ Disassembly of section .text.malloc:
 9d0043e8:	3c1ea000 	lui	s8,0xa000
 9d0043ec:	0254b821 	addu	s7,s2,s4
 9d0043f0:	26b50010 	addiu	s5,s5,16
-9d0043f4:	0f403075 	jal	9d00c1d4 <getpagesize>
+9d0043f4:	0f403078 	jal	9d00c1e0 <getpagesize>
 9d0043f8:	02b0a821 	addu	s5,s5,s0
 9d0043fc:	0040b021 	move	s6,v0
 9d004400:	8fc34240 	lw	v1,16960(s8)
@@ -3452,7 +3452,7 @@ Disassembly of section .text.malloc:
 9d004410:	00561021 	addu	v0,v0,s6
 9d004414:	0016a823 	negu	s5,s6
 9d004418:	02a2a824 	and	s5,s5,v0
-9d00441c:	0f402eab 	jal	9d00baac <sbrk>
+9d00441c:	0f402eae 	jal	9d00bab8 <sbrk>
 9d004420:	02a02021 	move	a0,s5
 9d004424:	00409821 	move	s3,v0
 9d004428:	2402ffff 	li	v0,-1
@@ -3577,7 +3577,7 @@ Disassembly of section .text.malloc:
 9d004604:	02a52824 	and	a1,s5,a1
 9d004608:	0045a823 	subu	s5,v0,a1
 9d00460c:	02a02021 	move	a0,s5
-9d004610:	0f402eab 	jal	9d00baac <sbrk>
+9d004610:	0f402eae 	jal	9d00bab8 <sbrk>
 9d004614:	afa30010 	sw	v1,16(sp)
 9d004618:	2404ffff 	li	a0,-1
 9d00461c:	10440052 	beq	v0,a0,9d004768 <malloc+0x7c4>
@@ -3863,7 +3863,7 @@ int state_5kHz(modevars *modevar) {
 			
 			CurrCtrl.dt = dt_CurrCtrl;		//Itest sampling period
 9d004964:	3c029d01 	lui	v0,0x9d01
-9d004968:	8c43c0ec 	lw	v1,-16148(v0)
+9d004968:	8c43c0f8 	lw	v1,-16136(v0)
 9d00496c:	3c02a000 	lui	v0,0xa000
 9d004970:	ac4322d4 	sw	v1,8916(v0)
 			if ((Itestcount == 25) || (Itestcount == 50) || (Itestcount == 75)) {		//Every 25 iterations through ISR, Flip sign of Itest ref
@@ -3898,7 +3898,7 @@ int state_5kHz(modevars *modevar) {
 9d0049c8 <.LVL29>:
 9d0049c8:	00409021 	move	s2,v0
 			modevar->pwm = (int)PID_Out(&CurrCtrl, (float)Itestval);	//Set PWM to Control signal output.
-9d0049cc:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d0049cc:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d0049d0:	00402021 	move	a0,v0
 9d0049d4:	262422b0 	addiu	a0,s1,8880
 9d0049d8:	0f4011e9 	jal	9d0047a4 <PID_Out>
@@ -3992,7 +3992,7 @@ void set_modee(modevars *modevar, int mode) {
 		{
 			PosCtrl.dt = dt_PosCtrl;
 9d004a9c:	3c029d01 	lui	v0,0x9d01
-9d004aa0:	8c43c0f0 	lw	v1,-16144(v0)
+9d004aa0:	8c43c0fc 	lw	v1,-16132(v0)
 9d004aa4:	3c02a000 	lui	v0,0xa000
 			Imon = ADC_ma(read_ADC());
 9d004aa8:	0f40276b 	jal	9d009dac <read_ADC>
@@ -4005,13 +4005,13 @@ void set_modee(modevars *modevar, int mode) {
 9d004ab8 <.LVL39>:
 9d004ab8:	00409021 	move	s2,v0
 			CurrCtrl.ref = Iref;
-9d004abc:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d004abc:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d004ac0:	8f848030 	lw	a0,-32720(gp)
 9d004ac4:	3c11a000 	lui	s1,0xa000
 9d004ac8:	263122b0 	addiu	s1,s1,8880
 9d004acc:	ae220020 	sw	v0,32(s1)
 			modevar->pwm = (int)PID_Out(&CurrCtrl, (float)Imon);
-9d004ad0:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d004ad0:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d004ad4:	02402021 	move	a0,s2
 9d004ad8:	02202021 	move	a0,s1
 9d004adc:	0f4011e9 	jal	9d0047a4 <PID_Out>
@@ -4044,7 +4044,7 @@ void set_modee(modevars *modevar, int mode) {
 			
 			PosCtrl.dt = dt_PosCtrl;
 9d004b28:	3c029d01 	lui	v0,0x9d01
-9d004b2c:	8c43c0f0 	lw	v1,-16144(v0)
+9d004b2c:	8c43c0fc 	lw	v1,-16132(v0)
 9d004b30:	3c02a000 	lui	v0,0xa000
 			Imon = ADC_ma(read_ADC());
 9d004b34:	0f40276b 	jal	9d009dac <read_ADC>
@@ -4057,13 +4057,13 @@ void set_modee(modevars *modevar, int mode) {
 9d004b44 <.LVL47>:
 9d004b44:	00409021 	move	s2,v0
 			CurrCtrl.ref = Iref;
-9d004b48:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d004b48:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d004b4c:	8f848030 	lw	a0,-32720(gp)
 9d004b50:	3c11a000 	lui	s1,0xa000
 9d004b54:	263122b0 	addiu	s1,s1,8880
 9d004b58:	ae220020 	sw	v0,32(s1)
 			modevar->pwm = (int)PID_Out(&CurrCtrl, (float)Imon);
-9d004b5c:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d004b5c:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d004b60:	02402021 	move	a0,s2
 9d004b64:	02202021 	move	a0,s1
 9d004b68:	0f4011e9 	jal	9d0047a4 <PID_Out>
@@ -4127,7 +4127,7 @@ int state_200Hz(modevars *modevar) {
 	}
 	return modevar->current;
 }
-9d004bfc:	0b401353 	j	9d004d4c <.LBE10+0x4>
+9d004bfc:	0b401352 	j	9d004d48 <.LBE10+0x4>
 9d004c00:	8e020018 	lw	v0,24(s0)
 			break;
 		}
@@ -4145,12 +4145,12 @@ int state_200Hz(modevars *modevar) {
 9d004c14 <.LVL57>:
 9d004c14:	00409021 	move	s2,v0
 			PosCtrl.ref = modevar->pos;
-9d004c18:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d004c18:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d004c1c:	8e040014 	lw	a0,20(s0)
 9d004c20:	26314218 	addiu	s1,s1,16920
 9d004c24:	ae220020 	sw	v0,32(s1)
 			modevar->current = PID_Out(&PosCtrl, Angle);
-9d004c28:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d004c28:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d004c2c:	02402021 	move	a0,s2
 9d004c30:	02202021 	move	a0,s1
 9d004c34:	0f4011e9 	jal	9d0047a4 <PID_Out>
@@ -4161,7 +4161,7 @@ int state_200Hz(modevars *modevar) {
 9d004c40:	00402021 	move	a0,v0
 			
 			break;
-9d004c44:	0b401352 	j	9d004d48 <.LBE10>
+9d004c44:	0b401351 	j	9d004d44 <.LBE10>
 9d004c48:	ae020018 	sw	v0,24(s0)
 		}
 		case TRACK:
@@ -4170,7 +4170,7 @@ int state_200Hz(modevars *modevar) {
 9d004c4c:	8f838018 	lw	v1,-32744(gp)
 9d004c50:	8f82802c 	lw	v0,-32724(gp)
 9d004c54:	0062102a 	slt	v0,v1,v0
-9d004c58:	10400023 	beqz	v0,9d004ce8 <.LVL70+0x20>
+9d004c58:	10400021 	beqz	v0,9d004ce0 <.LVL67+0x20>
 9d004c5c:	00000000 	nop
 				Angle = count_to_deg(encoder_counts());
 9d004c60:	0f4027d4 	jal	9d009f50 <encoder_counts>
@@ -4181,355 +4181,355 @@ int state_200Hz(modevars *modevar) {
 9d004c6c:	00402021 	move	a0,v0
 
 9d004c70 <.LVL65>:
-9d004c70:	00409021 	move	s2,v0
 				Track_data_real[trackcount] = Angle;
-9d004c74:	8f838018 	lw	v1,-32744(gp)
-9d004c78:	00031880 	sll	v1,v1,0x2
-9d004c7c:	3c02a000 	lui	v0,0xa000
-9d004c80:	24420034 	addiu	v0,v0,52
-9d004c84:	00621021 	addu	v0,v1,v0
-9d004c88:	ac520000 	sw	s2,0(v0)
+9d004c70:	8f848018 	lw	a0,-32744(gp)
+9d004c74:	00042080 	sll	a0,a0,0x2
+9d004c78:	3c03a000 	lui	v1,0xa000
+9d004c7c:	24630034 	addiu	v1,v1,52
+9d004c80:	00831821 	addu	v1,a0,v1
+9d004c84:	ac620000 	sw	v0,0(v1)
 				PosCtrl.ref = Track_data_ref[trackcount];
-9d004c8c:	8f838018 	lw	v1,-32744(gp)
-9d004c90:	00031880 	sll	v1,v1,0x2
-9d004c94:	3c02a000 	lui	v0,0xa000
-9d004c98:	244222d8 	addiu	v0,v0,8920
-9d004c9c:	00621021 	addu	v0,v1,v0
-9d004ca0:	0f402e68 	jal	9d00b9a0 <__floatsisf>
-9d004ca4:	8c440000 	lw	a0,0(v0)
-9d004ca8:	3c11a000 	lui	s1,0xa000
-9d004cac:	26314218 	addiu	s1,s1,16920
-9d004cb0:	ae220020 	sw	v0,32(s1)
+9d004c88:	8f848018 	lw	a0,-32744(gp)
+9d004c8c:	00042080 	sll	a0,a0,0x2
+9d004c90:	3c03a000 	lui	v1,0xa000
+9d004c94:	246322d8 	addiu	v1,v1,8920
+9d004c98:	00831821 	addu	v1,a0,v1
+9d004c9c:	8c630000 	lw	v1,0(v1)
+9d004ca0:	3c11a000 	lui	s1,0xa000
+9d004ca4:	26314218 	addiu	s1,s1,16920
+9d004ca8:	ae230020 	sw	v1,32(s1)
 				modevar->current = PID_Out(&PosCtrl, Angle);
-9d004cb4:	0f402e68 	jal	9d00b9a0 <__floatsisf>
-9d004cb8:	02402021 	move	a0,s2
-9d004cbc:	02202021 	move	a0,s1
-9d004cc0:	0f4011e9 	jal	9d0047a4 <PID_Out>
-9d004cc4:	00402821 	move	a1,v0
+9d004cac:	0f402e81 	jal	9d00ba04 <__floatsisf>
+9d004cb0:	00402021 	move	a0,v0
+9d004cb4:	02202021 	move	a0,s1
+9d004cb8:	0f4011e9 	jal	9d0047a4 <PID_Out>
+9d004cbc:	00402821 	move	a1,v0
 
-9d004cc8 <.LVL70>:
-9d004cc8:	0f402d3a 	jal	9d00b4e8 <__fixsfsi>
-9d004ccc:	00402021 	move	a0,v0
-9d004cd0:	ae020018 	sw	v0,24(s0)
+9d004cc0 <.LVL67>:
+9d004cc0:	0f402d3a 	jal	9d00b4e8 <__fixsfsi>
+9d004cc4:	00402021 	move	a0,v0
+9d004cc8:	ae020018 	sw	v0,24(s0)
 				trackcount++;
-9d004cd4:	8f828018 	lw	v0,-32744(gp)
-9d004cd8:	24420001 	addiu	v0,v0,1
-9d004cdc:	af828018 	sw	v0,-32744(gp)
-9d004ce0:	0b401353 	j	9d004d4c <.LBE10+0x4>
-9d004ce4:	8e020018 	lw	v0,24(s0)
+9d004ccc:	8f828018 	lw	v0,-32744(gp)
+9d004cd0:	24420001 	addiu	v0,v0,1
+9d004cd4:	af828018 	sw	v0,-32744(gp)
+9d004cd8:	0b401352 	j	9d004d48 <.LBE10+0x4>
+9d004cdc:	8e020018 	lw	v0,24(s0)
 			}else {
 				Angle = count_to_deg(encoder_counts());
-9d004ce8:	0f4027d4 	jal	9d009f50 <encoder_counts>
-9d004cec:	00000000 	nop
+9d004ce0:	0f4027d4 	jal	9d009f50 <encoder_counts>
+9d004ce4:	00000000 	nop
 
-9d004cf0 <.LVL73>:
-9d004cf0:	0f4027fc 	jal	9d009ff0 <count_to_deg>
-9d004cf4:	00402021 	move	a0,v0
+9d004ce8 <.LVL70>:
+9d004ce8:	0f4027fc 	jal	9d009ff0 <count_to_deg>
+9d004cec:	00402021 	move	a0,v0
 
-9d004cf8 <.LVL74>:
+9d004cf0 <.LVL71>:
 				modevar->pos = Track_data_ref[trajectory_size-1];
-9d004cf8:	8f83802c 	lw	v1,-32724(gp)
-9d004cfc:	2463ffff 	addiu	v1,v1,-1
-9d004d00:	00031880 	sll	v1,v1,0x2
-9d004d04:	3c02a000 	lui	v0,0xa000
-9d004d08:	244222d8 	addiu	v0,v0,8920
-9d004d0c:	00621021 	addu	v0,v1,v0
-9d004d10:	8c420000 	lw	v0,0(v0)
-9d004d14:	ae020014 	sw	v0,20(s0)
+9d004cf0:	8f83802c 	lw	v1,-32724(gp)
+9d004cf4:	2463ffff 	addiu	v1,v1,-1
+9d004cf8:	00031880 	sll	v1,v1,0x2
+9d004cfc:	3c02a000 	lui	v0,0xa000
+9d004d00:	244222d8 	addiu	v0,v0,8920
+9d004d04:	00621021 	addu	v0,v1,v0
+9d004d08:	0f402d3a 	jal	9d00b4e8 <__fixsfsi>
+9d004d0c:	8c440000 	lw	a0,0(v0)
+9d004d10:	ae020014 	sw	v0,20(s0)
 			
 				Track_Data_f = 1;
-9d004d18:	24020001 	li	v0,1
-9d004d1c:	af828028 	sw	v0,-32728(gp)
+9d004d14:	24020001 	li	v0,1
+9d004d18:	af828028 	sw	v0,-32728(gp)
 				trackcount = 0;
-9d004d20:	af808018 	sw	zero,-32744(gp)
+9d004d1c:	af808018 	sw	zero,-32744(gp)
 				CurrCtrl.eint = 0;
-9d004d24:	3c02a000 	lui	v0,0xa000
-9d004d28:	244222b0 	addiu	v0,v0,8880
-9d004d2c:	00001821 	move	v1,zero
-9d004d30:	ac430014 	sw	v1,20(v0)
+9d004d20:	3c02a000 	lui	v0,0xa000
+9d004d24:	244222b0 	addiu	v0,v0,8880
+9d004d28:	00001821 	move	v1,zero
+9d004d2c:	ac430014 	sw	v1,20(v0)
 				CurrCtrl.eprev = 0;
-9d004d34:	ac430010 	sw	v1,16(v0)
+9d004d30:	ac430010 	sw	v1,16(v0)
 				PosCtrl.eint = 0;
-9d004d38:	3c02a000 	lui	v0,0xa000
-9d004d3c:	ac43422c 	sw	v1,16940(v0)
+9d004d34:	3c02a000 	lui	v0,0xa000
+9d004d38:	ac43422c 	sw	v1,16940(v0)
 
-9d004d40 <.LBB10>:
+9d004d3c <.LBB10>:
 	
 	return out;	
 }
 
 void set_modee(modevars *modevar, int mode) {
 	modevar->mode = mode;	
-9d004d40:	24020003 	li	v0,3
-9d004d44:	ae020010 	sw	v0,16(s0)
+9d004d3c:	24020003 	li	v0,3
+9d004d40:	ae020010 	sw	v0,16(s0)
 
-9d004d48 <.LBE10>:
+9d004d44 <.LBE10>:
 		}
 		
 		
 	}
 	return modevar->current;
 }
-9d004d48:	8e020018 	lw	v0,24(s0)
-9d004d4c:	8fbf001c 	lw	ra,28(sp)
-9d004d50:	8fb20018 	lw	s2,24(sp)
-9d004d54:	8fb10014 	lw	s1,20(sp)
-9d004d58:	8fb00010 	lw	s0,16(sp)
-9d004d5c:	03e00008 	jr	ra
-9d004d60:	27bd0020 	addiu	sp,sp,32
+9d004d44:	8e020018 	lw	v0,24(s0)
+9d004d48:	8fbf001c 	lw	ra,28(sp)
+9d004d4c:	8fb20018 	lw	s2,24(sp)
+9d004d50:	8fb10014 	lw	s1,20(sp)
+9d004d54:	8fb00010 	lw	s0,16(sp)
+9d004d58:	03e00008 	jr	ra
+9d004d5c:	27bd0020 	addiu	sp,sp,32
 
-9d004d64 <set_modee>:
+9d004d60 <set_modee>:
 	
 	return out;	
 }
 
 void set_modee(modevars *modevar, int mode) {
 	modevar->mode = mode;	
-9d004d64:	03e00008 	jr	ra
-9d004d68:	ac850010 	sw	a1,16(a0)
+9d004d60:	03e00008 	jr	ra
+9d004d64:	ac850010 	sw	a1,16(a0)
 
-9d004d6c <get_mode>:
+9d004d68 <get_mode>:
 
 int get_mode(modevars *modevar) {
 	
 	return modevar->mode;
 	
 }
-9d004d6c:	03e00008 	jr	ra
-9d004d70:	8c820010 	lw	v0,16(a0)
+9d004d68:	03e00008 	jr	ra
+9d004d6c:	8c820010 	lw	v0,16(a0)
 
-9d004d74 <config_PWM>:
+9d004d70 <config_PWM>:
 
 void config_PWM(void) {
 	
 	//TRISDbits.TRISD0 = 0;		//Initialize OC1 on RD0
 	
 	PR2 = 3999;
-9d004d74:	24030f9f 	li	v1,3999
-9d004d78:	3c02bf80 	lui	v0,0xbf80
-9d004d7c:	ac430820 	sw	v1,2080(v0)
+9d004d70:	24030f9f 	li	v1,3999
+9d004d74:	3c02bf80 	lui	v0,0xbf80
+9d004d78:	ac430820 	sw	v1,2080(v0)
 	//TMR2 = 0;
 /*	T2CONbits.TCKPS = 0;
 	T2CONCLR = 2; 
 	T2CONbits.TGATE = 0; */
 	
 	OC1CONbits.ON = 0;
-9d004d80:	3c02bf80 	lui	v0,0xbf80
-9d004d84:	94433000 	lhu	v1,12288(v0)
-9d004d88:	7c037bc4 	ins	v1,zero,0xf,0x1
-9d004d8c:	a4433000 	sh	v1,12288(v0)
+9d004d7c:	3c02bf80 	lui	v0,0xbf80
+9d004d80:	94433000 	lhu	v1,12288(v0)
+9d004d84:	7c037bc4 	ins	v1,zero,0xf,0x1
+9d004d88:	a4433000 	sh	v1,12288(v0)
 	OC1CONbits.OCTSEL = 0;
-9d004d90:	94433000 	lhu	v1,12288(v0)
-9d004d94:	7c0318c4 	ins	v1,zero,0x3,0x1
-9d004d98:	a4433000 	sh	v1,12288(v0)
+9d004d8c:	94433000 	lhu	v1,12288(v0)
+9d004d90:	7c0318c4 	ins	v1,zero,0x3,0x1
+9d004d94:	a4433000 	sh	v1,12288(v0)
 	OC1CONbits.OCM = 0b110;
-9d004d9c:	94433000 	lhu	v1,12288(v0)
-9d004da0:	24040006 	li	a0,6
-9d004da4:	7c831004 	ins	v1,a0,0x0,0x3
-9d004da8:	a4433000 	sh	v1,12288(v0)
+9d004d98:	94433000 	lhu	v1,12288(v0)
+9d004d9c:	24040006 	li	a0,6
+9d004da0:	7c831004 	ins	v1,a0,0x0,0x3
+9d004da4:	a4433000 	sh	v1,12288(v0)
 	OC1R = 1000;
-9d004dac:	240303e8 	li	v1,1000
-9d004db0:	3c04bf80 	lui	a0,0xbf80
-9d004db4:	ac833010 	sw	v1,12304(a0)
+9d004da8:	240303e8 	li	v1,1000
+9d004dac:	3c04bf80 	lui	a0,0xbf80
+9d004db0:	ac833010 	sw	v1,12304(a0)
 	OC1RS = 1000;
-9d004db8:	3c04bf80 	lui	a0,0xbf80
-9d004dbc:	ac833020 	sw	v1,12320(a0)
+9d004db4:	3c04bf80 	lui	a0,0xbf80
+9d004db8:	ac833020 	sw	v1,12320(a0)
 	
 	T2CONbits.ON = 1;
-9d004dc0:	3c04bf80 	lui	a0,0xbf80
-9d004dc4:	94850800 	lhu	a1,2048(a0)
-9d004dc8:	24030001 	li	v1,1
-9d004dcc:	7c657bc4 	ins	a1,v1,0xf,0x1
-9d004dd0:	a4850800 	sh	a1,2048(a0)
+9d004dbc:	3c04bf80 	lui	a0,0xbf80
+9d004dc0:	94850800 	lhu	a1,2048(a0)
+9d004dc4:	24030001 	li	v1,1
+9d004dc8:	7c657bc4 	ins	a1,v1,0xf,0x1
+9d004dcc:	a4850800 	sh	a1,2048(a0)
 	OC1CONbits.ON = 1;
-9d004dd4:	94443000 	lhu	a0,12288(v0)
-9d004dd8:	7c647bc4 	ins	a0,v1,0xf,0x1
-9d004ddc:	a4443000 	sh	a0,12288(v0)
+9d004dd0:	94443000 	lhu	a0,12288(v0)
+9d004dd4:	7c647bc4 	ins	a0,v1,0xf,0x1
+9d004dd8:	a4443000 	sh	a0,12288(v0)
 /*	IPC2bits.T2IP = 5;              // INT step 4: priority
     IPC2bits.T2IS = 0;              //             subpriority
     IFS0bits.T2IF = 0;              // INT step 5: clear interrupt flag
     IEC0bits.T2IE = 1;    */          // INT step 6: enable interrupt 
 	
 	IPC1bits.OC1IP = 5;              // INT step 4: priority
-9d004de0:	3c02bf88 	lui	v0,0xbf88
-9d004de4:	8c4410a0 	lw	a0,4256(v0)
-9d004de8:	24050005 	li	a1,5
-9d004dec:	7ca4a484 	ins	a0,a1,0x12,0x3
-9d004df0:	ac4410a0 	sw	a0,4256(v0)
+9d004ddc:	3c02bf88 	lui	v0,0xbf88
+9d004de0:	8c4410a0 	lw	a0,4256(v0)
+9d004de4:	24050005 	li	a1,5
+9d004de8:	7ca4a484 	ins	a0,a1,0x12,0x3
+9d004dec:	ac4410a0 	sw	a0,4256(v0)
     IPC1bits.OC1IS = 1;              //             subpriority
-9d004df4:	8c4410a0 	lw	a0,4256(v0)
-9d004df8:	7c648c04 	ins	a0,v1,0x10,0x2
-9d004dfc:	ac4410a0 	sw	a0,4256(v0)
+9d004df0:	8c4410a0 	lw	a0,4256(v0)
+9d004df4:	7c648c04 	ins	a0,v1,0x10,0x2
+9d004df8:	ac4410a0 	sw	a0,4256(v0)
     IFS0bits.OC1IF = 0;              // INT step 5: clear interrupt flag
-9d004e00:	3c02bf88 	lui	v0,0xbf88
-9d004e04:	8c441030 	lw	a0,4144(v0)
-9d004e08:	7c043184 	ins	a0,zero,0x6,0x1
-9d004e0c:	ac441030 	sw	a0,4144(v0)
+9d004dfc:	3c02bf88 	lui	v0,0xbf88
+9d004e00:	8c441030 	lw	a0,4144(v0)
+9d004e04:	7c043184 	ins	a0,zero,0x6,0x1
+9d004e08:	ac441030 	sw	a0,4144(v0)
     IEC0bits.OC1IE = 1;              // INT step 6: enable interrupt
-9d004e10:	3c02bf88 	lui	v0,0xbf88
-9d004e14:	8c441060 	lw	a0,4192(v0)
-9d004e18:	7c643184 	ins	a0,v1,0x6,0x1
-9d004e1c:	ac441060 	sw	a0,4192(v0)
-9d004e20:	03e00008 	jr	ra
-9d004e24:	00000000 	nop
+9d004e0c:	3c02bf88 	lui	v0,0xbf88
+9d004e10:	8c441060 	lw	a0,4192(v0)
+9d004e14:	7c643184 	ins	a0,v1,0x6,0x1
+9d004e18:	ac441060 	sw	a0,4192(v0)
+9d004e1c:	03e00008 	jr	ra
+9d004e20:	00000000 	nop
 
-9d004e28 <config_T4>:
+9d004e24 <config_T4>:
 }
 
 void config_T4(void) {
 	
 	
 	PR4 = 15999;
-9d004e28:	24033e7f 	li	v1,15999
-9d004e2c:	3c02bf80 	lui	v0,0xbf80
-9d004e30:	ac430c20 	sw	v1,3104(v0)
+9d004e24:	24033e7f 	li	v1,15999
+9d004e28:	3c02bf80 	lui	v0,0xbf80
+9d004e2c:	ac430c20 	sw	v1,3104(v0)
 	TMR4 = 0;
-9d004e34:	3c02bf80 	lui	v0,0xbf80
-9d004e38:	ac400c10 	sw	zero,3088(v0)
+9d004e30:	3c02bf80 	lui	v0,0xbf80
+9d004e34:	ac400c10 	sw	zero,3088(v0)
 	T4CONbits.TCKPS = 0;
-9d004e3c:	3c02bf80 	lui	v0,0xbf80
-9d004e40:	94430c00 	lhu	v1,3072(v0)
-9d004e44:	7c033104 	ins	v1,zero,0x4,0x3
-9d004e48:	a4430c00 	sh	v1,3072(v0)
+9d004e38:	3c02bf80 	lui	v0,0xbf80
+9d004e3c:	94430c00 	lhu	v1,3072(v0)
+9d004e40:	7c033104 	ins	v1,zero,0x4,0x3
+9d004e44:	a4430c00 	sh	v1,3072(v0)
 	T4CONCLR = 2;  
-9d004e4c:	24050002 	li	a1,2
-9d004e50:	3c03bf80 	lui	v1,0xbf80
-9d004e54:	ac650c04 	sw	a1,3076(v1)
+9d004e48:	24050002 	li	a1,2
+9d004e4c:	3c03bf80 	lui	v1,0xbf80
+9d004e50:	ac650c04 	sw	a1,3076(v1)
 	T4CONbits.TGATE = 0; 
-9d004e58:	94430c00 	lhu	v1,3072(v0)
-9d004e5c:	7c0339c4 	ins	v1,zero,0x7,0x1
-9d004e60:	a4430c00 	sh	v1,3072(v0)
+9d004e54:	94430c00 	lhu	v1,3072(v0)
+9d004e58:	7c0339c4 	ins	v1,zero,0x7,0x1
+9d004e5c:	a4430c00 	sh	v1,3072(v0)
 	T4CONbits.ON = 1;			//Timer Initialize for 5kHz current controller.
-9d004e64:	94430c00 	lhu	v1,3072(v0)
-9d004e68:	24040001 	li	a0,1
-9d004e6c:	7c837bc4 	ins	v1,a0,0xf,0x1
-9d004e70:	a4430c00 	sh	v1,3072(v0)
+9d004e60:	94430c00 	lhu	v1,3072(v0)
+9d004e64:	24040001 	li	a0,1
+9d004e68:	7c837bc4 	ins	v1,a0,0xf,0x1
+9d004e6c:	a4430c00 	sh	v1,3072(v0)
 	
 	IPC4bits.T4IP = 5;              // INT step 4: priority
-9d004e74:	3c02bf88 	lui	v0,0xbf88
-9d004e78:	8c4310d0 	lw	v1,4304(v0)
-9d004e7c:	24060005 	li	a2,5
-9d004e80:	7cc32084 	ins	v1,a2,0x2,0x3
-9d004e84:	ac4310d0 	sw	v1,4304(v0)
+9d004e70:	3c02bf88 	lui	v0,0xbf88
+9d004e74:	8c4310d0 	lw	v1,4304(v0)
+9d004e78:	24060005 	li	a2,5
+9d004e7c:	7cc32084 	ins	v1,a2,0x2,0x3
+9d004e80:	ac4310d0 	sw	v1,4304(v0)
     IPC4bits.T4IS = 2;              //             subpriority
-9d004e88:	8c4310d0 	lw	v1,4304(v0)
-9d004e8c:	7ca30804 	ins	v1,a1,0x0,0x2
-9d004e90:	ac4310d0 	sw	v1,4304(v0)
+9d004e84:	8c4310d0 	lw	v1,4304(v0)
+9d004e88:	7ca30804 	ins	v1,a1,0x0,0x2
+9d004e8c:	ac4310d0 	sw	v1,4304(v0)
     IFS0bits.T4IF = 0;              // INT step 5: clear interrupt flag
-9d004e94:	3c02bf88 	lui	v0,0xbf88
-9d004e98:	8c431030 	lw	v1,4144(v0)
-9d004e9c:	7c038404 	ins	v1,zero,0x10,0x1
-9d004ea0:	ac431030 	sw	v1,4144(v0)
+9d004e90:	3c02bf88 	lui	v0,0xbf88
+9d004e94:	8c431030 	lw	v1,4144(v0)
+9d004e98:	7c038404 	ins	v1,zero,0x10,0x1
+9d004e9c:	ac431030 	sw	v1,4144(v0)
     IEC0bits.T4IE = 1;              // INT step 6: enable interrupt
-9d004ea4:	3c02bf88 	lui	v0,0xbf88
-9d004ea8:	8c431060 	lw	v1,4192(v0)
-9d004eac:	7c838404 	ins	v1,a0,0x10,0x1
-9d004eb0:	ac431060 	sw	v1,4192(v0)
-9d004eb4:	03e00008 	jr	ra
-9d004eb8:	00000000 	nop
+9d004ea0:	3c02bf88 	lui	v0,0xbf88
+9d004ea4:	8c431060 	lw	v1,4192(v0)
+9d004ea8:	7c838404 	ins	v1,a0,0x10,0x1
+9d004eac:	ac431060 	sw	v1,4192(v0)
+9d004eb0:	03e00008 	jr	ra
+9d004eb4:	00000000 	nop
 
-9d004ebc <init_ControlLoop>:
+9d004eb8 <init_ControlLoop>:
 	
 	return modevar->mode;
 	
 }
 
 void init_ControlLoop(void) {
-9d004ebc:	27bdffe8 	addiu	sp,sp,-24
-9d004ec0:	afbf0014 	sw	ra,20(sp)
+9d004eb8:	27bdffe8 	addiu	sp,sp,-24
+9d004ebc:	afbf0014 	sw	ra,20(sp)
 	
 	config_PWM();
-9d004ec4:	0f40135d 	jal	9d004d74 <config_PWM>
-9d004ec8:	00000000 	nop
+9d004ec0:	0f40135c 	jal	9d004d70 <config_PWM>
+9d004ec4:	00000000 	nop
 
-9d004ecc <.LVL80>:
+9d004ec8 <.LVL78>:
 	
 	TRISCbits.TRISC14 = 0;		//Output bit for motor direction
-9d004ecc:	3c02bf88 	lui	v0,0xbf88
-9d004ed0:	94436080 	lhu	v1,24704(v0)
-9d004ed4:	7c037384 	ins	v1,zero,0xe,0x1
-9d004ed8:	a4436080 	sh	v1,24704(v0)
+9d004ec8:	3c02bf88 	lui	v0,0xbf88
+9d004ecc:	94436080 	lhu	v1,24704(v0)
+9d004ed0:	7c037384 	ins	v1,zero,0xe,0x1
+9d004ed4:	a4436080 	sh	v1,24704(v0)
 	
 	config_T4();
-9d004edc:	0f40138a 	jal	9d004e28 <config_T4>
-9d004ee0:	00000000 	nop
+9d004ed8:	0f401389 	jal	9d004e24 <config_T4>
+9d004edc:	00000000 	nop
 
-9d004ee4 <.LVL81>:
+9d004ee0 <.LVL79>:
 	
 }
-9d004ee4:	8fbf0014 	lw	ra,20(sp)
-9d004ee8:	03e00008 	jr	ra
-9d004eec:	27bd0018 	addiu	sp,sp,24
+9d004ee0:	8fbf0014 	lw	ra,20(sp)
+9d004ee4:	03e00008 	jr	ra
+9d004ee8:	27bd0018 	addiu	sp,sp,24
 
-9d004ef0 <config_T3>:
+9d004eec <config_T3>:
 	
 }
 
 void config_T3(void) {
 	
 	PR3 = 6249;
-9d004ef0:	24031869 	li	v1,6249
-9d004ef4:	3c02bf80 	lui	v0,0xbf80
-9d004ef8:	ac430a20 	sw	v1,2592(v0)
+9d004eec:	24031869 	li	v1,6249
+9d004ef0:	3c02bf80 	lui	v0,0xbf80
+9d004ef4:	ac430a20 	sw	v1,2592(v0)
 	TMR3 = 0;
-9d004efc:	3c02bf80 	lui	v0,0xbf80
-9d004f00:	ac400a10 	sw	zero,2576(v0)
+9d004ef8:	3c02bf80 	lui	v0,0xbf80
+9d004efc:	ac400a10 	sw	zero,2576(v0)
 	T3CONbits.TCKPS = 6;
-9d004f04:	3c02bf80 	lui	v0,0xbf80
-9d004f08:	94430a00 	lhu	v1,2560(v0)
-9d004f0c:	24040006 	li	a0,6
-9d004f10:	7c833104 	ins	v1,a0,0x4,0x3
-9d004f14:	a4430a00 	sh	v1,2560(v0)
+9d004f00:	3c02bf80 	lui	v0,0xbf80
+9d004f04:	94430a00 	lhu	v1,2560(v0)
+9d004f08:	24040006 	li	a0,6
+9d004f0c:	7c833104 	ins	v1,a0,0x4,0x3
+9d004f10:	a4430a00 	sh	v1,2560(v0)
 	T3CONCLR = 2;  
-9d004f18:	24040002 	li	a0,2
-9d004f1c:	3c03bf80 	lui	v1,0xbf80
-9d004f20:	ac640a04 	sw	a0,2564(v1)
+9d004f14:	24040002 	li	a0,2
+9d004f18:	3c03bf80 	lui	v1,0xbf80
+9d004f1c:	ac640a04 	sw	a0,2564(v1)
 	T3CONbits.TGATE = 0; 
-9d004f24:	94430a00 	lhu	v1,2560(v0)
-9d004f28:	7c0339c4 	ins	v1,zero,0x7,0x1
-9d004f2c:	a4430a00 	sh	v1,2560(v0)
+9d004f20:	94430a00 	lhu	v1,2560(v0)
+9d004f24:	7c0339c4 	ins	v1,zero,0x7,0x1
+9d004f28:	a4430a00 	sh	v1,2560(v0)
 	T3CONbits.ON = 1;			//Timer Initialize for 5kHz current controller.
-9d004f30:	94430a00 	lhu	v1,2560(v0)
-9d004f34:	24040001 	li	a0,1
-9d004f38:	7c837bc4 	ins	v1,a0,0xf,0x1
-9d004f3c:	a4430a00 	sh	v1,2560(v0)
+9d004f2c:	94430a00 	lhu	v1,2560(v0)
+9d004f30:	24040001 	li	a0,1
+9d004f34:	7c837bc4 	ins	v1,a0,0xf,0x1
+9d004f38:	a4430a00 	sh	v1,2560(v0)
 	
 	IPC3bits.T3IP = 4;
-9d004f40:	3c02bf88 	lui	v0,0xbf88
-9d004f44:	8c4310c0 	lw	v1,4288(v0)
-9d004f48:	24050004 	li	a1,4
-9d004f4c:	7ca32084 	ins	v1,a1,0x2,0x3
-9d004f50:	ac4310c0 	sw	v1,4288(v0)
+9d004f3c:	3c02bf88 	lui	v0,0xbf88
+9d004f40:	8c4310c0 	lw	v1,4288(v0)
+9d004f44:	24050004 	li	a1,4
+9d004f48:	7ca32084 	ins	v1,a1,0x2,0x3
+9d004f4c:	ac4310c0 	sw	v1,4288(v0)
 	IPC4bits.T4IS = 0;
-9d004f54:	3c02bf88 	lui	v0,0xbf88
-9d004f58:	8c4310d0 	lw	v1,4304(v0)
-9d004f5c:	7c030804 	ins	v1,zero,0x0,0x2
-9d004f60:	ac4310d0 	sw	v1,4304(v0)
+9d004f50:	3c02bf88 	lui	v0,0xbf88
+9d004f54:	8c4310d0 	lw	v1,4304(v0)
+9d004f58:	7c030804 	ins	v1,zero,0x0,0x2
+9d004f5c:	ac4310d0 	sw	v1,4304(v0)
 	IFS0bits.T3IF = 0;
-9d004f64:	3c02bf88 	lui	v0,0xbf88
-9d004f68:	8c431030 	lw	v1,4144(v0)
-9d004f6c:	7c036304 	ins	v1,zero,0xc,0x1
-9d004f70:	ac431030 	sw	v1,4144(v0)
+9d004f60:	3c02bf88 	lui	v0,0xbf88
+9d004f64:	8c431030 	lw	v1,4144(v0)
+9d004f68:	7c036304 	ins	v1,zero,0xc,0x1
+9d004f6c:	ac431030 	sw	v1,4144(v0)
 	IEC0bits.T3IE = 1;	
-9d004f74:	3c02bf88 	lui	v0,0xbf88
-9d004f78:	8c431060 	lw	v1,4192(v0)
-9d004f7c:	7c836304 	ins	v1,a0,0xc,0x1
-9d004f80:	ac431060 	sw	v1,4192(v0)
-9d004f84:	03e00008 	jr	ra
-9d004f88:	00000000 	nop
+9d004f70:	3c02bf88 	lui	v0,0xbf88
+9d004f74:	8c431060 	lw	v1,4192(v0)
+9d004f78:	7c836304 	ins	v1,a0,0xc,0x1
+9d004f7c:	ac431060 	sw	v1,4192(v0)
+9d004f80:	03e00008 	jr	ra
+9d004f84:	00000000 	nop
 
-9d004f8c <array_clr>:
-void array_clr(int *array) {
+9d004f88 <array_clr>:
+void array_clr(float *array) {
 	int size = sizeof(array);
 	int c;
 	
 	for (c = 0; c < size; c++) {
 			array[c] = 0;
-9d004f8c:	ac800000 	sw	zero,0(a0)
-9d004f90:	ac800004 	sw	zero,4(a0)
-9d004f94:	ac800008 	sw	zero,8(a0)
+9d004f88:	00001021 	move	v0,zero
+9d004f8c:	ac820000 	sw	v0,0(a0)
+9d004f90:	ac820004 	sw	v0,4(a0)
+9d004f94:	ac820008 	sw	v0,8(a0)
 9d004f98:	03e00008 	jr	ra
-9d004f9c:	ac80000c 	sw	zero,12(a0)
+9d004f9c:	ac82000c 	sw	v0,12(a0)
 
 Disassembly of section .text._fconvert:
 
@@ -4936,17 +4936,17 @@ Disassembly of section .dinit:
 9d005614:	00000040 	ssnop
 9d005618:	00001009 	jalr	v0,zero
 9d00561c:	00000000 	nop
-9d005620:	9d00c090 	0x9d00c090
+9d005620:	9d00c09c 	0x9d00c09c
 9d005624:	ffffffff 	sdc3	$31,-1(ra)
 	...
 9d005634:	00011002 	srl	v0,at,0x0
 9d005638:	00000000 	nop
-9d00563c:	9d00c090 	0x9d00c090
+9d00563c:	9d00c09c 	0x9d00c09c
 9d005640:	ffffffff 	sdc3	$31,-1(ra)
 	...
 9d005650:	00020002 	srl	zero,v0,0x0
 9d005654:	00000000 	nop
-9d005658:	9d00c090 	0x9d00c090
+9d005658:	9d00c09c 	0x9d00c09c
 9d00565c:	fffffffd 	sdc3	$31,-3(ra)
 	...
 9d005678:	a0004724 	sb	zero,18212(zero)
@@ -7303,7 +7303,7 @@ Disassembly of section .text.__strtod:
 9d00784c:	0057b026 	xor	s6,v0,s7
 9d007850:	02c2b023 	subu	s6,s6,v0
 9d007854:	3c159d01 	lui	s5,0x9d01
-9d007858:	26b5bcac 	addiu	s5,s5,-17236
+9d007858:	26b5bcb8 	addiu	s5,s5,-17224
 9d00785c:	3c093ff0 	lui	t1,0x3ff0
 9d007860:	0b401e1c 	j	9d007870 <.LCFI0+0x160>
 9d007864:	24140009 	li	s4,9
@@ -7343,7 +7343,7 @@ Disassembly of section .text.__strtod:
 9d0078ec:	12600007 	beqz	s3,9d00790c <.LCFI0+0x1fc>
 9d0078f0:	02201021 	move	v0,s1
 9d0078f4:	02202021 	move	a0,s1
-9d0078f8:	0f40300c 	jal	9d00c030 <__negdf2>
+9d0078f8:	0f40300f 	jal	9d00c03c <__negdf2>
 9d0078fc:	02002821 	move	a1,s0
 9d007900:	00408821 	move	s1,v0
 9d007904:	00608021 	move	s0,v1
@@ -7745,7 +7745,7 @@ Disassembly of section .text.__strtof:
 9d007f0c:	0f402617 	jal	9d00985c <.LFE9>
 9d007f10:	3c054120 	lui	a1,0x4120
 9d007f14:	00408821 	move	s1,v0
-9d007f18:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d007f18:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d007f1c:	02402021 	move	a0,s2
 9d007f20:	02202021 	move	a0,s1
 9d007f24:	00402821 	move	a1,v0
@@ -7775,7 +7775,7 @@ Disassembly of section .text.__strtof:
 9d007f84:	0052a826 	xor	s5,v0,s2
 9d007f88:	02a2a823 	subu	s5,s5,v0
 9d007f8c:	3c139d01 	lui	s3,0x9d01
-9d007f90:	2673c078 	addiu	s3,s3,-16264
+9d007f90:	2673c084 	addiu	s3,s3,-16252
 9d007f94:	24100006 	li	s0,6
 9d007f98:	0b401fea 	j	9d007fa8 <.LCFI0+0x140>
 9d007f9c:	3c023f80 	lui	v0,0x3f80
@@ -7808,7 +7808,7 @@ Disassembly of section .text.__strtof:
 9d008008:	00000000 	nop
 9d00800c:	12e00005 	beqz	s7,9d008024 <.LCFI0+0x1bc>
 9d008010:	02201021 	move	v0,s1
-9d008014:	0f403033 	jal	9d00c0cc <__negsf2>
+9d008014:	0f403036 	jal	9d00c0d8 <__negsf2>
 9d008018:	02202021 	move	a0,s1
 9d00801c:	00408821 	move	s1,v0
 9d008020:	02201021 	move	v0,s1
@@ -7834,7 +7834,7 @@ Disassembly of section .text.__strtof:
 9d008070:	0f402617 	jal	9d00985c <.LFE9>
 9d008074:	3c054120 	lui	a1,0x4120
 9d008078:	00408821 	move	s1,v0
-9d00807c:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d00807c:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d008080:	02a02021 	move	a0,s5
 9d008084:	02202021 	move	a0,s1
 9d008088:	00402821 	move	a1,v0
@@ -8392,7 +8392,7 @@ Disassembly of section .text._strtostr:
 9d008864:	24150001 	li	s5,1
 9d008868:	3c1e9d01 	lui	s8,0x9d01
 9d00886c:	27dea399 	addiu	s8,s8,-23655
-9d008870:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d008870:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d008874:	02402021 	move	a0,s2
 9d008878:	50540011 	beql	v0,s4,9d0088c0 <_strtostr+0xcc>
 9d00887c:	02e01821 	move	v1,s7
@@ -8407,7 +8407,7 @@ Disassembly of section .text._strtostr:
 9d0088a0:	26310001 	addiu	s1,s1,1
 9d0088a4:	10600006 	beqz	v1,9d0088c0 <_strtostr+0xcc>
 9d0088a8:	0060b821 	move	s7,v1
-9d0088ac:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d0088ac:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d0088b0:	02402021 	move	a0,s2
 9d0088b4:	1454fff2 	bne	v0,s4,9d008880 <_strtostr+0x8c>
 9d0088b8:	00000000 	nop
@@ -8472,7 +8472,7 @@ Disassembly of section .text._strtostr:
 9d0089a4:	24150001 	li	s5,1
 9d0089a8:	00002821 	move	a1,zero
 9d0089ac:	27a40010 	addiu	a0,sp,16
-9d0089b0:	0f402fc3 	jal	9d00bf0c <.LFE1>
+9d0089b0:	0f402fc6 	jal	9d00bf18 <.LFE1>
 9d0089b4:	24060100 	li	a2,256
 9d0089b8:	82830000 	lb	v1,0(s4)
 9d0089bc:	2405ffff 	li	a1,-1
@@ -9837,7 +9837,7 @@ Disassembly of section .text.__ldexp:
 9d009b2c:	00832004 	sllv	a0,v1,a0
 9d009b30:	00828825 	or	s1,a0,v0
 9d009b34:	00402021 	move	a0,v0
-9d009b38:	0f402f4e 	jal	9d00bd38 <__lshrdi3>
+9d009b38:	0f402f51 	jal	9d00bd44 <__lshrdi3>
 9d009b3c:	00602821 	move	a1,v1
 9d009b40:	0011882b 	sltu	s1,zero,s1
 9d009b44:	02221025 	or	v0,s1,v0
@@ -9866,7 +9866,7 @@ Disassembly of section .text.__ldexp:
 9d009ba0:	2646fff5 	addiu	a2,s2,-11
 9d009ba4:	10c0ffad 	beqz	a2,9d009a5c <.LCFI0+0x40>
 9d009ba8:	2407fc02 	li	a3,-1022
-9d009bac:	0f402f5e 	jal	9d00bd78 <__ashldi3>
+9d009bac:	0f402f61 	jal	9d00bd84 <__ashldi3>
 9d009bb0:	01002821 	move	a1,t0
 9d009bb4:	2407fc0d 	li	a3,-1011
 9d009bb8:	0b402697 	j	9d009a5c <.LCFI0+0x40>
@@ -9912,7 +9912,7 @@ Disassembly of section .text._sbrk_init:
 9d009c40:	00b1180a 	movz	v1,a1,s1
 9d009c44:	00608821 	move	s1,v1
 9d009c48:	0094100a 	movz	v0,a0,s4
-9d009c4c:	0f402fb8 	jal	9d00bee0 <_stub_sbd_memlayout>
+9d009c4c:	0f402fbb 	jal	9d00beec <_stub_sbd_memlayout>
 9d009c50:	0040a021 	move	s4,v0
 9d009c54:	8c430000 	lw	v1,0(v0)
 9d009c58:	8c440004 	lw	a0,4(v0)
@@ -10058,7 +10058,7 @@ unsigned int read_ADC(void) {
 		if(ADC1BUF0 <= (0.5*ticks_old)) {
 9d009df8:	3c12bf81 	lui	s2,0xbf81
 9d009dfc:	3c029d01 	lui	v0,0x9d01
-9d009e00:	8c56c0e0 	lw	s6,-16160(v0)
+9d009e00:	8c56c0ec 	lw	s6,-16148(v0)
 	
 	AD1CHSbits.CH0SA = ADC_PIN;
 	//AD1CON1bits.SAMP = 1;
@@ -10070,10 +10070,10 @@ unsigned int read_ADC(void) {
 9d009e0c:	a6639000 	sh	v1,-28672(s3)
 		if(ADC1BUF0 <= (0.5*ticks_old)) {
 9d009e10:	8e449070 	lw	a0,-28560(s2)
-9d009e14:	0f402ebf 	jal	9d00bafc <.LCFI11>
+9d009e14:	0f402ec2 	jal	9d00bb08 <.LCFI11>
 9d009e18:	00000000 	nop
 9d009e1c:	0040a821 	move	s5,v0
-9d009e20:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d009e20:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d009e24:	02802021 	move	a0,s4
 9d009e28:	00402021 	move	a0,v0
 9d009e2c:	0f402617 	jal	9d00985c <.LFE9>
@@ -10126,16 +10126,16 @@ int ADC_ma(unsigned int ticks) {
 9d009e98:	afbf0014 	sw	ra,20(sp)
 	
 	return (int)(ADC_MA((int)ticks));	//Line equation determined in matlab.
-9d009e9c:	0f402e68 	jal	9d00b9a0 <__floatsisf>
+9d009e9c:	0f402e81 	jal	9d00ba04 <__floatsisf>
 9d009ea0:	2484ff47 	addiu	a0,a0,-185
 9d009ea4:	00402021 	move	a0,v0
 9d009ea8:	3c029d01 	lui	v0,0x9d01
 9d009eac:	0f402617 	jal	9d00985c <.LFE9>
-9d009eb0:	8c45c0e4 	lw	a1,-16156(v0)
+9d009eb0:	8c45c0f0 	lw	a1,-16144(v0)
 9d009eb4:	00402021 	move	a0,v0
 9d009eb8:	3c029d01 	lui	v0,0x9d01
 9d009ebc:	0f40247c 	jal	9d0091f0 <__subsf3>
-9d009ec0:	8c45c0e8 	lw	a1,-16152(v0)
+9d009ec0:	8c45c0f4 	lw	a1,-16140(v0)
 9d009ec4:	0f402d3a 	jal	9d00b4e8 <__fixsfsi>
 9d009ec8:	00402021 	move	a0,v0
 	
@@ -10488,7 +10488,7 @@ Disassembly of section .text.putget.2780:
 9d00a2c8:	8e020004 	lw	v0,4(s0)
 9d00a2cc:	1040000a 	beqz	v0,9d00a2f8 <putget.2780+0x6c>
 9d00a2d0:	2411ffff 	li	s1,-1
-9d00a2d4:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d00a2d4:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d00a2d8:	8e040000 	lw	a0,0(s0)
 9d00a2dc:	00408821 	move	s1,v0
 9d00a2e0:	2402ffff 	li	v0,-1
@@ -10560,7 +10560,7 @@ Disassembly of section .text.malloc_trim:
 9d00a4a4:	afb20018 	sw	s2,24(sp)
 9d00a4a8:	afb10014 	sw	s1,20(sp)
 9d00a4ac:	afb00010 	sw	s0,16(sp)
-9d00a4b0:	0f403075 	jal	9d00c1d4 <getpagesize>
+9d00a4b0:	0f403078 	jal	9d00c1e0 <getpagesize>
 9d00a4b4:	00809021 	move	s2,a0
 9d00a4b8:	3c10a000 	lui	s0,0xa000
 9d00a4bc:	26104248 	addiu	s0,s0,16968
@@ -10585,13 +10585,13 @@ Disassembly of section .text.malloc_trim:
 9d00a508:	8fb00010 	lw	s0,16(sp)
 9d00a50c:	03e00008 	jr	ra
 9d00a510:	27bd0020 	addiu	sp,sp,32
-9d00a514:	0f402eab 	jal	9d00baac <sbrk>
+9d00a514:	0f402eae 	jal	9d00bab8 <sbrk>
 9d00a518:	00002021 	move	a0,zero
 9d00a51c:	8e030008 	lw	v1,8(s0)
 9d00a520:	00711821 	addu	v1,v1,s1
 9d00a524:	1443fff5 	bne	v0,v1,9d00a4fc <malloc_trim+0x60>
 9d00a528:	00001021 	move	v0,zero
-9d00a52c:	0f402eab 	jal	9d00baac <sbrk>
+9d00a52c:	0f402eae 	jal	9d00bab8 <sbrk>
 9d00a530:	00122023 	negu	a0,s2
 9d00a534:	2403ffff 	li	v1,-1
 9d00a538:	1043000a 	beq	v0,v1,9d00a564 <malloc_trim+0xc8>
@@ -10605,7 +10605,7 @@ Disassembly of section .text.malloc_trim:
 9d00a558:	ac5247ac 	sw	s2,18348(v0)
 9d00a55c:	0b40293f 	j	9d00a4fc <malloc_trim+0x60>
 9d00a560:	24020001 	li	v0,1
-9d00a564:	0f402eab 	jal	9d00baac <sbrk>
+9d00a564:	0f402eae 	jal	9d00bab8 <sbrk>
 9d00a568:	00002021 	move	a0,zero
 9d00a56c:	8e030008 	lw	v1,8(s0)
 9d00a570:	00432023 	subu	a0,v0,v1
@@ -10818,7 +10818,7 @@ Disassembly of section .text._flsbuf_simple:
 9d00a870:	a4a20010 	sh	v0,16(a1)
 9d00a874:	27a40010 	addiu	a0,sp,16
 9d00a878:	24050001 	li	a1,1
-9d00a87c:	0f402ed2 	jal	9d00bb48 <.LFE0>
+9d00a87c:	0f402ed5 	jal	9d00bb54 <.LFE0>
 9d00a880:	a3b10010 	sb	s1,16(sp)
 9d00a884:	ae000000 	sw	zero,0(s0)
 9d00a888:	02201021 	move	v0,s1
@@ -10983,7 +10983,7 @@ Disassembly of section .text.general_exception:
 9d00aacc:	00004010 	mfhi	t0
 9d00aad0:	afa80050 	sw	t0,80(sp)
 9d00aad4:	3c1a9d01 	lui	k0,0x9d01
-9d00aad8:	275abbdc 	addiu	k0,k0,-17444
+9d00aad8:	275abbe8 	addiu	k0,k0,-17432
 9d00aadc:	00000000 	nop
 9d00aae0:	40046800 	mfc0	a0,c0_cause
 9d00aae4:	40056000 	mfc0	a1,c0_status
@@ -11297,12 +11297,12 @@ Disassembly of section .text._fullexit:
 9d00af30:	3c10a000 	lui	s0,0xa000
 9d00af34:	3c11a000 	lui	s1,0xa000
 9d00af38:	00809021 	move	s2,a0
-9d00af3c:	0f40304f 	jal	9d00c13c <_weak_pthread_mutex_lock>
+9d00af3c:	0f403052 	jal	9d00c148 <_weak_pthread_mutex_lock>
 9d00af40:	26044804 	addiu	a0,s0,18436
 9d00af44:	8e220000 	lw	v0,0(s1)
 9d00af48:	26044804 	addiu	a0,s0,18436
 9d00af4c:	24030001 	li	v1,1
-9d00af50:	0f403053 	jal	9d00c14c <_weak_pthread_mutex_unlock>
+9d00af50:	0f403056 	jal	9d00c158 <_weak_pthread_mutex_unlock>
 9d00af54:	ac430038 	sw	v1,56(v0)
 9d00af58:	8e220000 	lw	v0,0(s1)
 9d00af5c:	8c500010 	lw	s0,16(v0)
@@ -11328,7 +11328,7 @@ Disassembly of section .text._fullexit:
 9d00afac:	00000000 	nop
 9d00afb0:	0040f809 	jalr	v0
 9d00afb4:	00000000 	nop
-9d00afb8:	0f403077 	jal	9d00c1dc <.LFE0>
+9d00afb8:	0f40307a 	jal	9d00c1e8 <.LFE0>
 9d00afbc:	02402021 	move	a0,s2
 
 Disassembly of section .text._o_init:
@@ -11342,7 +11342,7 @@ Disassembly of section .text._o_init:
 9d00afd4:	8c430000 	lw	v1,0(v0)
 9d00afd8:	8c820008 	lw	v0,8(a0)
 9d00afdc:	3c059d01 	lui	a1,0x9d01
-9d00afe0:	24a5be84 	addiu	a1,a1,-16764
+9d00afe0:	24a5be90 	addiu	a1,a1,-16752
 9d00afe4:	1040001b 	beqz	v0,9d00b054 <_o_init+0x94>
 9d00afe8:	ac650034 	sw	a1,52(v1)
 9d00afec:	8e03000c 	lw	v1,12(s0)
@@ -11365,7 +11365,7 @@ Disassembly of section .text._o_init:
 9d00b030:	8fb00010 	lw	s0,16(sp)
 9d00b034:	03e00008 	jr	ra
 9d00b038:	27bd0018 	addiu	sp,sp,24
-9d00b03c:	0f403079 	jal	9d00c1e4 <.LFE0>
+9d00b03c:	0f40307c 	jal	9d00c1f0 <.LFE0>
 9d00b040:	86040012 	lh	a0,18(s0)
 9d00b044:	1440fff7 	bnez	v0,9d00b024 <_o_init+0x64>
 9d00b048:	96030010 	lhu	v1,16(s0)
@@ -11436,7 +11436,7 @@ Disassembly of section .text._eat_white:
 9d00b12c:	30630088 	andi	v1,v1,0x88
 9d00b130:	50600010 	beqzl	v1,9d00b174 <_eat_white+0x74>
 9d00b134:	8e030010 	lw	v1,16(s0)
-9d00b138:	0f402e36 	jal	9d00b8d8 <gsgetc>
+9d00b138:	0f402e4f 	jal	9d00b93c <gsgetc>
 9d00b13c:	02002021 	move	a0,s0
 9d00b140:	1451fff9 	bne	v0,s1,9d00b128 <_eat_white+0x28>
 9d00b144:	00521821 	addu	v1,v0,s2
@@ -11534,7 +11534,7 @@ Disassembly of section .text._i_init:
 9d00b29c:	27bd0018 	addiu	sp,sp,24
 9d00b2a0:	0b402c99 	j	9d00b264 <_i_init+0x2c>
 9d00b2a4:	ae020004 	sw	v0,4(s0)
-9d00b2a8:	0f403079 	jal	9d00c1e4 <.LFE0>
+9d00b2a8:	0f40307c 	jal	9d00c1f0 <.LFE0>
 9d00b2ac:	86040012 	lh	a0,18(s0)
 9d00b2b0:	1440fff5 	bnez	v0,9d00b288 <_i_init+0x50>
 9d00b2b4:	96030010 	lhu	v1,16(s0)
@@ -11648,7 +11648,7 @@ Disassembly of section .text._fflush_simple:
 9d00b414:	50a20006 	beql	a1,v0,9d00b430 <_fflush_simple+0x48>
 9d00b418:	8e030008 	lw	v1,8(s0)
 9d00b41c:	8c840008 	lw	a0,8(a0)
-9d00b420:	0f402ed2 	jal	9d00bb48 <.LFE0>
+9d00b420:	0f402ed5 	jal	9d00bb54 <.LFE0>
 9d00b424:	00452823 	subu	a1,v0,a1
 9d00b428:	8e02000c 	lw	v0,12(s0)
 9d00b42c:	8e030008 	lw	v1,8(s0)
@@ -11693,7 +11693,7 @@ Disassembly of section .text._fwrite_simple:
 9d00b4b8:	0f402cfa 	jal	9d00b3e8 <_fflush_simple>
 9d00b4bc:	afa60010 	sw	a2,16(sp)
 9d00b4c0:	02202021 	move	a0,s1
-9d00b4c4:	0f402ed2 	jal	9d00bb48 <.LFE0>
+9d00b4c4:	0f402ed5 	jal	9d00bb54 <.LFE0>
 9d00b4c8:	02002821 	move	a1,s0
 9d00b4cc:	8fa60010 	lw	a2,16(sp)
 9d00b4d0:	00c01021 	move	v0,a2
@@ -11828,7 +11828,7 @@ Disassembly of section .text._sscanf_cdfFnopuxX:
 9d00b6a0:	afb00018 	sw	s0,24(sp)
 9d00b6a4:	afb00014 	sw	s0,20(sp)
 9d00b6a8:	3c029d01 	lui	v0,0x9d01
-9d00b6ac:	2442c0b8 	addiu	v0,v0,-16200
+9d00b6ac:	2442c0c4 	addiu	v0,v0,-16188
 9d00b6b0:	afa20028 	sw	v0,40(sp)
 9d00b6b4:	0f400780 	jal	9d001e00 <do_scan>
 9d00b6b8:	afa3002c 	sw	v1,44(sp)
@@ -11858,7 +11858,7 @@ Disassembly of section .text._sprintf_cdfFnopuxX:
 9d00b708:	afa30018 	sw	v1,24(sp)
 9d00b70c:	afa30014 	sw	v1,20(sp)
 9d00b710:	3c039d01 	lui	v1,0x9d01
-9d00b714:	2463c0b8 	addiu	v1,v1,-16200
+9d00b714:	2463c0c4 	addiu	v1,v1,-16188
 9d00b718:	afa30028 	sw	v1,40(sp)
 9d00b71c:	0f400d3c 	jal	9d0034f0 <.LFE10>
 9d00b720:	afa2002c 	sw	v0,44(sp)
@@ -11942,7 +11942,7 @@ Disassembly of section .text.memmove:
 9d00b850:	8fbf0014 	lw	ra,20(sp)
 9d00b854:	03e00008 	jr	ra
 9d00b858:	27bd0018 	addiu	sp,sp,24
-9d00b85c:	0f402fad 	jal	9d00beb4 <memcpy>
+9d00b85c:	0f402fb0 	jal	9d00bec0 <memcpy>
 9d00b860:	00000000 	nop
 9d00b864:	8fbf0014 	lw	ra,20(sp)
 9d00b868:	03e00008 	jr	ra
@@ -11978,876 +11978,879 @@ Disassembly of section .text._bufalloc:
 9d00b8d0:	03e00008 	jr	ra
 9d00b8d4:	27bd0018 	addiu	sp,sp,24
 
+Disassembly of section .rodata:
+
+9d00b8d8 <.LC0>:
+9d00b8d8:	0a0d6425 	j	98359094 <_bmxdudba_address+0x98339094>
+9d00b8dc:	00000000 	nop
+
+9d00b8e0 <.LC1>:
+9d00b8e0:	25206425 	addiu	zero,t1,25637
+9d00b8e4:	00000064 	0x64
+
+9d00b8e8 <.LC2>:
+9d00b8e8:	00006425 	0x6425
+
+9d00b8ec <.LC3>:
+9d00b8ec:	25206625 	addiu	zero,t1,26149
+9d00b8f0:	00000066 	0x66
+
+9d00b8f4 <.LC4>:
+9d00b8f4:	25206625 	addiu	zero,t1,26149
+9d00b8f8:	000a0d66 	0xa0d66
+9d00b8fc:	25206425 	addiu	zero,t1,25637
+9d00b900:	000a0d64 	0xa0d64
+
+9d00b904 <.LC9>:
+9d00b904:	25206625 	addiu	zero,t1,26149
+9d00b908:	66252066 	0x66252066
+9d00b90c:	00000000 	nop
+
+9d00b910 <.LC10>:
+9d00b910:	25206625 	addiu	zero,t1,26149
+9d00b914:	66252066 	0x66252066
+9d00b918:	00000a0d 	break	0x0,0x28
+9d00b91c:	00006625 	0x6625
+9d00b920:	25206625 	addiu	zero,t1,26149
+9d00b924:	000a0d64 	0xa0d64
+9d00b928:	43480000 	c0	0x1480000
+9d00b92c:	c2c80000 	ll	t0,0(s6)
+9d00b930:	42c80000 	c0	0xc80000
+9d00b934:	c3960000 	ll	s6,0(gp)
+9d00b938:	43960000 	c0	0x1960000
+
 Disassembly of section .text.gsgetc:
 
-9d00b8d8 <gsgetc>:
-9d00b8d8:	27bdffe0 	addiu	sp,sp,-32
-9d00b8dc:	afbf001c 	sw	ra,28(sp)
-9d00b8e0:	afb10018 	sw	s1,24(sp)
-9d00b8e4:	afb00014 	sw	s0,20(sp)
-9d00b8e8:	8c820004 	lw	v0,4(a0)
-9d00b8ec:	2411ffff 	li	s1,-1
-9d00b8f0:	1051000a 	beq	v0,s1,9d00b91c <gsgetc+0x44>
-9d00b8f4:	00808021 	move	s0,a0
-9d00b8f8:	ac910004 	sw	s1,4(a0)
-9d00b8fc:	8e030010 	lw	v1,16(s0)
-9d00b900:	24630001 	addiu	v1,v1,1
-9d00b904:	ae030010 	sw	v1,16(s0)
-9d00b908:	8fbf001c 	lw	ra,28(sp)
-9d00b90c:	8fb10018 	lw	s1,24(sp)
-9d00b910:	8fb00014 	lw	s0,20(sp)
-9d00b914:	03e00008 	jr	ra
-9d00b918:	27bd0020 	addiu	sp,sp,32
-9d00b91c:	0f402d5a 	jal	9d00b568 <fgetc>
-9d00b920:	8c840000 	lw	a0,0(a0)
-9d00b924:	1451fff5 	bne	v0,s1,9d00b8fc <gsgetc+0x24>
-9d00b928:	8fbf001c 	lw	ra,28(sp)
-9d00b92c:	8fb10018 	lw	s1,24(sp)
-9d00b930:	8fb00014 	lw	s0,20(sp)
-9d00b934:	03e00008 	jr	ra
-9d00b938:	27bd0020 	addiu	sp,sp,32
+9d00b93c <gsgetc>:
+9d00b93c:	27bdffe0 	addiu	sp,sp,-32
+9d00b940:	afbf001c 	sw	ra,28(sp)
+9d00b944:	afb10018 	sw	s1,24(sp)
+9d00b948:	afb00014 	sw	s0,20(sp)
+9d00b94c:	8c820004 	lw	v0,4(a0)
+9d00b950:	2411ffff 	li	s1,-1
+9d00b954:	1051000a 	beq	v0,s1,9d00b980 <gsgetc+0x44>
+9d00b958:	00808021 	move	s0,a0
+9d00b95c:	ac910004 	sw	s1,4(a0)
+9d00b960:	8e030010 	lw	v1,16(s0)
+9d00b964:	24630001 	addiu	v1,v1,1
+9d00b968:	ae030010 	sw	v1,16(s0)
+9d00b96c:	8fbf001c 	lw	ra,28(sp)
+9d00b970:	8fb10018 	lw	s1,24(sp)
+9d00b974:	8fb00014 	lw	s0,20(sp)
+9d00b978:	03e00008 	jr	ra
+9d00b97c:	27bd0020 	addiu	sp,sp,32
+9d00b980:	0f402d5a 	jal	9d00b568 <fgetc>
+9d00b984:	8c840000 	lw	a0,0(a0)
+9d00b988:	1451fff5 	bne	v0,s1,9d00b960 <gsgetc+0x24>
+9d00b98c:	8fbf001c 	lw	ra,28(sp)
+9d00b990:	8fb10018 	lw	s1,24(sp)
+9d00b994:	8fb00014 	lw	s0,20(sp)
+9d00b998:	03e00008 	jr	ra
+9d00b99c:	27bd0020 	addiu	sp,sp,32
 
 Disassembly of section .text._buffree:
 
-9d00b93c <_buffree>:
-9d00b93c:	27bdffe8 	addiu	sp,sp,-24
-9d00b940:	afbf0014 	sw	ra,20(sp)
-9d00b944:	afb00010 	sw	s0,16(sp)
-9d00b948:	00808021 	move	s0,a0
-9d00b94c:	8c840008 	lw	a0,8(a0)
-9d00b950:	10800010 	beqz	a0,9d00b994 <_buffree+0x58>
-9d00b954:	8fbf0014 	lw	ra,20(sp)
-9d00b958:	96020010 	lhu	v0,16(s0)
-9d00b95c:	30420010 	andi	v0,v0,0x10
-9d00b960:	5040000d 	beqzl	v0,9d00b998 <_buffree+0x5c>
-9d00b964:	8fb00010 	lw	s0,16(sp)
-9d00b968:	0f40233e 	jal	9d008cf8 <free>
-9d00b96c:	00000000 	nop
-9d00b970:	96020010 	lhu	v0,16(s0)
-9d00b974:	ae000008 	sw	zero,8(s0)
-9d00b978:	7c0220c4 	ins	v0,zero,0x3,0x2
-9d00b97c:	ae00000c 	sw	zero,12(s0)
-9d00b980:	ae000000 	sw	zero,0(s0)
-9d00b984:	2403ffff 	li	v1,-1
-9d00b988:	ae030004 	sw	v1,4(s0)
-9d00b98c:	a6020010 	sh	v0,16(s0)
-9d00b990:	8fbf0014 	lw	ra,20(sp)
-9d00b994:	8fb00010 	lw	s0,16(sp)
-9d00b998:	03e00008 	jr	ra
-9d00b99c:	27bd0018 	addiu	sp,sp,24
+9d00b9a0 <_buffree>:
+9d00b9a0:	27bdffe8 	addiu	sp,sp,-24
+9d00b9a4:	afbf0014 	sw	ra,20(sp)
+9d00b9a8:	afb00010 	sw	s0,16(sp)
+9d00b9ac:	00808021 	move	s0,a0
+9d00b9b0:	8c840008 	lw	a0,8(a0)
+9d00b9b4:	10800010 	beqz	a0,9d00b9f8 <_buffree+0x58>
+9d00b9b8:	8fbf0014 	lw	ra,20(sp)
+9d00b9bc:	96020010 	lhu	v0,16(s0)
+9d00b9c0:	30420010 	andi	v0,v0,0x10
+9d00b9c4:	5040000d 	beqzl	v0,9d00b9fc <_buffree+0x5c>
+9d00b9c8:	8fb00010 	lw	s0,16(sp)
+9d00b9cc:	0f40233e 	jal	9d008cf8 <free>
+9d00b9d0:	00000000 	nop
+9d00b9d4:	96020010 	lhu	v0,16(s0)
+9d00b9d8:	ae000008 	sw	zero,8(s0)
+9d00b9dc:	7c0220c4 	ins	v0,zero,0x3,0x2
+9d00b9e0:	ae00000c 	sw	zero,12(s0)
+9d00b9e4:	ae000000 	sw	zero,0(s0)
+9d00b9e8:	2403ffff 	li	v1,-1
+9d00b9ec:	ae030004 	sw	v1,4(s0)
+9d00b9f0:	a6020010 	sh	v0,16(s0)
+9d00b9f4:	8fbf0014 	lw	ra,20(sp)
+9d00b9f8:	8fb00010 	lw	s0,16(sp)
+9d00b9fc:	03e00008 	jr	ra
+9d00ba00:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.sitofp:
 
-9d00b9a0 <__floatsisf>:
-9d00b9a0:	3c018000 10800012 00813024 04810002     ...<....$0......
-9d00b9b0:	00000000 00042023                       ....# ..
+9d00ba04 <__floatsisf>:
+9d00ba04:	3c018000 10800012 00813024 04810002     ...<....$0......
+9d00ba14:	00000000 00042023                       ....# ..
 
-9d00b9b8 <i40>:
-9d00b9b8:	2405009e 	li	a1,158
-9d00b9bc:	70873820 	clz	a3,a0
-9d00b9c0:	00a72823 	subu	a1,a1,a3
-9d00b9c4:	00e42004 	sllv	a0,a0,a3
-9d00b9c8:	24840080 	addiu	a0,a0,128
-9d00b9cc:	2c880080 	sltiu	t0,a0,128
-9d00b9d0:	00a82821 	addu	a1,a1,t0
-9d00b9d4:	00044203 	sra	t0,a0,0x8
-9d00b9d8:	31080001 	andi	t0,t0,0x1
-9d00b9dc:	00882023 	subu	a0,a0,t0
-9d00b9e0:	00042040 	sll	a0,a0,0x1
-9d00b9e4:	00042242 	srl	a0,a0,0x9
-9d00b9e8:	000545c0 	sll	t0,a1,0x17
-9d00b9ec:	00882025 	or	a0,a0,t0
+9d00ba1c <i40>:
+9d00ba1c:	2405009e 	li	a1,158
+9d00ba20:	70873820 	clz	a3,a0
+9d00ba24:	00a72823 	subu	a1,a1,a3
+9d00ba28:	00e42004 	sllv	a0,a0,a3
+9d00ba2c:	24840080 	addiu	a0,a0,128
+9d00ba30:	2c880080 	sltiu	t0,a0,128
+9d00ba34:	00a82821 	addu	a1,a1,t0
+9d00ba38:	00044203 	sra	t0,a0,0x8
+9d00ba3c:	31080001 	andi	t0,t0,0x1
+9d00ba40:	00882023 	subu	a0,a0,t0
+9d00ba44:	00042040 	sll	a0,a0,0x1
+9d00ba48:	00042242 	srl	a0,a0,0x9
+9d00ba4c:	000545c0 	sll	t0,a1,0x17
+9d00ba50:	00882025 	or	a0,a0,t0
 
-9d00b9f0 <i39>:
-9d00b9f0:	00861025 	or	v0,a0,a2
+9d00ba54 <i39>:
+9d00ba54:	00861025 	or	v0,a0,a2
 
-9d00b9f4 <E999>:
-9d00b9f4:	03e00008 	jr	ra
-9d00b9f8:	00000000 	nop
-9d00b9fc:	00000000 	nop
-
-Disassembly of section .rodata:
-
-9d00ba00 <.LC0>:
-9d00ba00:	0a0d6425 	j	98359094 <_bmxdudba_address+0x98339094>
-9d00ba04:	00000000 	nop
-
-9d00ba08 <.LC1>:
-9d00ba08:	25206425 	addiu	zero,t1,25637
-9d00ba0c:	00000064 	0x64
-
-9d00ba10 <.LC2>:
-9d00ba10:	00006425 	0x6425
-
-9d00ba14 <.LC3>:
-9d00ba14:	25206625 	addiu	zero,t1,26149
-9d00ba18:	00000066 	0x66
-
-9d00ba1c <.LC4>:
-9d00ba1c:	25206625 	addiu	zero,t1,26149
-9d00ba20:	000a0d66 	0xa0d66
-9d00ba24:	25206425 	addiu	zero,t1,25637
-9d00ba28:	000a0d64 	0xa0d64
-
-9d00ba2c <.LC9>:
-9d00ba2c:	25206625 	addiu	zero,t1,26149
-9d00ba30:	66252066 	0x66252066
-9d00ba34:	00000000 	nop
-
-9d00ba38 <.LC10>:
-9d00ba38:	25206625 	addiu	zero,t1,26149
-9d00ba3c:	66252066 	0x66252066
-9d00ba40:	00000a0d 	break	0x0,0x28
-9d00ba44:	43480000 	c0	0x1480000
-9d00ba48:	c2c80000 	ll	t0,0(s6)
-9d00ba4c:	42c80000 	c0	0xc80000
-9d00ba50:	c3960000 	ll	s6,0(gp)
-9d00ba54:	43960000 	c0	0x1960000
+9d00ba58 <E999>:
+9d00ba58:	03e00008 	jr	ra
+9d00ba5c:	00000000 	nop
+9d00ba60:	00000000 	nop
 
 Disassembly of section .text.main_entry:
 
-9d00ba58 <_main_entry>:
-9d00ba58:	3c040000 	lui	a0,0x0
-9d00ba5c:	27bdffe8 	addiu	sp,sp,-24
-9d00ba60:	24840000 	addiu	a0,a0,0
-9d00ba64:	10800003 	beqz	a0,9d00ba74 <_main_entry+0x1c>
-9d00ba68:	afbf0014 	sw	ra,20(sp)
-9d00ba6c:	0080f809 	jalr	a0
-9d00ba70:	00000000 	nop
-9d00ba74:	30840000 	andi	a0,a0,0x0
-9d00ba78:	30a50000 	andi	a1,a1,0x0
-9d00ba7c:	3c089d00 	lui	t0,0x9d00
-9d00ba80:	25082d20 	addiu	t0,t0,11552
-9d00ba84:	0100f809 	jalr	t0
-9d00ba88:	00000000 	nop
+9d00ba64 <_main_entry>:
+9d00ba64:	3c040000 	lui	a0,0x0
+9d00ba68:	27bdffe8 	addiu	sp,sp,-24
+9d00ba6c:	24840000 	addiu	a0,a0,0
+9d00ba70:	10800003 	beqz	a0,9d00ba80 <_main_entry+0x1c>
+9d00ba74:	afbf0014 	sw	ra,20(sp)
+9d00ba78:	0080f809 	jalr	a0
+9d00ba7c:	00000000 	nop
+9d00ba80:	30840000 	andi	a0,a0,0x0
+9d00ba84:	30a50000 	andi	a1,a1,0x0
+9d00ba88:	3c089d00 	lui	t0,0x9d00
+9d00ba8c:	25082d20 	addiu	t0,t0,11552
+9d00ba90:	0100f809 	jalr	t0
+9d00ba94:	00000000 	nop
 
-9d00ba8c <__crt0_exit>:
-9d00ba8c:	3c020000 24420000 10400003 00000000     ...<..B$..@.....
-9d00ba9c:	0040f809 00000000 1000fff9 00000000     ..@.............
+9d00ba98 <__crt0_exit>:
+9d00ba98:	3c020000 24420000 10400003 00000000     ...<..B$..@.....
+9d00baa8:	0040f809 00000000 1000fff9 00000000     ..@.............
 
 Disassembly of section .text.sbrk:
 
-9d00baac <sbrk>:
-9d00baac:	27bdffe0 	addiu	sp,sp,-32
+9d00bab8 <sbrk>:
+9d00bab8:	27bdffe0 	addiu	sp,sp,-32
 
-9d00bab0 <.LCFI9>:
-9d00bab0:	afbf001c 	sw	ra,28(sp)
-9d00bab4:	afb10018 	sw	s1,24(sp)
-9d00bab8:	afb00014 	sw	s0,20(sp)
-9d00babc:	0f402b3f 	jal	9d00acfc <.LFE0>
-9d00bac0:	00808821 	move	s1,a0
-9d00bac4:	1a200007 	blez	s1,9d00bae4 <.LCFI9+0x34>
-9d00bac8:	00408021 	move	s0,v0
-9d00bacc:	2402ffff 	li	v0,-1
-9d00bad0:	12020004 	beq	s0,v0,9d00bae4 <.LCFI9+0x34>
-9d00bad4:	02002021 	move	a0,s0
-9d00bad8:	00002821 	move	a1,zero
-9d00badc:	0f402fc3 	jal	9d00bf0c <.LFE1>
-9d00bae0:	02203021 	move	a2,s1
-9d00bae4:	02001021 	move	v0,s0
-9d00bae8:	8fbf001c 	lw	ra,28(sp)
-9d00baec:	8fb10018 	lw	s1,24(sp)
-9d00baf0:	8fb00014 	lw	s0,20(sp)
-9d00baf4:	03e00008 	jr	ra
-9d00baf8:	27bd0020 	addiu	sp,sp,32
+9d00babc <.LCFI9>:
+9d00babc:	afbf001c 	sw	ra,28(sp)
+9d00bac0:	afb10018 	sw	s1,24(sp)
+9d00bac4:	afb00014 	sw	s0,20(sp)
+9d00bac8:	0f402b3f 	jal	9d00acfc <.LFE0>
+9d00bacc:	00808821 	move	s1,a0
+9d00bad0:	1a200007 	blez	s1,9d00baf0 <.LCFI9+0x34>
+9d00bad4:	00408021 	move	s0,v0
+9d00bad8:	2402ffff 	li	v0,-1
+9d00badc:	12020004 	beq	s0,v0,9d00baf0 <.LCFI9+0x34>
+9d00bae0:	02002021 	move	a0,s0
+9d00bae4:	00002821 	move	a1,zero
+9d00bae8:	0f402fc6 	jal	9d00bf18 <.LFE1>
+9d00baec:	02203021 	move	a2,s1
+9d00baf0:	02001021 	move	v0,s0
+9d00baf4:	8fbf001c 	lw	ra,28(sp)
+9d00baf8:	8fb10018 	lw	s1,24(sp)
+9d00bafc:	8fb00014 	lw	s0,20(sp)
+9d00bb00:	03e00008 	jr	ra
+9d00bb04:	27bd0020 	addiu	sp,sp,32
 
 Disassembly of section .text:
 
-9d00bafc <__floatunsisf>:
-9d00bafc:	27bdffe8 	addiu	sp,sp,-24
-9d00bb00:	afbf0014 	sw	ra,20(sp)
-9d00bb04:	04800006 	bltz	a0,9d00bb20 <__floatunsisf+0x24>
-9d00bb08:	00801021 	move	v0,a0
-9d00bb0c:	0f402e68 	jal	9d00b9a0 <__floatsisf>
-9d00bb10:	00000000 	nop
-9d00bb14:	8fbf0014 	lw	ra,20(sp)
-9d00bb18:	03e00008 	jr	ra
-9d00bb1c:	27bd0018 	addiu	sp,sp,24
-9d00bb20:	00042042 	srl	a0,a0,0x1
-9d00bb24:	30420001 	andi	v0,v0,0x1
-9d00bb28:	0f402e68 	jal	9d00b9a0 <__floatsisf>
-9d00bb2c:	00822025 	or	a0,a0,v0
-9d00bb30:	00402021 	move	a0,v0
-9d00bb34:	0f40247e 	jal	9d0091f8 <__addsf3>
-9d00bb38:	00402821 	move	a1,v0
-9d00bb3c:	8fbf0014 	lw	ra,20(sp)
-9d00bb40:	03e00008 	jr	ra
-9d00bb44:	27bd0018 	addiu	sp,sp,24
+9d00bb08 <__floatunsisf>:
+9d00bb08:	27bdffe8 	addiu	sp,sp,-24
+9d00bb0c:	afbf0014 	sw	ra,20(sp)
+9d00bb10:	04800006 	bltz	a0,9d00bb2c <__floatunsisf+0x24>
+9d00bb14:	00801021 	move	v0,a0
+9d00bb18:	0f402e81 	jal	9d00ba04 <__floatsisf>
+9d00bb1c:	00000000 	nop
+9d00bb20:	8fbf0014 	lw	ra,20(sp)
+9d00bb24:	03e00008 	jr	ra
+9d00bb28:	27bd0018 	addiu	sp,sp,24
+9d00bb2c:	00042042 	srl	a0,a0,0x1
+9d00bb30:	30420001 	andi	v0,v0,0x1
+9d00bb34:	0f402e81 	jal	9d00ba04 <__floatsisf>
+9d00bb38:	00822025 	or	a0,a0,v0
+9d00bb3c:	00402021 	move	a0,v0
+9d00bb40:	0f40247e 	jal	9d0091f8 <__addsf3>
+9d00bb44:	00402821 	move	a1,v0
+9d00bb48:	8fbf0014 	lw	ra,20(sp)
+9d00bb4c:	03e00008 	jr	ra
+9d00bb50:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text._mon_write:
 
-9d00bb48 <_mon_write>:
-9d00bb48:	27bdffe0 	addiu	sp,sp,-32
+9d00bb54 <_mon_write>:
+9d00bb54:	27bdffe0 	addiu	sp,sp,-32
 
-9d00bb4c <.LCFI0>:
-9d00bb4c:	afbf001c 	sw	ra,28(sp)
-9d00bb50:	afb10018 	sw	s1,24(sp)
-9d00bb54:	afb00014 	sw	s0,20(sp)
-9d00bb58:	10800009 	beqz	a0,9d00bb80 <.LCFI0+0x34>
-9d00bb5c:	00808021 	move	s0,a0
-9d00bb60:	10a00007 	beqz	a1,9d00bb80 <.LCFI0+0x34>
-9d00bb64:	00a08821 	move	s1,a1
-9d00bb68:	82040000 	lb	a0,0(s0)
-9d00bb6c:	2631ffff 	addiu	s1,s1,-1
-9d00bb70:	0f402b0a 	jal	9d00ac28 <_mon_putc>
-9d00bb74:	26100001 	addiu	s0,s0,1
-9d00bb78:	5620fffc 	bnezl	s1,9d00bb6c <.LCFI0+0x20>
-9d00bb7c:	82040000 	lb	a0,0(s0)
-9d00bb80:	8fbf001c 	lw	ra,28(sp)
-9d00bb84:	8fb10018 	lw	s1,24(sp)
-9d00bb88:	8fb00014 	lw	s0,20(sp)
-9d00bb8c:	03e00008 	jr	ra
-9d00bb90:	27bd0020 	addiu	sp,sp,32
+9d00bb58 <.LCFI0>:
+9d00bb58:	afbf001c 	sw	ra,28(sp)
+9d00bb5c:	afb10018 	sw	s1,24(sp)
+9d00bb60:	afb00014 	sw	s0,20(sp)
+9d00bb64:	10800009 	beqz	a0,9d00bb8c <.LCFI0+0x34>
+9d00bb68:	00808021 	move	s0,a0
+9d00bb6c:	10a00007 	beqz	a1,9d00bb8c <.LCFI0+0x34>
+9d00bb70:	00a08821 	move	s1,a1
+9d00bb74:	82040000 	lb	a0,0(s0)
+9d00bb78:	2631ffff 	addiu	s1,s1,-1
+9d00bb7c:	0f402b0a 	jal	9d00ac28 <_mon_putc>
+9d00bb80:	26100001 	addiu	s0,s0,1
+9d00bb84:	5620fffc 	bnezl	s1,9d00bb78 <.LCFI0+0x20>
+9d00bb88:	82040000 	lb	a0,0(s0)
+9d00bb8c:	8fbf001c 	lw	ra,28(sp)
+9d00bb90:	8fb10018 	lw	s1,24(sp)
+9d00bb94:	8fb00014 	lw	s0,20(sp)
+9d00bb98:	03e00008 	jr	ra
+9d00bb9c:	27bd0020 	addiu	sp,sp,32
 
 Disassembly of section .text._bootstrap_exception_handler:
 
-9d00bb94 <_bootstrap_exception_handler>:
-9d00bb94:	3c020000 	lui	v0,0x0
-9d00bb98:	24420000 	addiu	v0,v0,0
-9d00bb9c:	10400005 	beqz	v0,9d00bbb4 <_bootstrap_exception_handler+0x20>
+9d00bba0 <_bootstrap_exception_handler>:
 9d00bba0:	3c020000 	lui	v0,0x0
 9d00bba4:	24420000 	addiu	v0,v0,0
-9d00bba8:	10400003 	beqz	v0,9d00bbb8 <_bootstrap_exception_handler+0x24>
-9d00bbac:	3c029d01 	lui	v0,0x9d01
-9d00bbb0:	7000003f 	sdbbp
-9d00bbb4:	3c029d01 	lui	v0,0x9d01
-9d00bbb8:	2442bcb4 	addiu	v0,v0,-17228
-9d00bbbc:	10400005 	beqz	v0,9d00bbd4 <.LCFI2>
-9d00bbc0:	00000000 	nop
-9d00bbc4:	27bdffe8 	addiu	sp,sp,-24
+9d00bba8:	10400005 	beqz	v0,9d00bbc0 <_bootstrap_exception_handler+0x20>
+9d00bbac:	3c020000 	lui	v0,0x0
+9d00bbb0:	24420000 	addiu	v0,v0,0
+9d00bbb4:	10400003 	beqz	v0,9d00bbc4 <_bootstrap_exception_handler+0x24>
+9d00bbb8:	3c029d01 	lui	v0,0x9d01
+9d00bbbc:	7000003f 	sdbbp
+9d00bbc0:	3c029d01 	lui	v0,0x9d01
+9d00bbc4:	2442bcc0 	addiu	v0,v0,-17216
+9d00bbc8:	10400005 	beqz	v0,9d00bbe0 <.LCFI2>
+9d00bbcc:	00000000 	nop
+9d00bbd0:	27bdffe8 	addiu	sp,sp,-24
 
-9d00bbc8 <.LCFI0>:
-9d00bbc8:	afbf0014 	sw	ra,20(sp)
-9d00bbcc:	0040f809 	jalr	v0
-9d00bbd0:	00000000 	nop
+9d00bbd4 <.LCFI0>:
+9d00bbd4:	afbf0014 	sw	ra,20(sp)
+9d00bbd8:	0040f809 	jalr	v0
+9d00bbdc:	00000000 	nop
 
-9d00bbd4 <.LCFI2>:
-9d00bbd4:	0b402ef5 	j	9d00bbd4 <.LCFI2>
-9d00bbd8:	00000000 	nop
+9d00bbe0 <.LCFI2>:
+9d00bbe0:	0b402ef8 	j	9d00bbe0 <.LCFI2>
+9d00bbe4:	00000000 	nop
 
 Disassembly of section .text._general_exception_handler:
 
-9d00bbdc <_general_exception_handler>:
-9d00bbdc:	3c020000 	lui	v0,0x0
-9d00bbe0:	24420000 	addiu	v0,v0,0
-9d00bbe4:	10400005 	beqz	v0,9d00bbfc <_general_exception_handler+0x20>
+9d00bbe8 <_general_exception_handler>:
 9d00bbe8:	3c020000 	lui	v0,0x0
 9d00bbec:	24420000 	addiu	v0,v0,0
-9d00bbf0:	10400003 	beqz	v0,9d00bc00 <_general_exception_handler+0x24>
-9d00bbf4:	3c029d01 	lui	v0,0x9d01
-9d00bbf8:	7000003f 	sdbbp
-9d00bbfc:	3c029d01 	lui	v0,0x9d01
-9d00bc00:	2442bcb4 	addiu	v0,v0,-17228
-9d00bc04:	10400005 	beqz	v0,9d00bc1c <.LCFI2>
-9d00bc08:	00000000 	nop
-9d00bc0c:	27bdffe8 	addiu	sp,sp,-24
+9d00bbf0:	10400005 	beqz	v0,9d00bc08 <_general_exception_handler+0x20>
+9d00bbf4:	3c020000 	lui	v0,0x0
+9d00bbf8:	24420000 	addiu	v0,v0,0
+9d00bbfc:	10400003 	beqz	v0,9d00bc0c <_general_exception_handler+0x24>
+9d00bc00:	3c029d01 	lui	v0,0x9d01
+9d00bc04:	7000003f 	sdbbp
+9d00bc08:	3c029d01 	lui	v0,0x9d01
+9d00bc0c:	2442bcc0 	addiu	v0,v0,-17216
+9d00bc10:	10400005 	beqz	v0,9d00bc28 <.LCFI2>
+9d00bc14:	00000000 	nop
+9d00bc18:	27bdffe8 	addiu	sp,sp,-24
 
-9d00bc10 <.LCFI0>:
-9d00bc10:	afbf0014 	sw	ra,20(sp)
-9d00bc14:	0040f809 	jalr	v0
-9d00bc18:	00000000 	nop
+9d00bc1c <.LCFI0>:
+9d00bc1c:	afbf0014 	sw	ra,20(sp)
+9d00bc20:	0040f809 	jalr	v0
+9d00bc24:	00000000 	nop
 
-9d00bc1c <.LCFI2>:
-9d00bc1c:	0b402f07 	j	9d00bc1c <.LCFI2>
-9d00bc20:	00000000 	nop
+9d00bc28 <.LCFI2>:
+9d00bc28:	0b402f0a 	j	9d00bc28 <.LCFI2>
+9d00bc2c:	00000000 	nop
 
 Disassembly of section .vector_default:
 
-9d00bc24 <_DefaultInterrupt>:
-9d00bc24:	3c020000 	lui	v0,0x0
-9d00bc28:	24420000 	addiu	v0,v0,0
-9d00bc2c:	10400007 	beqz	v0,9d00bc4c <_DefaultInterrupt+0x28>
+9d00bc30 <_DefaultInterrupt>:
 9d00bc30:	3c020000 	lui	v0,0x0
 9d00bc34:	24420000 	addiu	v0,v0,0
-9d00bc38:	50400005 	beqzl	v0,9d00bc50 <_DefaultInterrupt+0x2c>
-9d00bc3c:	3c029d01 	lui	v0,0x9d01
-9d00bc40:	7000003f 	sdbbp
-9d00bc44:	03e00008 	jr	ra
-9d00bc48:	00000000 	nop
-9d00bc4c:	3c029d01 	lui	v0,0x9d01
-9d00bc50:	2442bcb4 	addiu	v0,v0,-17228
-9d00bc54:	10400003 	beqz	v0,9d00bc64 <_DefaultInterrupt+0x40>
-9d00bc58:	00000000 	nop
-9d00bc5c:	0040f809 	jalr	v0
-9d00bc60:	00000000 	nop
-9d00bc64:	03e00008 	jr	ra
-9d00bc68:	00000000 	nop
+9d00bc38:	10400007 	beqz	v0,9d00bc58 <_DefaultInterrupt+0x28>
+9d00bc3c:	3c020000 	lui	v0,0x0
+9d00bc40:	24420000 	addiu	v0,v0,0
+9d00bc44:	50400005 	beqzl	v0,9d00bc5c <_DefaultInterrupt+0x2c>
+9d00bc48:	3c029d01 	lui	v0,0x9d01
+9d00bc4c:	7000003f 	sdbbp
+9d00bc50:	03e00008 	jr	ra
+9d00bc54:	00000000 	nop
+9d00bc58:	3c029d01 	lui	v0,0x9d01
+9d00bc5c:	2442bcc0 	addiu	v0,v0,-17216
+9d00bc60:	10400003 	beqz	v0,9d00bc70 <_DefaultInterrupt+0x40>
+9d00bc64:	00000000 	nop
+9d00bc68:	0040f809 	jalr	v0
+9d00bc6c:	00000000 	nop
+9d00bc70:	03e00008 	jr	ra
+9d00bc74:	00000000 	nop
 
 Disassembly of section .rodata:
 
-9d00bc6c <f5pow>:
-9d00bc6c:	00000000 40140000 00000000 40390000     .......@......9@
-9d00bc7c:	00000000 40838800 00000000 4117d784     .......@.......A
-9d00bc8c:	37e08000 4241c379 b5056e17 4493b8b5     ...7y.AB.n.....D
-9d00bc9c:	e93ff9f5 49384f03 f9301d32 52827748     ..?..O8I2.0.Hw.R
-9d00bcac:	7f73bf3c 65154fdd                       <.s..O.e
+9d00bc78 <f5pow>:
+9d00bc78:	00000000 40140000 00000000 40390000     .......@......9@
+9d00bc88:	00000000 40838800 00000000 4117d784     .......@.......A
+9d00bc98:	37e08000 4241c379 b5056e17 4493b8b5     ...7y.AB.n.....D
+9d00bca8:	e93ff9f5 49384f03 f9301d32 52827748     ..?..O8I2.0.Hw.R
+9d00bcb8:	7f73bf3c 65154fdd                       <.s..O.e
 
 Disassembly of section .text:
 
-9d00bcb4 <__pic32_software_reset>:
-9d00bcb4:	41606000 	di
-9d00bcb8:	000000c0 	ehb
-9d00bcbc:	3c03aa99 	lui	v1,0xaa99
-9d00bcc0:	3c02bf81 	lui	v0,0xbf81
-9d00bcc4:	24636655 	addiu	v1,v1,26197
-9d00bcc8:	ac40f230 	sw	zero,-3536(v0)
-9d00bccc:	ac43f230 	sw	v1,-3536(v0)
-9d00bcd0:	3c035566 	lui	v1,0x5566
-9d00bcd4:	346399aa 	ori	v1,v1,0x99aa
+9d00bcc0 <__pic32_software_reset>:
+9d00bcc0:	41606000 	di
+9d00bcc4:	000000c0 	ehb
+9d00bcc8:	3c03aa99 	lui	v1,0xaa99
+9d00bccc:	3c02bf81 	lui	v0,0xbf81
+9d00bcd0:	24636655 	addiu	v1,v1,26197
+9d00bcd4:	ac40f230 	sw	zero,-3536(v0)
 9d00bcd8:	ac43f230 	sw	v1,-3536(v0)
-9d00bcdc:	3c02bf81 	lui	v0,0xbf81
-9d00bce0:	24030001 	li	v1,1
-9d00bce4:	ac43f618 	sw	v1,-2536(v0)
+9d00bcdc:	3c035566 	lui	v1,0x5566
+9d00bce0:	346399aa 	ori	v1,v1,0x99aa
+9d00bce4:	ac43f230 	sw	v1,-3536(v0)
 9d00bce8:	3c02bf81 	lui	v0,0xbf81
-9d00bcec:	8c42f610 	lw	v0,-2544(v0)
-9d00bcf0:	0b402f2f 	j	9d00bcbc <__pic32_software_reset+0x8>
-9d00bcf4:	00000000 	nop
+9d00bcec:	24030001 	li	v1,1
+9d00bcf0:	ac43f618 	sw	v1,-2536(v0)
+9d00bcf4:	3c02bf81 	lui	v0,0xbf81
+9d00bcf8:	8c42f610 	lw	v0,-2544(v0)
+9d00bcfc:	0b402f32 	j	9d00bcc8 <__pic32_software_reset+0x8>
+9d00bd00:	00000000 	nop
 
 Disassembly of section .text._io_exit:
 
-9d00bcf8 <.text._io_exit>:
-9d00bcf8:	27bdffe8 	addiu	sp,sp,-24
-9d00bcfc:	afbf0014 	sw	ra,20(sp)
-9d00bd00:	afb00010 	sw	s0,16(sp)
-9d00bd04:	3c10a000 	lui	s0,0xa000
-9d00bd08:	0f40304f 	jal	9d00c13c <_weak_pthread_mutex_lock>
-9d00bd0c:	26044804 	addiu	a0,s0,18436
-9d00bd10:	3c02a000 	lui	v0,0xa000
-9d00bd14:	8c420000 	lw	v0,0(v0)
+9d00bd04 <.text._io_exit>:
+9d00bd04:	27bdffe8 	addiu	sp,sp,-24
+9d00bd08:	afbf0014 	sw	ra,20(sp)
+9d00bd0c:	afb00010 	sw	s0,16(sp)
+9d00bd10:	3c10a000 	lui	s0,0xa000
+9d00bd14:	0f403052 	jal	9d00c148 <_weak_pthread_mutex_lock>
 9d00bd18:	26044804 	addiu	a0,s0,18436
-9d00bd1c:	24030001 	li	v1,1
-9d00bd20:	0f403053 	jal	9d00c14c <_weak_pthread_mutex_unlock>
-9d00bd24:	ac430038 	sw	v1,56(v0)
-9d00bd28:	8fbf0014 	lw	ra,20(sp)
-9d00bd2c:	8fb00010 	lw	s0,16(sp)
-9d00bd30:	03e00008 	jr	ra
-9d00bd34:	27bd0018 	addiu	sp,sp,24
+9d00bd1c:	3c02a000 	lui	v0,0xa000
+9d00bd20:	8c420000 	lw	v0,0(v0)
+9d00bd24:	26044804 	addiu	a0,s0,18436
+9d00bd28:	24030001 	li	v1,1
+9d00bd2c:	0f403056 	jal	9d00c158 <_weak_pthread_mutex_unlock>
+9d00bd30:	ac430038 	sw	v1,56(v0)
+9d00bd34:	8fbf0014 	lw	ra,20(sp)
+9d00bd38:	8fb00010 	lw	s0,16(sp)
+9d00bd3c:	03e00008 	jr	ra
+9d00bd40:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text:
 
-9d00bd38 <__lshrdi3>:
-9d00bd38:	10c00009 	beqz	a2,9d00bd60 <.LBE2+0x8>
-9d00bd3c:	00801021 	move	v0,a0
-9d00bd40:	24020020 	li	v0,32
-9d00bd44:	00461023 	subu	v0,v0,a2
-9d00bd48:	18400007 	blez	v0,9d00bd68 <.LBE2+0x10>
-9d00bd4c:	00c42006 	srlv	a0,a0,a2
+9d00bd44 <__lshrdi3>:
+9d00bd44:	10c00009 	beqz	a2,9d00bd6c <.LBE2+0x8>
+9d00bd48:	00801021 	move	v0,a0
+9d00bd4c:	24020020 	li	v0,32
+9d00bd50:	00461023 	subu	v0,v0,a2
+9d00bd54:	18400007 	blez	v0,9d00bd74 <.LBE2+0x10>
+9d00bd58:	00c42006 	srlv	a0,a0,a2
 
-9d00bd50 <.LBB2>:
-9d00bd50:	00451004 	sllv	v0,a1,v0
-9d00bd54:	00c51806 	srlv	v1,a1,a2
+9d00bd5c <.LBB2>:
+9d00bd5c:	00451004 	sllv	v0,a1,v0
+9d00bd60:	00c51806 	srlv	v1,a1,a2
 
-9d00bd58 <.LBE2>:
-9d00bd58:	03e00008 	jr	ra
-9d00bd5c:	00441025 	or	v0,v0,a0
-9d00bd60:	03e00008 	jr	ra
-9d00bd64:	00a01821 	move	v1,a1
-9d00bd68:	00021023 	negu	v0,v0
-9d00bd6c:	00001821 	move	v1,zero
-9d00bd70:	03e00008 	jr	ra
-9d00bd74:	00451006 	srlv	v0,a1,v0
+9d00bd64 <.LBE2>:
+9d00bd64:	03e00008 	jr	ra
+9d00bd68:	00441025 	or	v0,v0,a0
+9d00bd6c:	03e00008 	jr	ra
+9d00bd70:	00a01821 	move	v1,a1
+9d00bd74:	00021023 	negu	v0,v0
+9d00bd78:	00001821 	move	v1,zero
+9d00bd7c:	03e00008 	jr	ra
+9d00bd80:	00451006 	srlv	v0,a1,v0
 
-9d00bd78 <__ashldi3>:
-9d00bd78:	10c00009 	beqz	a2,9d00bda0 <.LBE2+0x8>
-9d00bd7c:	00801021 	move	v0,a0
-9d00bd80:	24030020 	li	v1,32
-9d00bd84:	00661823 	subu	v1,v1,a2
-9d00bd88:	18600007 	blez	v1,9d00bda8 <.LBE2+0x10>
-9d00bd8c:	00c52804 	sllv	a1,a1,a2
+9d00bd84 <__ashldi3>:
+9d00bd84:	10c00009 	beqz	a2,9d00bdac <.LBE2+0x8>
+9d00bd88:	00801021 	move	v0,a0
+9d00bd8c:	24030020 	li	v1,32
+9d00bd90:	00661823 	subu	v1,v1,a2
+9d00bd94:	18600007 	blez	v1,9d00bdb4 <.LBE2+0x10>
+9d00bd98:	00c52804 	sllv	a1,a1,a2
 
-9d00bd90 <.LBB2>:
-9d00bd90:	00641806 	srlv	v1,a0,v1
-9d00bd94:	00c41004 	sllv	v0,a0,a2
+9d00bd9c <.LBB2>:
+9d00bd9c:	00641806 	srlv	v1,a0,v1
+9d00bda0:	00c41004 	sllv	v0,a0,a2
 
-9d00bd98 <.LBE2>:
-9d00bd98:	03e00008 	jr	ra
-9d00bd9c:	00651825 	or	v1,v1,a1
-9d00bda0:	03e00008 	jr	ra
-9d00bda4:	00a01821 	move	v1,a1
-9d00bda8:	00031823 	negu	v1,v1
-9d00bdac:	00001021 	move	v0,zero
-9d00bdb0:	03e00008 	jr	ra
-9d00bdb4:	00641804 	sllv	v1,a0,v1
+9d00bda4 <.LBE2>:
+9d00bda4:	03e00008 	jr	ra
+9d00bda8:	00651825 	or	v1,v1,a1
+9d00bdac:	03e00008 	jr	ra
+9d00bdb0:	00a01821 	move	v1,a1
+9d00bdb4:	00031823 	negu	v1,v1
+9d00bdb8:	00001021 	move	v0,zero
+9d00bdbc:	03e00008 	jr	ra
+9d00bdc0:	00641804 	sllv	v1,a0,v1
 
 Disassembly of section .text._weak_pthread_once:
 
-9d00bdb8 <_weak_pthread_once>:
-9d00bdb8:	8c820000 	lw	v0,0(a0)
-9d00bdbc:	10400003 	beqz	v0,9d00bdcc <_weak_pthread_once+0x14>
-9d00bdc0:	00001021 	move	v0,zero
-9d00bdc4:	03e00008 	jr	ra
-9d00bdc8:	00000000 	nop
-9d00bdcc:	27bdffe8 	addiu	sp,sp,-24
-9d00bdd0:	afbf0014 	sw	ra,20(sp)
-9d00bdd4:	24020002 	li	v0,2
-9d00bdd8:	00a0f809 	jalr	a1
-9d00bddc:	ac820000 	sw	v0,0(a0)
-9d00bde0:	00001021 	move	v0,zero
-9d00bde4:	8fbf0014 	lw	ra,20(sp)
-9d00bde8:	03e00008 	jr	ra
-9d00bdec:	27bd0018 	addiu	sp,sp,24
+9d00bdc4 <_weak_pthread_once>:
+9d00bdc4:	8c820000 	lw	v0,0(a0)
+9d00bdc8:	10400003 	beqz	v0,9d00bdd8 <_weak_pthread_once+0x14>
+9d00bdcc:	00001021 	move	v0,zero
+9d00bdd0:	03e00008 	jr	ra
+9d00bdd4:	00000000 	nop
+9d00bdd8:	27bdffe8 	addiu	sp,sp,-24
+9d00bddc:	afbf0014 	sw	ra,20(sp)
+9d00bde0:	24020002 	li	v0,2
+9d00bde4:	00a0f809 	jalr	a1
+9d00bde8:	ac820000 	sw	v0,0(a0)
+9d00bdec:	00001021 	move	v0,zero
+9d00bdf0:	8fbf0014 	lw	ra,20(sp)
+9d00bdf4:	03e00008 	jr	ra
+9d00bdf8:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text._filbuf_simple:
 
-9d00bdf0 <_filbuf_simple>:
-9d00bdf0:	8c820004 	lw	v0,4(a0)
-9d00bdf4:	2403ffff 	li	v1,-1
-9d00bdf8:	10430003 	beq	v0,v1,9d00be08 <_filbuf_simple+0x18>
-9d00bdfc:	ac800000 	sw	zero,0(a0)
-9d00be00:	03e00008 	jr	ra
-9d00be04:	ac830004 	sw	v1,4(a0)
-9d00be08:	27bdffe8 	addiu	sp,sp,-24
-9d00be0c:	afbf0014 	sw	ra,20(sp)
-9d00be10:	0f402a65 	jal	9d00a994 <_mon_getc>
-9d00be14:	24040001 	li	a0,1
-9d00be18:	8fbf0014 	lw	ra,20(sp)
-9d00be1c:	03e00008 	jr	ra
-9d00be20:	27bd0018 	addiu	sp,sp,24
+9d00bdfc <_filbuf_simple>:
+9d00bdfc:	8c820004 	lw	v0,4(a0)
+9d00be00:	2403ffff 	li	v1,-1
+9d00be04:	10430003 	beq	v0,v1,9d00be14 <_filbuf_simple+0x18>
+9d00be08:	ac800000 	sw	zero,0(a0)
+9d00be0c:	03e00008 	jr	ra
+9d00be10:	ac830004 	sw	v1,4(a0)
+9d00be14:	27bdffe8 	addiu	sp,sp,-24
+9d00be18:	afbf0014 	sw	ra,20(sp)
+9d00be1c:	0f402a65 	jal	9d00a994 <_mon_getc>
+9d00be20:	24040001 	li	a0,1
+9d00be24:	8fbf0014 	lw	ra,20(sp)
+9d00be28:	03e00008 	jr	ra
+9d00be2c:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text._fsync_simple:
 
-9d00be24 <_fsync_simple>:
-9d00be24:	94830010 	lhu	v1,16(a0)
-9d00be28:	00a32824 	and	a1,a1,v1
-9d00be2c:	10a00007 	beqz	a1,9d00be4c <_fsync_simple+0x28>
-9d00be30:	24020001 	li	v0,1
-9d00be34:	34630040 	ori	v1,v1,0x40
-9d00be38:	a4830010 	sh	v1,16(a0)
-9d00be3c:	24030009 	li	v1,9
-9d00be40:	3c02a000 	lui	v0,0xa000
-9d00be44:	ac430010 	sw	v1,16(v0)
-9d00be48:	00001021 	move	v0,zero
-9d00be4c:	03e00008 	jr	ra
-9d00be50:	00000000 	nop
+9d00be30 <_fsync_simple>:
+9d00be30:	94830010 	lhu	v1,16(a0)
+9d00be34:	00a32824 	and	a1,a1,v1
+9d00be38:	10a00007 	beqz	a1,9d00be58 <_fsync_simple+0x28>
+9d00be3c:	24020001 	li	v0,1
+9d00be40:	34630040 	ori	v1,v1,0x40
+9d00be44:	a4830010 	sh	v1,16(a0)
+9d00be48:	24030009 	li	v1,9
+9d00be4c:	3c02a000 	lui	v0,0xa000
+9d00be50:	ac430010 	sw	v1,16(v0)
+9d00be54:	00001021 	move	v0,zero
+9d00be58:	03e00008 	jr	ra
+9d00be5c:	00000000 	nop
 
 Disassembly of section .rodata:
 
-9d00be54 <.rodata>:
-9d00be54:	33323130 	andi	s2,t9,0x3130
-9d00be58:	37363534 	ori	s6,t9,0x3534
-9d00be5c:	00000000 	nop
+9d00be60 <.rodata>:
 9d00be60:	33323130 	andi	s2,t9,0x3130
 9d00be64:	37363534 	ori	s6,t9,0x3534
-9d00be68:	42413938 	c0	0x413938
-9d00be6c:	46454443 	c1	0x454443
-9d00be70:	64636261 	0x64636261
-9d00be74:	00006665 	0x6665
-9d00be78:	33323130 	andi	s2,t9,0x3130
-9d00be7c:	37363534 	ori	s6,t9,0x3534
-9d00be80:	00003938 	0x3938
+9d00be68:	00000000 	nop
+9d00be6c:	33323130 	andi	s2,t9,0x3130
+9d00be70:	37363534 	ori	s6,t9,0x3534
+9d00be74:	42413938 	c0	0x413938
+9d00be78:	46454443 	c1	0x454443
+9d00be7c:	64636261 	0x64636261
+9d00be80:	00006665 	0x6665
+9d00be84:	33323130 	andi	s2,t9,0x3130
+9d00be88:	37363534 	ori	s6,t9,0x3534
+9d00be8c:	00003938 	0x3938
 
 Disassembly of section .text._cleanup:
 
-9d00be84 <_cleanup>:
-9d00be84:	3c02a000 	lui	v0,0xa000
-9d00be88:	8c424828 	lw	v0,18472(v0)
-9d00be8c:	10400007 	beqz	v0,9d00beac <_cleanup+0x28>
-9d00be90:	00000000 	nop
-9d00be94:	27bdffe8 	addiu	sp,sp,-24
-9d00be98:	afbf0014 	sw	ra,20(sp)
-9d00be9c:	0040f809 	jalr	v0
-9d00bea0:	00000000 	nop
-9d00bea4:	8fbf0014 	lw	ra,20(sp)
-9d00bea8:	27bd0018 	addiu	sp,sp,24
-9d00beac:	03e00008 	jr	ra
-9d00beb0:	00000000 	nop
+9d00be90 <_cleanup>:
+9d00be90:	3c02a000 	lui	v0,0xa000
+9d00be94:	8c424828 	lw	v0,18472(v0)
+9d00be98:	10400007 	beqz	v0,9d00beb8 <_cleanup+0x28>
+9d00be9c:	00000000 	nop
+9d00bea0:	27bdffe8 	addiu	sp,sp,-24
+9d00bea4:	afbf0014 	sw	ra,20(sp)
+9d00bea8:	0040f809 	jalr	v0
+9d00beac:	00000000 	nop
+9d00beb0:	8fbf0014 	lw	ra,20(sp)
+9d00beb4:	27bd0018 	addiu	sp,sp,24
+9d00beb8:	03e00008 	jr	ra
+9d00bebc:	00000000 	nop
 
 Disassembly of section .text.memcpy:
 
-9d00beb4 <memcpy>:
-9d00beb4:	00801021 	move	v0,a0
-9d00beb8:	00863821 	addu	a3,a0,a2
-9d00bebc:	10c00006 	beqz	a2,9d00bed8 <memcpy+0x24>
-9d00bec0:	00801821 	move	v1,a0
-9d00bec4:	24a50001 	addiu	a1,a1,1
-9d00bec8:	90a6ffff 	lbu	a2,-1(a1)
-9d00becc:	24630001 	addiu	v1,v1,1
-9d00bed0:	1467fffc 	bne	v1,a3,9d00bec4 <memcpy+0x10>
-9d00bed4:	a066ffff 	sb	a2,-1(v1)
-9d00bed8:	03e00008 	jr	ra
-9d00bedc:	00000000 	nop
+9d00bec0 <memcpy>:
+9d00bec0:	00801021 	move	v0,a0
+9d00bec4:	00863821 	addu	a3,a0,a2
+9d00bec8:	10c00006 	beqz	a2,9d00bee4 <memcpy+0x24>
+9d00becc:	00801821 	move	v1,a0
+9d00bed0:	24a50001 	addiu	a1,a1,1
+9d00bed4:	90a6ffff 	lbu	a2,-1(a1)
+9d00bed8:	24630001 	addiu	v1,v1,1
+9d00bedc:	1467fffc 	bne	v1,a3,9d00bed0 <memcpy+0x10>
+9d00bee0:	a066ffff 	sb	a2,-1(v1)
+9d00bee4:	03e00008 	jr	ra
+9d00bee8:	00000000 	nop
 
 Disassembly of section .text._stub_sbd_memlayout:
 
-9d00bee0 <_stub_sbd_memlayout>:
-9d00bee0:	3c03a000 	lui	v1,0xa000
-9d00bee4:	246247e0 	addiu	v0,v1,18400
-9d00bee8:	24040001 	li	a0,1
-9d00beec:	ac440008 	sw	a0,8(v0)
-9d00bef0:	3c04a000 	lui	a0,0xa000
-9d00bef4:	24844830 	addiu	a0,a0,18480
-9d00bef8:	ac6447e0 	sw	a0,18400(v1)
-9d00befc:	3c030000 	lui	v1,0x0
-9d00bf00:	24630000 	addiu	v1,v1,0
-9d00bf04:	03e00008 	jr	ra
-9d00bf08:	ac430004 	sw	v1,4(v0)
+9d00beec <_stub_sbd_memlayout>:
+9d00beec:	3c03a000 	lui	v1,0xa000
+9d00bef0:	246247e0 	addiu	v0,v1,18400
+9d00bef4:	24040001 	li	a0,1
+9d00bef8:	ac440008 	sw	a0,8(v0)
+9d00befc:	3c04a000 	lui	a0,0xa000
+9d00bf00:	24844830 	addiu	a0,a0,18480
+9d00bf04:	ac6447e0 	sw	a0,18400(v1)
+9d00bf08:	3c030000 	lui	v1,0x0
+9d00bf0c:	24630000 	addiu	v1,v1,0
+9d00bf10:	03e00008 	jr	ra
+9d00bf14:	ac430004 	sw	v1,4(v0)
 
 Disassembly of section .text.memset:
 
-9d00bf0c <memset>:
-9d00bf0c:	10c00007 	beqz	a2,9d00bf2c <memset+0x20>
-9d00bf10:	00801021 	move	v0,a0
-9d00bf14:	30a500ff 	andi	a1,a1,0xff
-9d00bf18:	00863021 	addu	a2,a0,a2
-9d00bf1c:	00801821 	move	v1,a0
-9d00bf20:	24630001 	addiu	v1,v1,1
-9d00bf24:	1466fffe 	bne	v1,a2,9d00bf20 <memset+0x14>
-9d00bf28:	a065ffff 	sb	a1,-1(v1)
-9d00bf2c:	03e00008 	jr	ra
-9d00bf30:	00000000 	nop
+9d00bf18 <memset>:
+9d00bf18:	10c00007 	beqz	a2,9d00bf38 <memset+0x20>
+9d00bf1c:	00801021 	move	v0,a0
+9d00bf20:	30a500ff 	andi	a1,a1,0xff
+9d00bf24:	00863021 	addu	a2,a0,a2
+9d00bf28:	00801821 	move	v1,a0
+9d00bf2c:	24630001 	addiu	v1,v1,1
+9d00bf30:	1466fffe 	bne	v1,a2,9d00bf2c <memset+0x14>
+9d00bf34:	a065ffff 	sb	a1,-1(v1)
+9d00bf38:	03e00008 	jr	ra
+9d00bf3c:	00000000 	nop
 
 Disassembly of section .text.strtod:
 
-9d00bf34 <strtod>:
-9d00bf34:	27bdffe8 	addiu	sp,sp,-24
-9d00bf38:	afbf0014 	sw	ra,20(sp)
-9d00bf3c:	0f401dc3 	jal	9d00770c <__strtod>
-9d00bf40:	00000000 	nop
-9d00bf44:	00402021 	move	a0,v0
-9d00bf48:	0f4029a9 	jal	9d00a6a4 <.LFE23>
-9d00bf4c:	00602821 	move	a1,v1
-9d00bf50:	8fbf0014 	lw	ra,20(sp)
-9d00bf54:	03e00008 	jr	ra
-9d00bf58:	27bd0018 	addiu	sp,sp,24
+9d00bf40 <strtod>:
+9d00bf40:	27bdffe8 	addiu	sp,sp,-24
+9d00bf44:	afbf0014 	sw	ra,20(sp)
+9d00bf48:	0f401dc3 	jal	9d00770c <__strtod>
+9d00bf4c:	00000000 	nop
+9d00bf50:	00402021 	move	a0,v0
+9d00bf54:	0f4029a9 	jal	9d00a6a4 <.LFE23>
+9d00bf58:	00602821 	move	a1,v1
+9d00bf5c:	8fbf0014 	lw	ra,20(sp)
+9d00bf60:	03e00008 	jr	ra
+9d00bf64:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.putchar:
 
-9d00bf5c <putchar>:
-9d00bf5c:	27bdffe8 	addiu	sp,sp,-24
-9d00bf60:	afbf0014 	sw	ra,20(sp)
-9d00bf64:	3c02a000 	lui	v0,0xa000
-9d00bf68:	8c420000 	lw	v0,0(v0)
-9d00bf6c:	0f402b71 	jal	9d00adc4 <.LCFI8>
-9d00bf70:	8c450004 	lw	a1,4(v0)
-9d00bf74:	8fbf0014 	lw	ra,20(sp)
-9d00bf78:	03e00008 	jr	ra
-9d00bf7c:	27bd0018 	addiu	sp,sp,24
+9d00bf68 <putchar>:
+9d00bf68:	27bdffe8 	addiu	sp,sp,-24
+9d00bf6c:	afbf0014 	sw	ra,20(sp)
+9d00bf70:	3c02a000 	lui	v0,0xa000
+9d00bf74:	8c420000 	lw	v0,0(v0)
+9d00bf78:	0f402b71 	jal	9d00adc4 <.LCFI8>
+9d00bf7c:	8c450004 	lw	a1,4(v0)
+9d00bf80:	8fbf0014 	lw	ra,20(sp)
+9d00bf84:	03e00008 	jr	ra
+9d00bf88:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.getchar:
 
-9d00bf80 <getchar>:
-9d00bf80:	27bdffe8 	addiu	sp,sp,-24
-9d00bf84:	afbf0014 	sw	ra,20(sp)
-9d00bf88:	3c02a000 	lui	v0,0xa000
-9d00bf8c:	8c420000 	lw	v0,0(v0)
-9d00bf90:	0f402d5a 	jal	9d00b568 <fgetc>
-9d00bf94:	8c440000 	lw	a0,0(v0)
-9d00bf98:	8fbf0014 	lw	ra,20(sp)
-9d00bf9c:	03e00008 	jr	ra
-9d00bfa0:	27bd0018 	addiu	sp,sp,24
+9d00bf8c <getchar>:
+9d00bf8c:	27bdffe8 	addiu	sp,sp,-24
+9d00bf90:	afbf0014 	sw	ra,20(sp)
+9d00bf94:	3c02a000 	lui	v0,0xa000
+9d00bf98:	8c420000 	lw	v0,0(v0)
+9d00bf9c:	0f402d5a 	jal	9d00b568 <fgetc>
+9d00bfa0:	8c440000 	lw	a0,0(v0)
+9d00bfa4:	8fbf0014 	lw	ra,20(sp)
+9d00bfa8:	03e00008 	jr	ra
+9d00bfac:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text._vfprintf_cdfFnopuxX:
 
-9d00bfa4 <_vfprintf_cdfFnopuxX>:
-9d00bfa4:	27bdffe8 	addiu	sp,sp,-24
-9d00bfa8:	afbf0014 	sw	ra,20(sp)
-9d00bfac:	0f400d3c 	jal	9d0034f0 <.LFE10>
-9d00bfb0:	00000000 	nop
-9d00bfb4:	8fbf0014 	lw	ra,20(sp)
-9d00bfb8:	03e00008 	jr	ra
-9d00bfbc:	27bd0018 	addiu	sp,sp,24
+9d00bfb0 <_vfprintf_cdfFnopuxX>:
+9d00bfb0:	27bdffe8 	addiu	sp,sp,-24
+9d00bfb4:	afbf0014 	sw	ra,20(sp)
+9d00bfb8:	0f400d3c 	jal	9d0034f0 <.LFE10>
+9d00bfbc:	00000000 	nop
+9d00bfc0:	8fbf0014 	lw	ra,20(sp)
+9d00bfc4:	03e00008 	jr	ra
+9d00bfc8:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.putc:
 
-9d00bfc0 <putc>:
-9d00bfc0:	27bdffe8 	addiu	sp,sp,-24
-9d00bfc4:	afbf0014 	sw	ra,20(sp)
-9d00bfc8:	0f402b71 	jal	9d00adc4 <.LCFI8>
-9d00bfcc:	00000000 	nop
-9d00bfd0:	8fbf0014 	lw	ra,20(sp)
-9d00bfd4:	03e00008 	jr	ra
-9d00bfd8:	27bd0018 	addiu	sp,sp,24
+9d00bfcc <putc>:
+9d00bfcc:	27bdffe8 	addiu	sp,sp,-24
+9d00bfd0:	afbf0014 	sw	ra,20(sp)
+9d00bfd4:	0f402b71 	jal	9d00adc4 <.LCFI8>
+9d00bfd8:	00000000 	nop
+9d00bfdc:	8fbf0014 	lw	ra,20(sp)
+9d00bfe0:	03e00008 	jr	ra
+9d00bfe4:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.vfscanf:
 
-9d00bfdc <vfscanf>:
-9d00bfdc:	27bdffe8 	addiu	sp,sp,-24
-9d00bfe0:	afbf0014 	sw	ra,20(sp)
-9d00bfe4:	0f400780 	jal	9d001e00 <do_scan>
-9d00bfe8:	00000000 	nop
-9d00bfec:	8fbf0014 	lw	ra,20(sp)
-9d00bff0:	03e00008 	jr	ra
-9d00bff4:	27bd0018 	addiu	sp,sp,24
+9d00bfe8 <vfscanf>:
+9d00bfe8:	27bdffe8 	addiu	sp,sp,-24
+9d00bfec:	afbf0014 	sw	ra,20(sp)
+9d00bff0:	0f400780 	jal	9d001e00 <do_scan>
+9d00bff4:	00000000 	nop
+9d00bff8:	8fbf0014 	lw	ra,20(sp)
+9d00bffc:	03e00008 	jr	ra
+9d00c000:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.strtof:
 
-9d00bff8 <strtof>:
-9d00bff8:	27bdffe8 	addiu	sp,sp,-24
-9d00bffc:	afbf0014 	sw	ra,20(sp)
-9d00c000:	0f401f99 	jal	9d007e64 <__strtof>
-9d00c004:	00000000 	nop
-9d00c008:	8fbf0014 	lw	ra,20(sp)
-9d00c00c:	03e00008 	jr	ra
-9d00c010:	27bd0018 	addiu	sp,sp,24
+9d00c004 <strtof>:
+9d00c004:	27bdffe8 	addiu	sp,sp,-24
+9d00c008:	afbf0014 	sw	ra,20(sp)
+9d00c00c:	0f401f99 	jal	9d007e64 <__strtof>
+9d00c010:	00000000 	nop
+9d00c014:	8fbf0014 	lw	ra,20(sp)
+9d00c018:	03e00008 	jr	ra
+9d00c01c:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.getc:
 
-9d00c014 <getc>:
-9d00c014:	27bdffe8 	addiu	sp,sp,-24
-9d00c018:	afbf0014 	sw	ra,20(sp)
-9d00c01c:	0f402d5a 	jal	9d00b568 <fgetc>
-9d00c020:	00000000 	nop
-9d00c024:	8fbf0014 	lw	ra,20(sp)
-9d00c028:	03e00008 	jr	ra
-9d00c02c:	27bd0018 	addiu	sp,sp,24
+9d00c020 <getc>:
+9d00c020:	27bdffe8 	addiu	sp,sp,-24
+9d00c024:	afbf0014 	sw	ra,20(sp)
+9d00c028:	0f402d5a 	jal	9d00b568 <fgetc>
+9d00c02c:	00000000 	nop
+9d00c030:	8fbf0014 	lw	ra,20(sp)
+9d00c034:	03e00008 	jr	ra
+9d00c038:	27bd0018 	addiu	sp,sp,24
 
 Disassembly of section .text.negdf2:
 
-9d00c030 <__negdf2>:
-9d00c030:	3c018000 00a12826 00041025 00051825     ...<&(..%...%...
+9d00c03c <__negdf2>:
+9d00c03c:	3c018000 00a12826 00041025 00051825     ...<&(..%...%...
 
-9d00c040 <M999>:
-9d00c040:	03e00008 	jr	ra
-9d00c044:	00000000 	nop
-9d00c048:	00000000 	nop
+9d00c04c <M999>:
+9d00c04c:	03e00008 	jr	ra
+9d00c050:	00000000 	nop
+9d00c054:	00000000 	nop
 
 Disassembly of section .text:
 
-9d00c04c <_nmi_handler>:
-9d00c04c:	401a6000 	mfc0	k0,c0_status
-9d00c050:	3c1bffbf 	lui	k1,0xffbf
-9d00c054:	377bffff 	ori	k1,k1,0xffff
-9d00c058:	035bd024 	and	k0,k0,k1
-9d00c05c:	409a6000 	mtc0	k0,c0_status
-9d00c060:	42000018 	eret
+9d00c058 <_nmi_handler>:
+9d00c058:	401a6000 	mfc0	k0,c0_status
+9d00c05c:	3c1bffbf 	lui	k1,0xffbf
+9d00c060:	377bffff 	ori	k1,k1,0xffff
+9d00c064:	035bd024 	and	k0,k0,k1
+9d00c068:	409a6000 	mtc0	k0,c0_status
+9d00c06c:	42000018 	eret
 
 Disassembly of section .rodata:
 
-9d00c064 <f5pow>:
-9d00c064:	40a00000 41c80000 441c4000 48bebc20     ...@...A.@.D ..H
-9d00c074:	520e1bca 649dc5ae                       ...R...d
+9d00c070 <f5pow>:
+9d00c070:	40a00000 41c80000 441c4000 48bebc20     ...@...A.@.D ..H
+9d00c080:	520e1bca 649dc5ae                       ...R...d
 
 Disassembly of section .text._io_exit:
 
-9d00c07c <_io_exit>:
-9d00c07c:	3c02a000 	lui	v0,0xa000
-9d00c080:	8c420000 	lw	v0,0(v0)
-9d00c084:	24030001 	li	v1,1
-9d00c088:	03e00008 	jr	ra
-9d00c08c:	ac430038 	sw	v1,56(v0)
+9d00c088 <_io_exit>:
+9d00c088:	3c02a000 	lui	v0,0xa000
+9d00c08c:	8c420000 	lw	v0,0(v0)
+9d00c090:	24030001 	li	v1,1
+9d00c094:	03e00008 	jr	ra
+9d00c098:	ac430038 	sw	v1,56(v0)
 
 Disassembly of section .rodata:
 
-9d00c090 <_io_funcs>:
-9d00c090:	9d00bdf0 9d00a7a4 9d00b3e8 9d00b468     ............h...
-9d00c0a0:	9d00be24                                $...
+9d00c09c <_io_funcs>:
+9d00c09c:	9d00bdfc 9d00a7a4 9d00b3e8 9d00b468     ............h...
+9d00c0ac:	9d00be30                                0...
 
 Disassembly of section .text._io_exit:
 
-9d00c0a4 <.text._io_exit>:
-9d00c0a4:	3c02a000 	lui	v0,0xa000
-9d00c0a8:	8c420000 	lw	v0,0(v0)
-9d00c0ac:	24030001 	li	v1,1
-9d00c0b0:	03e00008 	jr	ra
-9d00c0b4:	ac430038 	sw	v1,56(v0)
+9d00c0b0 <.text._io_exit>:
+9d00c0b0:	3c02a000 	lui	v0,0xa000
+9d00c0b4:	8c420000 	lw	v0,0(v0)
+9d00c0b8:	24030001 	li	v1,1
+9d00c0bc:	03e00008 	jr	ra
+9d00c0c0:	ac430038 	sw	v1,56(v0)
 
 Disassembly of section .rodata:
 
-9d00c0b8 <_io_strfuncs>:
-9d00c0b8:	9d00c104 9d00c10c 9d00c114 9d00c11c     ................
-9d00c0c8:	9d00c124                                $...
+9d00c0c4 <_io_strfuncs>:
+9d00c0c4:	9d00c110 9d00c118 9d00c120 9d00c128     ........ ...(...
+9d00c0d4:	9d00c130                                0...
 
 Disassembly of section .text.negsf2:
 
-9d00c0cc <__negsf2>:
-9d00c0cc:	3c018000 00811026                       ...<&...
+9d00c0d8 <__negsf2>:
+9d00c0d8:	3c018000 00811026                       ...<&...
 
-9d00c0d4 <L999>:
-9d00c0d4:	03e00008 	jr	ra
-9d00c0d8:	00000000 	nop
-9d00c0dc:	00000000 	nop
+9d00c0e0 <L999>:
+9d00c0e0:	03e00008 	jr	ra
+9d00c0e4:	00000000 	nop
+9d00c0e8:	00000000 	nop
 
 Disassembly of section .rodata:
 
-9d00c0e0 <.rodata>:
-9d00c0e0:	3f000000 	0x3f000000
-9d00c0e4:	3f2f5c29 	0x3f2f5c29
-9d00c0e8:	438f8000 	c0	0x18f8000
-9d00c0ec:	3951b717 	xori	s1,t2,0xb717
-9d00c0f0:	3ba3d70a 	xori	v1,sp,0xd70a
+9d00c0ec <.rodata>:
+9d00c0ec:	3f000000 	0x3f000000
+9d00c0f0:	3f2f5c29 	0x3f2f5c29
+9d00c0f4:	438f8000 	c0	0x18f8000
+9d00c0f8:	3951b717 	xori	s1,t2,0xb717
+9d00c0fc:	3ba3d70a 	xori	v1,sp,0xd70a
 
 Disassembly of section .text._on_reset:
 
-9d00c0f4 <_on_reset>:
-9d00c0f4:	03e00008 	jr	ra
-9d00c0f8:	00000000 	nop
+9d00c100 <_on_reset>:
+9d00c100:	03e00008 	jr	ra
+9d00c104:	00000000 	nop
 
 Disassembly of section .text._on_bootstrap:
 
-9d00c0fc <_on_bootstrap>:
-9d00c0fc:	03e00008 	jr	ra
-9d00c100:	00000000 	nop
+9d00c108 <_on_bootstrap>:
+9d00c108:	03e00008 	jr	ra
+9d00c10c:	00000000 	nop
 
 Disassembly of section .text._filbuf_string:
 
-9d00c104 <_filbuf_string>:
-9d00c104:	03e00008 	jr	ra
-9d00c108:	2402ffff 	li	v0,-1
+9d00c110 <_filbuf_string>:
+9d00c110:	03e00008 	jr	ra
+9d00c114:	2402ffff 	li	v0,-1
 
 Disassembly of section .text._flsbuf_string:
 
-9d00c10c <_flsbuf_string>:
-9d00c10c:	03e00008 	jr	ra
-9d00c110:	00801021 	move	v0,a0
+9d00c118 <_flsbuf_string>:
+9d00c118:	03e00008 	jr	ra
+9d00c11c:	00801021 	move	v0,a0
 
 Disassembly of section .text._fflush_string:
 
-9d00c114 <_fflush_string>:
-9d00c114:	03e00008 	jr	ra
-9d00c118:	00001021 	move	v0,zero
+9d00c120 <_fflush_string>:
+9d00c120:	03e00008 	jr	ra
+9d00c124:	00001021 	move	v0,zero
 
 Disassembly of section .text._fwrite_string:
 
-9d00c11c <_fwrite_string>:
-9d00c11c:	03e00008 	jr	ra
-9d00c120:	00001021 	move	v0,zero
+9d00c128 <_fwrite_string>:
+9d00c128:	03e00008 	jr	ra
+9d00c12c:	00001021 	move	v0,zero
 
 Disassembly of section .text._fsync_string:
 
-9d00c124 <_fsync_string>:
-9d00c124:	03e00008 	jr	ra
-9d00c128:	24020001 	li	v0,1
+9d00c130 <_fsync_string>:
+9d00c130:	03e00008 	jr	ra
+9d00c134:	24020001 	li	v0,1
 
 Disassembly of section .text._weak_pthread_mutex_init:
 
-9d00c12c <_weak_pthread_mutex_init>:
-9d00c12c:	03e00008 	jr	ra
-9d00c130:	00001021 	move	v0,zero
+9d00c138 <_weak_pthread_mutex_init>:
+9d00c138:	03e00008 	jr	ra
+9d00c13c:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutex_destroy:
 
-9d00c134 <_weak_pthread_mutex_destroy>:
-9d00c134:	03e00008 	jr	ra
-9d00c138:	00001021 	move	v0,zero
+9d00c140 <_weak_pthread_mutex_destroy>:
+9d00c140:	03e00008 	jr	ra
+9d00c144:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutex_lock:
 
-9d00c13c <_weak_pthread_mutex_lock>:
-9d00c13c:	03e00008 	jr	ra
-9d00c140:	00001021 	move	v0,zero
+9d00c148 <_weak_pthread_mutex_lock>:
+9d00c148:	03e00008 	jr	ra
+9d00c14c:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutex_trylock:
 
-9d00c144 <_weak_pthread_mutex_trylock>:
-9d00c144:	03e00008 	jr	ra
-9d00c148:	00001021 	move	v0,zero
+9d00c150 <_weak_pthread_mutex_trylock>:
+9d00c150:	03e00008 	jr	ra
+9d00c154:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutex_unlock:
 
-9d00c14c <_weak_pthread_mutex_unlock>:
-9d00c14c:	03e00008 	jr	ra
-9d00c150:	00001021 	move	v0,zero
+9d00c158 <_weak_pthread_mutex_unlock>:
+9d00c158:	03e00008 	jr	ra
+9d00c15c:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutex_setname_np:
 
-9d00c154 <_weak_pthread_mutex_setname_np>:
-9d00c154:	03e00008 	jr	ra
-9d00c158:	00001021 	move	v0,zero
+9d00c160 <_weak_pthread_mutex_setname_np>:
+9d00c160:	03e00008 	jr	ra
+9d00c164:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutexattr_init:
 
-9d00c15c <_weak_pthread_mutexattr_init>:
-9d00c15c:	03e00008 	jr	ra
-9d00c160:	00001021 	move	v0,zero
+9d00c168 <_weak_pthread_mutexattr_init>:
+9d00c168:	03e00008 	jr	ra
+9d00c16c:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutexattr_destroy:
 
-9d00c164 <_weak_pthread_mutexattr_destroy>:
-9d00c164:	03e00008 	jr	ra
-9d00c168:	00001021 	move	v0,zero
+9d00c170 <_weak_pthread_mutexattr_destroy>:
+9d00c170:	03e00008 	jr	ra
+9d00c174:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutexattr_setname_np:
 
-9d00c16c <_weak_pthread_mutexattr_setname_np>:
-9d00c16c:	03e00008 	jr	ra
-9d00c170:	00001021 	move	v0,zero
+9d00c178 <_weak_pthread_mutexattr_setname_np>:
+9d00c178:	03e00008 	jr	ra
+9d00c17c:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_mutexattr_settype_np:
 
-9d00c174 <_weak_pthread_mutexattr_settype_np>:
-9d00c174:	03e00008 	jr	ra
-9d00c178:	00001021 	move	v0,zero
+9d00c180 <_weak_pthread_mutexattr_settype_np>:
+9d00c180:	03e00008 	jr	ra
+9d00c184:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak_pthread_sysconf_np:
 
-9d00c17c <_weak_pthread_sysconf_np>:
-9d00c17c:	03e00008 	jr	ra
-9d00c180:	2402ffff 	li	v0,-1
+9d00c188 <_weak_pthread_sysconf_np>:
+9d00c188:	03e00008 	jr	ra
+9d00c18c:	2402ffff 	li	v0,-1
 
 Disassembly of section .text._weak_pthread_sigdisable_np:
 
-9d00c184 <_weak_pthread_sigdisable_np>:
-9d00c184:	03e00008 	jr	ra
-9d00c188:	00000000 	nop
+9d00c190 <_weak_pthread_sigdisable_np>:
+9d00c190:	03e00008 	jr	ra
+9d00c194:	00000000 	nop
 
 Disassembly of section .text._weak_pthread_sigrestore_np:
 
-9d00c18c <_weak_pthread_sigrestore_np>:
-9d00c18c:	03e00008 	jr	ra
-9d00c190:	00000000 	nop
+9d00c198 <_weak_pthread_sigrestore_np>:
+9d00c198:	03e00008 	jr	ra
+9d00c19c:	00000000 	nop
 
 Disassembly of section .text._weak__pthread_cleanup_push:
 
-9d00c194 <_weak__pthread_cleanup_push>:
-9d00c194:	03e00008 	jr	ra
-9d00c198:	00000000 	nop
+9d00c1a0 <_weak__pthread_cleanup_push>:
+9d00c1a0:	03e00008 	jr	ra
+9d00c1a4:	00000000 	nop
 
 Disassembly of section .text._weak__pthread_cleanup_pop:
 
-9d00c19c <_weak__pthread_cleanup_pop>:
-9d00c19c:	03e00008 	jr	ra
-9d00c1a0:	00000000 	nop
+9d00c1a8 <_weak__pthread_cleanup_pop>:
+9d00c1a8:	03e00008 	jr	ra
+9d00c1ac:	00000000 	nop
 
 Disassembly of section .text._weak__pthread_cleanup_push_defer:
 
-9d00c1a4 <_weak__pthread_cleanup_push_defer>:
-9d00c1a4:	03e00008 	jr	ra
-9d00c1a8:	00000000 	nop
+9d00c1b0 <_weak__pthread_cleanup_push_defer>:
+9d00c1b0:	03e00008 	jr	ra
+9d00c1b4:	00000000 	nop
 
 Disassembly of section .text._weak__pthread_cleanup_pop_restore:
 
-9d00c1ac <_weak__pthread_cleanup_pop_restore>:
-9d00c1ac:	03e00008 	jr	ra
-9d00c1b0:	00000000 	nop
+9d00c1b8 <_weak__pthread_cleanup_pop_restore>:
+9d00c1b8:	03e00008 	jr	ra
+9d00c1bc:	00000000 	nop
 
 Disassembly of section .text._weak_pthread_key_create:
 
-9d00c1b4 <_weak_pthread_key_create>:
-9d00c1b4:	03e00008 	jr	ra
-9d00c1b8:	2402ffff 	li	v0,-1
+9d00c1c0 <_weak_pthread_key_create>:
+9d00c1c0:	03e00008 	jr	ra
+9d00c1c4:	2402ffff 	li	v0,-1
 
 Disassembly of section .text._weak_pthread_setspecific:
 
-9d00c1bc <_weak_pthread_setspecific>:
-9d00c1bc:	03e00008 	jr	ra
-9d00c1c0:	2402ffff 	li	v0,-1
+9d00c1c8 <_weak_pthread_setspecific>:
+9d00c1c8:	03e00008 	jr	ra
+9d00c1cc:	2402ffff 	li	v0,-1
 
 Disassembly of section .text._weak_pthread_getspecific:
 
-9d00c1c4 <_weak_pthread_getspecific>:
-9d00c1c4:	03e00008 	jr	ra
-9d00c1c8:	00001021 	move	v0,zero
+9d00c1d0 <_weak_pthread_getspecific>:
+9d00c1d0:	03e00008 	jr	ra
+9d00c1d4:	00001021 	move	v0,zero
 
 Disassembly of section .text._weak__libc_private_storage:
 
-9d00c1cc <_weak__libc_private_storage>:
-9d00c1cc:	03e00008 	jr	ra
-9d00c1d0:	00a01021 	move	v0,a1
+9d00c1d8 <_weak__libc_private_storage>:
+9d00c1d8:	03e00008 	jr	ra
+9d00c1dc:	00a01021 	move	v0,a1
 
 Disassembly of section .text.getpagesize:
 
-9d00c1d4 <getpagesize>:
-9d00c1d4:	03e00008 	jr	ra
-9d00c1d8:	24020080 	li	v0,128
+9d00c1e0 <getpagesize>:
+9d00c1e0:	03e00008 	jr	ra
+9d00c1e4:	24020080 	li	v0,128
 
 Disassembly of section .text._exit:
 
-9d00c1dc <_exit>:
-9d00c1dc:	0b403077 	j	9d00c1dc <_exit>
-9d00c1e0:	00000000 	nop
+9d00c1e8 <_exit>:
+9d00c1e8:	0b40307a 	j	9d00c1e8 <_exit>
+9d00c1ec:	00000000 	nop
 
 Disassembly of section .text.isatty:
 
-9d00c1e4 <isatty>:
-9d00c1e4:	03e00008 	jr	ra
-9d00c1e8:	00001021 	move	v0,zero
+9d00c1f0 <isatty>:
+9d00c1f0:	03e00008 	jr	ra
+9d00c1f4:	00001021 	move	v0,zero

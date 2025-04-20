@@ -13,7 +13,8 @@ volatile int Itest_data_real[100], Itest_ref[100];
 int Ival, Iref, PosVal, Posref;
 modevars modevar;
 int trajectory_pos, trajectory_size;
-int Track_data_ref[MAX_TRAJ_SIZE], Track_data_real[MAX_TRAJ_SIZE];
+int Track_data_real[MAX_TRAJ_SIZE];
+float Track_data_ref[MAX_TRAJ_SIZE];
 
 
 void __ISR(_TIMER_3_VECTOR, IPL4SOFT) TIMER3ISR(void) {
@@ -208,7 +209,7 @@ int main()
           sscanf(buffer, "%d", &trajectory_size);
 		  for (m = 0; m < trajectory_size; m++){
 			NU32_ReadUART3(buffer, BUF_SIZE);
-			sscanf(buffer, "%d", &Track_data_ref[m]);
+			sscanf(buffer, "%f", &Track_data_ref[m]);
           }
 		  sprintf(buffer, "%d\r\n", 1);
           NU32_WriteUART3(buffer);
@@ -222,7 +223,7 @@ int main()
 		  sscanf(buffer, "%d", &trajectory_size);
 		  for (n = 0; n < trajectory_size; n++) {
 			  NU32_ReadUART3(buffer, BUF_SIZE);
-			  sscanf(buffer, "%d", &Track_data_ref[n]);
+			  sscanf(buffer, "%f", &Track_data_ref[n]);
 		  }
 		  sprintf(buffer, "%d\r\n", 1);
 		  NU32_WriteUART3(buffer);
@@ -243,7 +244,7 @@ int main()
 		  sprintf(buffer, "%d\r\n", trajectory_size);
 		  NU32_WriteUART3(buffer);
 		  for(k=0; k<trajectory_size; k++) {
-			  sprintf(buffer, "%d %d\r\n", Track_data_ref[k], Track_data_real[k]);
+			  sprintf(buffer, "%f %d\r\n", Track_data_ref[k], Track_data_real[k]);
 			  NU32_WriteUART3(buffer);
 		  }
 		  break;

@@ -261,7 +261,7 @@ void config_T3(void) {
 	IEC0bits.T3IE = 1;	
 }	
 
-void array_clr(int *array) {
+void array_clr(float *array) {
 	int size = sizeof(array);
 	int c;
 	
