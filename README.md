@@ -24,4 +24,18 @@ ki: 0.00001
 kd: 0
 
 There is a small bit of oscillation and overshoot, but is very quick. Other gain combinations resulted in higher oscillation and inaccuracy.
+After further testing, position control gains were improved to minimize oscillation. There are still some oscillation, but cubic and step trajectories are followed fairly well.
+The new Position gains tuned to get the best reponses are as follows:
+
+kp: 15
+ki: 0.000006
+kd: 0.08
+
+For the current loop gains of kp = 10000 and ki = 0.001, and position loop gains of kp = 15, ki = 0.000006, kd = 0.08, the following responses are recorded:
+
+![image](https://github.com/user-attachments/assets/5bf26eb0-ac59-4f8d-bac3-b1d02ddecd5b)
+
+![image](https://github.com/user-attachments/assets/ece6d563-3e94-47b1-8cd2-01e62f745acc)
+
+
 
