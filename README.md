@@ -11,8 +11,7 @@ Schematic/Diagram/Tables:
 ![image](https://github.com/user-attachments/assets/450453da-f9c4-45b6-83bf-7bbb437d8e7d)
 ![image](https://github.com/user-attachments/assets/346b52d8-2aad-4f6f-8f1f-4fb2bd7b7b4b)
 
-![image](https://github.com/user-attachments/assets/c5d82180-69a7-4850-8394-544ebc1938a6)
-
+![image](https://github.com/user-attachments/assets/5cf22185-4131-45ff-bd6f-b7b3ce1acea1)
 
 
 Current loop gain tests:
