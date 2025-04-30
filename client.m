@@ -27,14 +27,26 @@ mySerial = serial(port, 'BaudRate', 230400, 'FlowControl', 'hardware','Timeout',
 % opens serial connection
 fopen(mySerial);
 % closes serial port when function exits
-clean = onCleanup(@()fclose(mySerial));                                 
+clean = onCleanup(@()fclose(mySerial));
+Itest = zeros(100);
+type = 0;
 
 has_quit = false;
 % menu loop
 while ~has_quit
     fprintf('PIC32 MOTOR DRIVER INTERFACE\n\n');
     % display the menu options; this list will grow
-    fprintf('     d: Get Encoder Counts (Degrees)      x: Integer SUM      c: Get Encoder Counts     e: Reset Encoder Counts    a: Get ADC Ticks (0-1023)    b: Get Current Value (mA)     q: Quit\n');
+    fprintf([ ...
+        '     d: Get Encoder Counts (Degrees)           x: Integer SUM\n' ...
+        '     c: Get Encoder Counts                     e: Reset Encoder Counts\n' ...
+        '     a: Get ADC Ticks (0-1023)                 b: Get Current Value (mA)\n' ...
+        '     r: Get Current State of Motor             f: Set PWM (-100 to 100)\n' ...
+        '     p: Stop Motor                             g: Set Current Loop Gains\n' ...
+        '     h: Get Current Loop Gains                 k: Test Current Loop Gains\n' ...
+        '     i: Set Position Loop Gains                j: Get Position Loop Gains\n' ...
+        '     l: Step to Angle (Test P-Loop Gains)      m: Set Up Step Trajectory\n' ...
+        '     n: Set up Cubic Trajectory                o: Execute Trajectory\n' ...
+        '                               q: Quit\n                                       ']);
     % read the user's choice
     selection = input('\nENTER COMMAND: ', 's');
      
@@ -109,7 +121,71 @@ while ~has_quit
             fprintf('P Gain: %f\n', Pgainh);
             fprintf('I Gain: %f\n', Igainh);
         case 'k'
-
+            read_plot_matrix(mySerial);
+        case 'i'
+            Pgain2 = input('Enter P Gain: ');
+            Igain2 = input('Enter I gain: ');
+            Dgain2 = input('Enter D gain: ');
+            PIDgain1 = [Pgain2; Igain2; Dgain2];
+            fprintf(mySerial, "%f %f %f\n", PIDgain1);
+            ack_j = fscanf(mySerial, '%d');
+            if ack_j == 1
+                fprintf('Position Control Mode Gains Set.\n');
+            else
+                fprintf('Error - Position Control Mode Gains Not Set.\n');
+            end
+        case 'j'
+            PIDgainj = fscanf(mySerial, '%f %f %f');
+            Pgainj = PIDgainj(1);
+            Igainj = PIDgainj(2);
+            Dgainj = PIDgainj(3);
+            fprintf('P Gain: %f\n', Pgainj);
+            fprintf('I Gain: %f\n', Igainj);
+            fprintf('D Gain: %f\n', Dgainj);
+        case 'l'
+            Angleref = input('Enter a desired angle: ');
+            fprintf(mySerial, "%d\n", Angleref);
+        case 'm'
+            mSamples = input('Enter number of steps to track: ');
+            trajectory = zeros(mSamples, 2);
+            type = 0;   %Step
+            for i = 1:1:mSamples
+                trajectory(i, 1) = input('Insert Time of step: ');
+                trajectory(i, 2) = input('Insert Position of step: ');
+            end
+            position_m = genRef(trajectory, 'step');
+            fprintf(mySerial,'%d\n',length(position_m));
+            for i=1:length(position_m)
+                fprintf(mySerial,'%f\n',position_m(i));
+            end
+            m_ack=fscanf(mySerial,'%d');
+            if m_ack == 1
+                fprintf('Data Recieved\n');
+            else
+                fprintf('Data Not Received\n');
+            end
+        case 'n'
+            nSamples = input('Enter number of steps to track: ');
+            trajectory = zeros(nSamples, 2);
+            type = 1;   %Cubic
+            for i = 1:1:nSamples
+                trajectory(i, 1) = input('Insert Time of step: ');
+                trajectory(i, 2) = input('Insert Position of step: ');
+            end
+            position_n = genRef(trajectory, 'cubic');
+            fprintf(mySerial,'%d\n',length(position_n));
+            for i=1:length(position_n)
+                fprintf(mySerial,'%f\n',position_n(i));
+            end
+            plot(position_n);
+            n_ack=fscanf(mySerial,'%d');
+            if n_ack == 1
+                fprintf('Data Recieved\n');
+            else
+                fprintf('Data Not Received\n');
+            end
+        case 'o'
+            read_plot_matrix_position(mySerial, type);
         case 'q'
             has_quit = true;             % exit client
         otherwise
